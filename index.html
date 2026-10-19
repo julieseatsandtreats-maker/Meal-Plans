@@ -7,6 +7,8 @@
 <meta name="description" content="Seven easy dinners, a grocery list that builds itself and one-tap calendar reminders from Julie’s Eats &amp; Treats.">
 <meta property="og:title" content="This Week’s Dinner Plan | Julie’s Eats &amp; Treats">
 <meta property="og:description" content="Pick your dinners and get a grocery list you can check off as you shop.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CND2QDGF7C"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CND2QDGF7C');</script>
 <title>This Week’s Dinner Plan | Julie’s Eats &amp; Treats</title>
 </head>
 <body>
@@ -278,7 +280,7 @@ function R(i){var D=DAYS[i],s=st.sw&&st.sw[i],x=s?SW[i].filter(function(o){retur
    tip:'Swapped in! Your grocery list already has everything you need for this one.'}}
 function swapOpts(i){var cur=R(i).id,o=SW[i].filter(function(x){return x.id!==cur}).map(function(x){return {id:x.id,name:x.name,url:U+x.slug+'/'}});
   if(cur!=='d'+i)o.unshift({id:'d'+i,name:DAYS[i].name,url:DAYS[i].url,back:true});return o}
-function doSwap(i,id){var was=R(i).name;if(!st.sw)st.sw={};st.sw[i]=(id==='d'+i)?null:id;save();
+function doSwap(i,id){var was=R(i).name;track('planner_swap',{day:DAYS[i].d,from:was,to:id==='d'+i?DAYS[i].name:(SW[i].filter(function(o){return o.id===id})[0]||{}).name});if(!st.sw)st.sw={};st.sw[i]=(id==='d'+i)?null:id;save();
   tonight();tabs();pick(i);picker();list();calRow();madeCount();toast(R(i).name+' swapped in. List updated!')}
 function chips(arr){return arr.map(function(x){return '<a class="xl" href="'+U+x[1]+'/" target="_blank" rel="noopener">'+x[0]+'</a>'}).join('')}
 function ratePrompt(D){
@@ -418,7 +420,7 @@ ITEMS.forEach(function(it){var a=SNEED[it.k];if(a)for(var k in a)it.need[k]=a[k]
  {k:'alm',s:6,need:{sd_fruit:1},f:function(){return ['Almond extract']}}
 ].forEach(function(x){ITEMS.push(x)});
 function sidesOf(i){return (st.sd&&st.sd[i])||[]}
-function toggleSide(i,sid){if(!st.sd)st.sd={};var a=sidesOf(i).slice(),j=a.indexOf(sid);if(j>-1)a.splice(j,1);else a.push(sid);st.sd[i]=a;save();
+function toggleSide(i,sid){if(!st.sd)st.sd={};var a=sidesOf(i).slice(),j=a.indexOf(sid);if(j>-1)a.splice(j,1);else a.push(sid);st.sd[i]=a;save();track(j>-1?'planner_remove_side':'planner_add_side',{day:DAYS[i].d,side:SIDES[sid][0]});
   pick(i);picker();list();tonight();calRow();toast(j>-1?SIDES[sid][0]+' removed from your list':SIDES[sid][0]+' added to your list!')}
 var SECS=[['Meat','teal'],['Deli & bakery','teal'],['Produce','mint'],['Dairy','peach'],['Freezer','blue'],['Pantry','yel'],['Check the cupboard','mint']];
 function shopping(){
@@ -431,6 +433,14 @@ function shopping(){
 }
 
 var root=document.getElementById('jetmp'),$=function(id){return document.getElementById(id)};
+/* analytics: sends events only where Google Analytics is loaded (the website version) */
+function track(name,params){try{if(typeof window.gtag==='function')window.gtag('event',name,Object.assign({plan_week:'2026-10-19'},params||{}))}catch(e){}}
+root.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+  if(/instacart\.com/.test(h))track('planner_instacart_click',{item:decodeURIComponent((h.split('k=')[1]||'')).slice(0,80)});
+  else if(/calendar\.google\.com/.test(h))track('planner_calendar_google',{day:a.textContent.trim().slice(0,30)});
+  else if(/#respond$/.test(h))track('planner_rating_click',{recipe:h.replace(/https?:\/\/[^/]+\//,'').replace(/\/#respond$/,'')});
+  else if(/julieseatsandtreats\.com\/[a-z0-9-]+\/?$/.test(h))track('planner_recipe_click',{recipe:h.replace(/https?:\/\/[^/]+\//,'').replace(/\/$/,''),spot:a.className||'link'});
+  else if(/\.pdf$/.test(h))track('planner_pdf_download');},true);
 var KEY='jet-mealplan-2026-10-19e',st={g:{},m:{},sel:[true,true,true,true,true,true,true],sw:{}};
 try{var _s=JSON.parse(localStorage.getItem(KEY));if(_s){st=_s;if(!st.sel)st.sel=[true,true,true,true,true,true,true];if(!st.sw)st.sw={}}}catch(e){}
 function nSel(){return st.sel.filter(Boolean).length}
@@ -483,7 +493,7 @@ function pick(i){
     else if(b.dataset.a==='sel'){toggleSel(i)}
     else if(b.dataset.sw){doSwap(i,b.dataset.sw)}
     else if(b.dataset.sd){toggleSide(i,b.dataset.sd)}
-    else{st.m[i]=!st.m[i];save();tabs();pick(i);madeCount(true);if(st.m[i]){burst(e.clientX,e.clientY);setTimeout(function(){ratePrompt(D)},700)}}
+    else{st.m[i]=!st.m[i];save();tabs();pick(i);madeCount(true);if(st.m[i])track('planner_made_it',{day:DAYS[i].d,recipe:R(i).name});if(st.m[i]){burst(e.clientX,e.clientY);setTimeout(function(){ratePrompt(D)},700)}}
   }});
 }
 function madeCount(fx){var n=0,t=nSel();DAYS.forEach(function(D,i){if(st.sel[i]&&st.m[i])n++});$('jm-made').textContent=n+' of '+t+' made'+(n===t?' 🎉':'');if(fx&&n===t)rain()}
@@ -496,7 +506,7 @@ function picker(){
   [].forEach.call($('jm-pick').querySelectorAll('.pk'),function(b){b.onclick=function(){toggleSel(+b.dataset.i)}});
   $('jm-pickn').textContent=nSel()+' of 7 dinners on my list';
 }
-function toggleSel(i){
+function toggleSel(i){track(st.sel[i]?'planner_skip_dinner':'planner_add_back_dinner',{day:DAYS[i].d,recipe:R(i).name});
   if(st.sel[i]&&nSel()===1){toast('Keep at least one dinner on the list!');return}
   st.sel[i]=!st.sel[i];save();picker();list();calRow();tabs();pick(cur);madeCount();
   toast(st.sel[i]?R(i).name+' is back on the list':R(i).name+' skipped. List updated!');
@@ -518,11 +528,11 @@ function prog(fx){
   var n=$('jm-list').querySelectorAll('input:checked').length;
   $('jm-bar').style.width=(total?n/total*100:0)+'%';
   $('jm-bartxt').textContent=n===total?'Cart’s full! You’re ready for the week 🎉':n+' of '+total+' items in the cart';
-  if(fx&&n===total){rain();toast('Grocery run: DONE! 🛒')}
+  if(fx&&n===total){rain();toast('Grocery run: DONE! 🛒');track('planner_list_complete',{items:total})}
 }
 $('jm-hide').onclick=function(){var on=root.classList.toggle('hide-done');this.setAttribute('aria-pressed',on);this.textContent=on?'Show checked':'Hide checked'};
 $('jm-reset').onclick=function(){if(confirm('Uncheck everything on the list?')){st.g={};save();list();toast('Fresh list, ready to go')}};
-$('jm-share').onclick=function(){
+$('jm-share').onclick=function(){track('planner_text_my_list',{dinners:nSel()});
   var out='Grocery list for Julie’s dinner plan (Oct 19 to 25)\n';
   out+=DAYS.map(function(D,i){return st.sel[i]?D.d+': '+R(i).name+'\n   '+R(i).url+sidesOf(i).map(function(x){return '\n   + '+SIDES[x][0]+'\n   '+U+SIDES[x][1]+'/'}).join(''):null}).filter(Boolean).join('\n')+'\n';
   shopping().forEach(function(sec){var rows=sec.rows.filter(function(it){return !st.g[it.k]});if(rows.length){out+='\n'+sec.name.toUpperCase()+'\n';rows.forEach(function(it){out+='☐ '+it.name+'\n'})}});
@@ -568,7 +578,7 @@ function buildPDF(J){
   foot();return d;
 }
 $('jm-printmy').onclick=async function(){
-  var b=this;b.disabled=true;b.textContent='Making your list...';
+  var b=this;b.disabled=true;b.textContent='Making your list...';track('planner_print_my_list',{dinners:nSel()});
   try{
     var J=await loadPDF(),blob=buildPDF(J).output('blob');
     var dl=window.claude&&window.claude.use?await window.claude.use('downloads'):null;
@@ -589,7 +599,7 @@ $('jm-cal').onclick=function(){
   L.push('END:VCALENDAR');
   var blob=new Blob([L.join('\r\n')],{type:'text/calendar'}),a=document.createElement('a');
   a.href=URL.createObjectURL(blob);a.download='julies-dinner-plan-oct-19.ics';document.body.appendChild(a);a.click();a.remove();
-  toast('Calendar file ready! Open it to add 📅');
+  toast('Calendar file ready! Open it to add 📅');track('planner_calendar_file',{dinners:nSel()});
 };
 
 /* calendar (Google Calendar links) */
