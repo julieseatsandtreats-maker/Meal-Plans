@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Publish HTML files only
-      - run: mkdir public && cp *.html public/
+      # Publish the whole site (week folders, weeks.json, manifest, photos), not just root .html files
+      - run: mkdir public && rsync -a --exclude='.git' --exclude='.github' --exclude='public' ./ public/
 
       - run: npx --yes wrangler@4 pages deploy public --project-name=meal-plans --branch="$BRANCH"
         env:
