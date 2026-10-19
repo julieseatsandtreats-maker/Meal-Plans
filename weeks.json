@@ -11,6 +11,32 @@
    "Roast Beef Sliders",
    "Baked Rigatoni",
    "Chicken Noodle Soup"
-  ]
+  ],
+  "slugs": [
+   "chicken-tetrazzini",
+   "easy-baked-tacos-recipe",
+   "chicken-yum-yum",
+   "mexican-skillet-pasta",
+   "roast-beef-sliders",
+   "baked-rigatoni",
+   "chicken-noodle-soup"
+  ],
+  "swaps": [
+   "easy-chicken-pot-pie-casserole",
+   "chicken-stroganoff",
+   "baked-chicken-tacos",
+   "crockpot-chicken-tacos",
+   "cheesy-chicken-stuffing-casserole",
+   "crack-chicken",
+   "taco-stuffed-shells",
+   "mexican-lasagna-kicmount-giveaway",
+   "pepperoni-pizza-sliders",
+   "chicken-bacon-ranch-sliders",
+   "baked-ziti",
+   "spasanga",
+   "creamy-chicken-noodle-soup",
+   "crockpot-chicken-noodle-soup"
+  ],
+  "dessert": "mini-pumpkin-pies"
  }
 ]
