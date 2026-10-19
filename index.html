@@ -132,6 +132,10 @@
 .jetmp .swr a{flex:1;font-size:13.5px;font-weight:700;color:var(--head);text-decoration:none}
 .jetmp .swbtn{flex:0 0 auto;border:0;border-radius:999px;background:var(--teal);color:#fff;font-weight:800;font-size:12px;padding:8px 12px}
 .jetmp .swbtn.on{background:var(--peach);color:#2C5B6D}
+.jetmp .withs{font-size:15px;font-weight:800;color:var(--peach);margin-top:4px}
+.jetmp .pkside{display:flex;align-items:center;gap:8px;margin:-2px 0 2px 56px}
+.jetmp .pkside span{flex:1;font-size:13.5px;font-weight:700;color:var(--head);background:var(--chip);border:1.5px solid var(--rule);border-radius:14px;padding:9px 12px}
+.jetmp .pkside .pkr{padding:9px 13px;align-self:stretch}
 .jetmp .pks{display:block;font-size:12px;font-weight:600;opacity:.85;margin-top:2px}
 .jetmp .swb2{position:absolute;right:16px;top:16px;background:var(--yel);color:#2C5B6D;font-weight:800;font-size:13px;padding:8px 12px;border-radius:999px;border:3px solid #fff}
 .jetmp .xt{font-size:11.5px;font-weight:800;color:var(--soft);margin-top:14px;letter-spacing:.3px}
@@ -415,7 +419,7 @@ ITEMS.forEach(function(it){var a=SNEED[it.k];if(a)for(var k in a)it.need[k]=a[k]
 ].forEach(function(x){ITEMS.push(x)});
 function sidesOf(i){return (st.sd&&st.sd[i])||[]}
 function toggleSide(i,sid){if(!st.sd)st.sd={};var a=sidesOf(i).slice(),j=a.indexOf(sid);if(j>-1)a.splice(j,1);else a.push(sid);st.sd[i]=a;save();
-  pick(i);picker();list();toast(j>-1?SIDES[sid][0]+' removed from your list':SIDES[sid][0]+' added to your list!')}
+  pick(i);picker();list();tonight();calRow();toast(j>-1?SIDES[sid][0]+' removed from your list':SIDES[sid][0]+' added to your list!')}
 var SECS=[['Meat','teal'],['Deli & bakery','teal'],['Produce','mint'],['Dairy','peach'],['Freezer','blue'],['Pantry','yel'],['Check the cupboard','mint']];
 function shopping(){
   var occ=[];DAYS.forEach(function(D,i){if(!st.sel[i])return;occ.push([R(i).id,i]);sidesOf(i).forEach(function(x){occ.push([x,i])})});
@@ -446,7 +450,7 @@ var after=!before&&idx===0&&!(y===2026&&mo===9&&dt===19);
 function tonight(){
   var D=R(idx),lab=before?'first up, Monday':(after?'kick off with':'tonight’s dinner');
   var note=D.start?'Start the crock pot about '+D.startAt[2]+' before dinner!':(D.off?D.line:D.time+' and it’s on the table');
-  $('jm-tonight').innerHTML='<div class="ph" id="jm-tph"></div><div><div class="scr lab">'+lab+'</div><div class="disp nm">'+D.name+'</div><div class="nt">'+note+'</div></div>';
+  $('jm-tonight').innerHTML='<div class="ph" id="jm-tph"></div><div><div class="scr lab">'+lab+'</div><div class="disp nm">'+D.name+'</div>'+(sidesOf(idx).length&&st.sel[idx]?'<div class="withs" style="font-size:13px;margin-top:2px">+ '+sidesOf(idx).map(function(x){return SIDES[x][0]}).join(' + ')+'</div>':'')+'<div class="nt">'+note+'</div></div>';
   var ph=$('jm-tph');ph.style.display='flex';ph.style.alignItems='center';ph.style.justifyContent='center';ph.style.fontSize='44px';ph.textContent=D.emoji;bg(ph,D.img);
   $('jm-tonight').style.cursor='pointer';$('jm-tonight').onclick=function(){pick(idx);$('jm-days').scrollIntoView({behavior:'smooth'})};
 }
@@ -460,7 +464,7 @@ function pick(i){
   cur=i;var D=R(i),c=COL[D.c];
   [].forEach.call($('jm-tabs').children,function(b,j){b.setAttribute('aria-selected',j===i)});
   var made=st.m[i];
-  var front='<div class="face'+(D.off?' off':'')+'"><div class="pic" id="jm-pic"'+(D.swapped?' style="aspect-ratio:16/7"':'')+'>'+D.emoji+'<span class="pill" style="background:'+c[0]+';color:'+c[1]+'">'+D.full+'</span>'+(D.swapped?'<span class="swb2">Your swap</span>':'')+'</div><div class="body"><h3 class="disp">'+D.name+'</h3>'+
+  var front='<div class="face'+(D.off?' off':'')+'"><div class="pic" id="jm-pic"'+(D.swapped?' style="aspect-ratio:16/7"':'')+'>'+D.emoji+'<span class="pill" style="background:'+c[0]+';color:'+c[1]+'">'+D.full+'</span>'+(D.swapped?'<span class="swb2">Your swap</span>':'')+'</div><div class="body"><h3 class="disp">'+D.name+'</h3>'+(sidesOf(i).length?'<div class="withs">+ '+sidesOf(i).map(function(x){return SIDES[x][0]}).join(' + ')+'</div>':'')+
    (D.off?'':'<div class="meta"><span class="chip">⏱ '+D.time+'</span>'+(D.rate?'<span class="chip">★ '+D.rate+'</span>':'')+'</div>')+
    '<p class="line">'+D.line+'</p>'+
    (D.sides?'<div class="xt">Great with (tap Add to put it on your grocery list)</div><div class="swl">'+D.sides.map(function(x){var sid=SLUG2SD[x[1]],on=sidesOf(i).indexOf(sid)>-1;return '<div class="swr"><a href="'+U+x[1]+'/" target="_blank" rel="noopener">'+x[0]+'</a><button class="swbtn'+(on?' on':'')+'" data-sd="'+sid+'">'+(on?'Added ✓':'+ Add')+'</button></div>'}).join('')+'</div>':'')+
@@ -488,7 +492,7 @@ function madeCount(fx){var n=0,t=nSel();DAYS.forEach(function(D,i){if(st.sel[i]&
 var CHECK='<svg viewBox="0 0 14 11" fill="none"><path d="M1.5 5.5l4 4 7-8" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 var total=0;
 function picker(){
-  $('jm-pick').innerHTML=DAYS.map(function(D0,i){var D=R(i),on=st.sel[i];return '<div class="pkrow"><button class="pk'+(on?' on':'')+'" data-i="'+i+'" aria-pressed="'+on+'"><b>'+D.d+'</b><span>'+D.name+(sidesOf(i).length?'<small class="pks">+ '+sidesOf(i).map(function(x){return SIDES[x][0]}).join(', ')+'</small>':'')+'</span></button><a class="pkr" href="'+D.url+'" target="_blank" rel="noopener" aria-label="Get the '+D.name+' recipe">Recipe</a></div>'}).join('');
+  $('jm-pick').innerHTML=DAYS.map(function(D0,i){var D=R(i),on=st.sel[i];return '<div class="pkrow"><button class="pk'+(on?' on':'')+'" data-i="'+i+'" aria-pressed="'+on+'"><b>'+D.d+'</b><span>'+D.name+'</span></button><a class="pkr" href="'+D.url+'" target="_blank" rel="noopener" aria-label="Get the '+D.name+' recipe">Recipe</a></div>'+(on?sidesOf(i).map(function(x){return '<div class="pkside"><span>+ '+SIDES[x][0]+'</span><a class="pkr" href="'+U+SIDES[x][1]+'/" target="_blank" rel="noopener" aria-label="Get the '+SIDES[x][0]+' recipe">Recipe</a></div>'}).join(''):'')}).join('');
   [].forEach.call($('jm-pick').querySelectorAll('.pk'),function(b){b.onclick=function(){toggleSel(+b.dataset.i)}});
   $('jm-pickn').textContent=nSel()+' of 7 dinners on my list';
 }
@@ -520,7 +524,7 @@ $('jm-hide').onclick=function(){var on=root.classList.toggle('hide-done');this.s
 $('jm-reset').onclick=function(){if(confirm('Uncheck everything on the list?')){st.g={};save();list();toast('Fresh list, ready to go')}};
 $('jm-share').onclick=function(){
   var out='Grocery list for Julie’s dinner plan (Oct 19 to 25)\n';
-  out+=DAYS.map(function(D,i){return st.sel[i]?D.d+': '+R(i).name+(sidesOf(i).length?' + '+sidesOf(i).map(function(x){return SIDES[x][0]}).join(' + '):''):null}).filter(Boolean).join('\n')+'\n';
+  out+=DAYS.map(function(D,i){return st.sel[i]?D.d+': '+R(i).name+'\n   '+R(i).url+sidesOf(i).map(function(x){return '\n   + '+SIDES[x][0]+'\n   '+U+SIDES[x][1]+'/'}).join(''):null}).filter(Boolean).join('\n')+'\n';
   shopping().forEach(function(sec){var rows=sec.rows.filter(function(it){return !st.g[it.k]});if(rows.length){out+='\n'+sec.name.toUpperCase()+'\n';rows.forEach(function(it){out+='☐ '+it.name+'\n'})}});
   
   function modal(){var w=document.createElement('div');w.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:20px';
@@ -545,7 +549,9 @@ function buildPDF(J){
     y+=16;d.setFillColor(255,255,255);
     d.setFont('helvetica','bold');d.setFontSize(10.5);d.setTextColor.apply(d,TEAL);d.text(D.full.toUpperCase(),M,y);
     d.setFont('helvetica','normal');d.setTextColor(26,26,26);
-    var line=clean(D.name)+(sd.length?'  +  '+sd.join(', '):''),w=d.splitTextToSize(line,W-2*M-90);d.text(w,M+90,y);y+=(w.length-1)*13});
+    var nm=clean(D.name);d.setTextColor.apply(d,TEAL);d.setFont('helvetica','bold');d.textWithLink(nm,M+90,y,{url:D.url});var nx=M+90+d.getTextWidth(nm);
+    d.setFont('helvetica','normal');d.setFontSize(8.5);d.setTextColor(120,120,120);d.textWithLink('   tap for recipe',nx,y,{url:D.url});
+    sidesOf(i).forEach(function(x){y+=13;d.setFontSize(10);d.setFont('helvetica','normal');d.setTextColor(26,26,26);d.text('+',M+90,y);d.setTextColor.apply(d,TEAL);d.setFont('helvetica','bold');var sn=clean(SIDES[x][0]);d.textWithLink(sn,M+100,y,{url:U+SIDES[x][1]+'/'});var sw=d.getTextWidth(sn);d.setFont('helvetica','normal');d.setFontSize(8.5);d.setTextColor(120,120,120);d.textWithLink('   tap for recipe',M+100+sw,y,{url:U+SIDES[x][1]+'/'})})});
   y+=28;d.setFont('helvetica','bold');d.setFontSize(14);d.setTextColor.apply(d,TEAL);d.text('MY GROCERY LIST',M,y);y+=6;
   var colW=(W-2*M-24)/2,col=0,top=y,x=M;
   function nextCol(){if(col===0){col=1;x=M+colW+24;y=top}else{foot();d.addPage();d.setFillColor(244,242,237);d.rect(0,0,W,H,'F');col=0;x=M;top=M;y=M}}
@@ -591,7 +597,7 @@ function calRow(){
   var p=function(n){return (n<10?'0':'')+n};
   function link(day,h,m,dur,title,details){var st='202610'+p(day)+'T'+p(h)+p(m)+'00',e=new Date(2026,9,day,h,m+dur),en='202610'+p(e.getDate())+'T'+p(e.getHours())+p(e.getMinutes())+'00';
     return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+st+'/'+en+'&details='+encodeURIComponent(details)}
-  var h='';DAYS.forEach(function(D0,i){if(!st.sel[i])return;var D=R(i);h+='<a target="_blank" rel="noopener" href="'+link(D.date,17,30,60,'Dinner: '+D.name,D.line+(D.url?'\n'+D.url:''))+'">'+D.d+'</a>'});
+  var h='';DAYS.forEach(function(D0,i){if(!st.sel[i])return;var D=R(i);h+='<a target="_blank" rel="noopener" href="'+link(D.date,17,30,60,'Dinner: '+D.name+(sidesOf(i).length?' + '+sidesOf(i).map(function(x){return SIDES[x][0]}).join(' + '):''),D.line+(D.url?'\n'+D.url:''))+'">'+D.d+'</a>'});
   DAYS.forEach(function(D0,i){var cp=R(i);if(!cp.start||!st.sel[i])return;var a=cp.startAt;
     h+='<a class="wide" target="_blank" rel="noopener" href="'+link(cp.date,a[0],a[1],15,'Start the crock pot! ('+cp.name+')','It needs about '+a[2]+' to be ready for dinner.\n'+cp.url)+'">'+cp.d+' '+(a[0]>12?a[0]-12:a[0])+':'+p(a[1])+(a[0]>=12?' pm':' am')+' crock pot reminder</a>'});
   $('jm-calrow').innerHTML=h;
