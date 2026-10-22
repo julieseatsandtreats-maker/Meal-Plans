@@ -23,6 +23,9 @@ h1{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:30px;line-he
 .wk .top{display:flex;justify-content:space-between;gap:10px;align-items:center}
 .wk b{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:21px;color:var(--head)}
 .tag{font-size:11px;font-weight:800;border-radius:999px;padding:3px 10px;background:var(--chip);color:var(--head);white-space:nowrap}
+.wk.nextup{border:3px dashed var(--peach);background:linear-gradient(0deg,var(--card),var(--card))}
+.wk.nextup .tag{background:var(--peach);color:#2C5B6D}
+.go.nx{background:var(--peach);color:#2C5B6D}
 .wk.now .tag{background:var(--yel);color:#2C5B6D}
 .wk .d{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.45}
 .wk .p{font-size:13px;font-weight:800;color:var(--head);margin-top:8px}
@@ -58,8 +61,8 @@ h1{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:30px;line-he
     var parts=[];if(made)parts.push(made+' of '+n+' made');if(chk)parts.push(chk+' grocery item'+(chk>1?'s':'')+' checked');
     return parts.length?'Your progress: '+parts.join(' · '):'Your picks are saved'}catch(e){return ''}}
   function card(w,kind){var d=w.dinners||[],n=d.length||7,p=prog(w,n),
-    tag=kind==='now'?'This week':(kind==='next'?'Coming up':'Past week');
-    return '<a class="wk'+(kind==='now'?' now':'')+'" href="'+w.url+'" onclick="try{gtag(\'event\',\'hub_open_week\',{week:\''+w.week+'\',kind:\''+kind+'\'})}catch(e){}"><div class="top"><b>'+w.label+'</b><span class="tag">'+tag+'</span></div><div class="d">'+d.join(' · ')+'</div>'+(p?'<div class="p">'+p+'</div>':'')+(kind==='now'?'<span class="go">Open this week’s plan →</span>':'')+'</a>'}
+    tag=kind==='now'?'This week':(kind==='nextup'?'Next week':(kind==='next'?'Coming up':'Past week'));
+    return '<a class="wk'+(kind==='now'?' now':'')+(kind==='nextup'?' nextup':'')+'" href="'+w.url+'" onclick="try{gtag(\'event\',\'hub_open_week\',{week:\''+w.week+'\',kind:\''+kind+'\'})}catch(e){}"><div class="top"><b>'+w.label+'</b><span class="tag">'+tag+'</span></div><div class="d">'+d.join(' · ')+'</div>'+(p?'<div class="p">'+p+'</div>':'')+(kind==='now'?'<span class="go">Open this week’s plan →</span>':'')+(kind==='nextup'?'<span class="go nx">Peek at next week’s plan →</span>':'')+'</a>'}
   fetch('/weeks.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(W){
     var t=new Date();t.setHours(0,0,0,0);
     function start(w){var a=w.week.split('-').map(Number);return new Date(a[0],a[1]-1,a[2])}
@@ -67,7 +70,8 @@ h1{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:30px;line-he
     if(!cur)cur=W.filter(function(w){return start(w)<=t})[0]||W[W.length-1];
     var html='<div class="lbl">This week</div>'+card(cur,'now');
     var nx=W.filter(function(w){return start(w)>start(cur)}),pa=W.filter(function(w){return start(w)<start(cur)});
-    if(nx.length)html+='<div class="lbl">Coming up</div>'+nx.map(function(w){return card(w,'next')}).join('');
+    if(nx.length){var n0=nx[nx.length-1];html+='<div class="lbl">🎉 Next week is ready!</div>'+card(n0,'nextup');
+      var more=nx.filter(function(w){return w!==n0});if(more.length)html+='<div class="lbl">Coming up</div>'+more.map(function(w){return card(w,'next')}).join('')}
     if(pa.length)html+='<div class="lbl">Past weeks</div>'+pa.map(function(w){return card(w,'past')}).join('');
     document.getElementById('now').innerHTML=html;
   }).catch(function(){document.getElementById('now').innerHTML='<p>Couldn’t load the plans. Pull down to refresh.</p>'});
