@@ -1,5 +1,45 @@
 [
  {
+  "week": "2026-10-26",
+  "label": "October 26 to November 1",
+  "url": "/2026-10-26/",
+  "dinners": [
+   "One Pot Ham & Penne Skillet",
+   "Taco Pizza",
+   "Chicken, Green Beans & Potatoes",
+   "Crockpot Chili",
+   "Baked Hamburgers",
+   "Jack O’ Lantern Quesadillas",
+   "Stuffed Pork Tenderloin"
+  ],
+  "slugs": [
+   "one-pot-ham-penne-skillet-recipe",
+   "taco-pizza",
+   "green-beans-chicken-potatoes",
+   "famous-chili",
+   "baked-hamburgers",
+   "jack-o-lantern-quesadillas",
+   "stuffed-pork-tenderloin"
+  ],
+  "swaps": [
+   "scalloped-potatoes-ham",
+   "crockpot-garlic-parmesan-chicken-pasta",
+   "beef-enchiladas",
+   "taco-salad",
+   "crock-pot-chicken-pot-pie",
+   "no-peek-chicken-and-rice",
+   "crock-pot-cheeseburger-soup",
+   "crock-pot-beef-stew-2",
+   "philly-cheesesteak-sloppy-joes",
+   "stromboli",
+   "mummy-hot-dogs",
+   "calzone-recipe",
+   "baked-pork-chops",
+   "crock-pot-potato-soup"
+  ],
+  "dessert": "peanut-butter-pie"
+ },
+ {
   "week": "2026-10-19",
   "label": "October 19 to 25",
   "url": "/2026-10-19/",
