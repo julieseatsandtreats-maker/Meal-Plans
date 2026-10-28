@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;background:var(--page-bg,#F4F2ED)}</style>
+<meta name="description" content="Easy family dinners, a grocery list that builds itself and one-tap calendar reminders from Julie’s Eats &amp; Treats.">
+<meta property="og:title" content="This Week’s Dinner Plan | Julie’s Eats &amp; Treats">
+<meta property="og:description" content="Pick your dinners and get a grocery list you can check off as you shop.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CND2QDGF7C"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CND2QDGF7C');</script>
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/julie.jpg">
+<meta name="apple-mobile-web-app-title" content="Dinner Plan">
+<meta name="theme-color" content="#2C5B6D">
+<title>This Week’s Dinner Plan | Julie’s Eats &amp; Treats</title>
+</head>
+<body>
+<!-- ===== JET MEAL PLAN: paste everything from here to the END marker into a WordPress Custom HTML block ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2C5B6D;--mint:#B6D3C7;--peach:#F3B09E;--yel:#F3BC69;--blue:#C0D8DD;--tan:#F4F2ED;--ink:#1A1A1A;--card:#fff;--head:#2C5B6D;--muted:#555;--soft:#777;--rule:#eee;--chip:#F4F2ED;--page-bg:#F4F2ED;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tan:#14232A;--ink:#F4F2ED;--card:#1E3640;--head:#B6D3C7;--muted:#C9D6DA;--soft:#9FB3BA;--rule:#2C4752;--chip:#14232A;--page-bg:#14232A;color-scheme:dark}}
+:root[data-theme="dark"]{--tan:#14232A;--ink:#F4F2ED;--card:#1E3640;--head:#B6D3C7;--muted:#C9D6DA;--soft:#9FB3BA;--rule:#2C4752;--chip:#14232A;--page-bg:#14232A;color-scheme:dark}
+.jetmp{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--tan);max-width:620px;margin:0 auto;padding:0 0 40px;overflow:hidden;position:relative;-webkit-tap-highlight-color:transparent}
+.jetmp *{box-sizing:border-box}
+.jetmp h1,.jetmp h2,.jetmp h3,.jetmp p{margin:0}
+.jetmp button{font:inherit;cursor:pointer}
+.jetmp a{color:inherit}
+.jetmp :focus-visible{outline:3px solid var(--yel);outline-offset:2px}
+.jetmp .disp{font-family:Oswald,Impact,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+.jetmp .scr{font-family:"Dancing Script",cursive;font-weight:700}
+
+/* hero */
+.jetmp .hero{background:var(--teal);color:#fff;padding:34px 22px 86px;position:relative;border-radius:0 0 40px 40px}
+.jetmp .hero .blob{position:absolute;border-radius:50%;opacity:.25}
+.jetmp .hi{display:flex;gap:16px;align-items:center;position:relative}
+.jetmp .selfie{flex:0 0 96px;height:96px;border-radius:50%;border:5px solid #fff;background:var(--peach) center/cover;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:800;color:var(--teal);line-height:1.2;transform:rotate(-4deg);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.jetmp .hey{font-size:34px;color:var(--yel);line-height:1}
+.jetmp .hero h1{font-size:clamp(38px,10vw,56px);line-height:.98;margin-top:16px;position:relative}
+.jetmp .hero p{font-size:15px;line-height:1.55;margin-top:12px;max-width:34em;opacity:.95;position:relative}
+.jetmp .wk{display:inline-block;background:var(--peach);color:var(--teal);font-weight:800;font-size:12px;padding:7px 12px;border-radius:999px;margin-top:14px;position:relative}
+
+/* tonight */
+.jetmp .tonight{margin:-62px 16px 0;background:var(--card);border-radius:26px;padding:14px;display:flex;gap:14px;align-items:center;position:relative;box-shadow:0 14px 34px rgba(44,91,109,.22)}
+.jetmp .tonight .ph{flex:0 0 108px;height:108px;border-radius:18px;background:var(--mint) center/cover}
+.jetmp .tonight .lab{font-size:24px;color:var(--peach);line-height:1}
+.jetmp .tonight .nm{font-size:24px;color:var(--head);line-height:1.05;margin-top:4px}
+.jetmp .tonight .nt{font-size:12.5px;font-weight:600;color:var(--muted);margin-top:6px;line-height:1.4}
+
+/* section heads */
+.jetmp .sh{padding:34px 20px 12px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.jetmp .sh h2{font-size:32px;color:var(--head);line-height:1}
+.jetmp .sh .scr{font-size:24px;color:var(--peach);display:block;margin-bottom:2px}
+.jetmp .ring{flex:0 0 auto;font-size:12px;font-weight:800;color:var(--head);background:var(--card);border-radius:999px;padding:8px 12px}
+
+/* day tabs */
+.jetmp .tabs{display:flex;gap:8px;padding:0 20px 14px;overflow-x:auto;scrollbar-width:none}
+.jetmp .tabs::-webkit-scrollbar{display:none}
+.jetmp .tab{flex:0 0 auto;width:58px;border:0;border-radius:18px;padding:9px 0 8px;background:var(--card);color:var(--head);text-align:center;position:relative;transition:transform .15s}
+.jetmp .tab b{display:block;font-family:Oswald,sans-serif;font-size:19px;line-height:1}
+.jetmp .tab small{display:block;font-size:10px;font-weight:700;margin-top:3px;opacity:.75}
+.jetmp .tab[aria-selected="true"]{background:var(--teal);color:#fff;transform:translateY(-3px)}
+.jetmp .tab .dot{position:absolute;top:5px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--peach);display:none}
+.jetmp .tab.made .dot{display:block}
+
+/* day card */
+.jetmp .card{margin:0 16px;perspective:1200px}
+.jetmp .flip{position:relative;transition:transform .6s cubic-bezier(.3,1.3,.5,1);transform-style:preserve-3d}
+.jetmp .flip.back{transform:rotateY(180deg)}
+.jetmp .face{background:var(--card);border-radius:28px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.jetmp .face.b{position:absolute;inset:0;transform:rotateY(180deg);background:var(--teal);color:#fff;padding:28px 24px;display:flex;flex-direction:column;justify-content:center}
+.jetmp .pic{aspect-ratio:4/5;max-height:620px;width:100%;background:var(--mint) center/cover;position:relative;display:flex;align-items:center;justify-content:center;font-size:64px}
+.jetmp .pill{border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.15);position:absolute;left:16px;top:16px;font-family:Oswald,sans-serif;font-weight:700;font-size:18px;padding:6px 14px;border-radius:999px;text-transform:uppercase}
+.jetmp .body{padding:18px 20px 20px}
+.jetmp .body h3{font-size:30px;line-height:1.02;color:var(--head)}
+.jetmp .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.jetmp .chip{font-size:12px;font-weight:700;background:var(--chip);border-radius:999px;padding:6px 10px;color:var(--head)}
+.jetmp .line{font-size:15px;line-height:1.5;margin-top:12px;color:var(--ink)}
+.jetmp .acts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.jetmp .btn{border:0;border-radius:999px;padding:13px 18px;font-weight:800;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;justify-content:center}
+.jetmp .btn.p{background:var(--teal);color:#fff;flex:1}
+.jetmp .btn.s{background:var(--chip);color:var(--head)}
+.jetmp .btn.made{background:var(--peach);color:var(--teal)}
+.jetmp .face.b .scr{font-size:30px;color:var(--yel)}
+.jetmp .face.b p{font-size:17px;line-height:1.55;margin-top:10px}
+.jetmp .face.b .btn{margin-top:20px;align-self:flex-start;background:#fff;color:var(--teal)}
+.jetmp .off .pic{background:var(--blue);font-size:80px}
+
+/* grocery */
+.jetmp .bar{margin:0 20px 6px;height:16px;background:var(--card);border-radius:999px;overflow:hidden}
+.jetmp .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--teal));border-radius:999px;transition:width .4s}
+.jetmp .bartxt{margin:0 20px;font-size:13px;font-weight:700;color:var(--head)}
+.jetmp .gtools{display:flex;gap:8px;padding:12px 20px 4px;flex-wrap:wrap}
+.jetmp .gtools .btn{padding:10px 14px;font-size:13px;background:var(--card);color:var(--head)}
+.jetmp .gtools .btn[aria-pressed="true"]{background:var(--teal);color:#fff}
+.jetmp .sec{margin:12px 16px 0;background:var(--card);border-radius:22px;padding:14px 16px 6px}
+.jetmp .sec h3{font-family:Montserrat,sans-serif;font-size:13px;font-weight:800;display:inline-block;padding:6px 12px;border-radius:999px;margin-bottom:4px}
+.jetmp .irow{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--rule)}
+.jetmp .irow:last-child{border-bottom:0}
+.jetmp .shop{display:flex;flex-direction:column;gap:5px;flex:0 0 auto}
+.jetmp .shop .ic{text-align:center}
+.jetmp .ic.wm{background:#0071dc}
+.jetmp .btn.wmbig{flex:1 0 100%;order:-1;background:#0071dc;color:#fff;border-color:#0071dc;font-size:16px;padding:14px}
+.jetmp .newweek{display:none;background:var(--teal,#2C5B6D);color:#fff;font-weight:800;font-size:15px;padding:12px 16px;border-radius:16px;margin:10px 12px 0;text-align:center}
+.jetmp .newweek a{color:#F3BC69;text-decoration:underline}
+.jetmp .hs{position:relative;margin:12px 16px 0;padding:14px 40px 14px 16px;border-radius:18px;background:var(--card);border:2px dashed var(--rule);color:var(--ink);font-size:14px;line-height:1.45}
+.jetmp .hs b{display:block;color:var(--head);font-size:15px;margin-bottom:4px}.jetmp .hs .how{display:block}.jetmp .hs small{display:block;color:var(--muted);margin-top:4px}
+.jetmp .hs .x{position:absolute;top:8px;right:8px;border:0;background:transparent;font-size:16px;color:var(--muted);cursor:pointer;padding:6px}
+.jetmp .wklist{display:flex;flex-direction:column;gap:10px;padding:0 16px}
+.jetmp .wk{display:block;text-decoration:none;background:var(--card);border-radius:18px;padding:14px 16px;color:var(--ink);box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.jetmp .wk b{display:block;color:var(--head);font-size:16px}.jetmp .wk i{font-style:normal;background:#F3BC69;color:#2C5B6D;border-radius:999px;padding:1px 8px;font-size:11px;margin-left:6px}
+.jetmp .wk span{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.jetmp .allweeks{display:inline-block;margin:10px 16px 0;font-weight:800;font-size:14px;color:var(--head);text-decoration:none}
+.jetmp .ordnote{display:none;margin:12px 16px 0;padding:10px 14px;border-radius:14px;background:var(--chip);color:var(--head);font-weight:800;font-size:13.5px;text-decoration:none}
+.jetmp .msheet{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center}
+.jetmp .mbox{background:var(--card);color:var(--ink);width:100%;max-width:520px;border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px))}
+.jetmp .mrow{display:flex;width:100%;justify-content:space-between;gap:10px;align-items:center;border:0;border-radius:14px;background:var(--chip);padding:12px 14px;margin:0 0 8px;font:inherit;color:var(--ink);cursor:pointer;text-align:left}
+.jetmp .mrow b{color:var(--head)}.jetmp .mrow span{font-size:13.5px;color:var(--muted)}
+.jetmp .newweek small{font-weight:600;opacity:.9}
+.jetmp .xcard{display:flex;gap:14px;padding:14px;align-items:stretch}
+.jetmp .xph{flex:0 0 120px;border-radius:16px;background:var(--chip) center/cover no-repeat;position:relative;min-height:150px}
+.jetmp .xph span{display:none}
+.jetmp .xbody{flex:1;min-width:0}.jetmp .xnm{font-size:22px;color:var(--head);line-height:1.1}
+.jetmp .xmeta{font-size:12.5px;font-weight:800;color:var(--muted);margin:4px 0}.jetmp .xbody p{font-size:14px;line-height:1.45;margin:6px 0 10px}
+.jetmp .xbtns{display:flex;flex-wrap:wrap;gap:8px}
+.jetmp .ic{flex:0 0 auto;font-size:11px;font-weight:800;text-decoration:none;color:#fff;background:#108910;border-radius:999px;padding:6px 10px}
+.jetmp .it{flex:1;display:flex;gap:12px;align-items:flex-start;padding:11px 2px;cursor:pointer;transition:opacity .25s}
+.jetmp .it:last-child{border-bottom:0}
+.jetmp .it input{position:absolute;opacity:0;pointer-events:none}
+.jetmp .bx{flex:0 0 24px;height:24px;border:2.5px solid var(--head);border-radius:8px;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.jetmp .bx svg{width:14px;opacity:0;transform:scale(.4);transition:all .2s}
+.jetmp .it.on .bx{background:var(--teal);transform:rotate(-6deg)}
+.jetmp .it.on .bx svg{opacity:1;transform:scale(1)}
+.jetmp .it.on .tx{text-decoration:line-through;text-decoration-color:var(--peach);text-decoration-thickness:2px;opacity:.55}
+.jetmp .tx{font-size:15px;font-weight:700;line-height:1.35}
+.jetmp .tx small{display:block;font-weight:500;font-size:12px;color:var(--soft);margin-top:2px}
+.jetmp.hide-done .irow:has(.it.on){display:none}
+
+/* extras */
+.jetmp .tile{margin:12px 16px 0;border-radius:24px;padding:20px;display:flex;gap:14px;align-items:center}
+.jetmp .tile .em{font-size:38px}
+.jetmp .tile h3{font-size:22px;line-height:1.05}
+.jetmp .tile p{font-size:13.5px;line-height:1.45;margin-top:4px}
+.jetmp .tile .btn{margin-left:auto;flex:0 0 auto}
+.jetmp .pickwrap{margin:0 16px 16px;background:var(--card);border-radius:22px;padding:16px}
+.jetmp .ptl{font-family:Oswald,sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;color:var(--head);line-height:1.1}
+.jetmp .pnote{font-size:13.5px;line-height:1.45;color:var(--ink);margin-top:6px}
+.jetmp .pickn{font-size:12.5px;font-weight:700;color:var(--muted);margin-top:4px}
+.jetmp .pick{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.jetmp .pkrow{display:flex;gap:8px;align-items:stretch}
+.jetmp .pkrow .pk{flex:1;min-width:0}
+.jetmp .pkr{flex:0 0 auto;display:flex;align-items:center;font-size:12.5px;font-weight:800;text-decoration:none;color:var(--teal);background:var(--peach);border-radius:16px;padding:0 13px}
+.jetmp .pk{display:flex;align-items:center;gap:10px;text-align:left;border:2px solid var(--rule);background:transparent;color:var(--soft);border-radius:16px;padding:9px 12px;transition:all .15s}
+.jetmp .pk b{flex:0 0 44px;font-family:Oswald,sans-serif;font-size:17px}
+.jetmp .pk span{font-size:14px;font-weight:700;text-decoration:line-through}
+.jetmp .pk.on{border-color:var(--teal);background:var(--teal);color:#fff}
+.jetmp .pk.on span{text-decoration:none}
+.jetmp .tab.skip{opacity:.45}
+.jetmp .swl{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.jetmp .swr{display:flex;align-items:center;gap:8px;background:var(--chip);border:1.5px solid var(--rule);border-radius:14px;padding:6px 6px 6px 12px}
+.jetmp .swr a{flex:1;font-size:13.5px;font-weight:700;color:var(--head);text-decoration:none}
+.jetmp .swbtn{flex:0 0 auto;border:0;border-radius:999px;background:var(--teal);color:#fff;font-weight:800;font-size:12px;padding:8px 12px}
+.jetmp .swbtn.on{background:var(--peach);color:#2C5B6D}
+.jetmp .withs{font-size:15px;font-weight:800;color:var(--peach);margin-top:4px}
+.jetmp .pkside{display:flex;align-items:center;gap:8px;margin:-2px 0 2px 56px}
+.jetmp .pkside span{flex:1;font-size:13.5px;font-weight:700;color:var(--head);background:var(--chip);border:1.5px solid var(--rule);border-radius:14px;padding:9px 12px}
+.jetmp .pkside .pkr{padding:9px 13px;align-self:stretch}
+.jetmp .pks{display:block;font-size:12px;font-weight:600;opacity:.85;margin-top:2px}
+.jetmp .swb2{position:absolute;right:16px;top:16px;background:var(--yel);color:#2C5B6D;font-weight:800;font-size:13px;padding:8px 12px;border-radius:999px;border:3px solid #fff}
+.jetmp .xt{font-size:11.5px;font-weight:800;color:var(--soft);margin-top:14px;letter-spacing:.3px}
+.jetmp .xrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.jetmp .xl{font-size:13px;font-weight:700;text-decoration:none;color:var(--head);background:var(--chip);border:1.5px solid var(--rule);border-radius:999px;padding:7px 12px}
+.jetmp .rate{display:flex;align-items:center;gap:10px;margin-top:14px;padding:12px 14px;border-radius:16px;background:var(--yel);color:#2C5B6D;text-decoration:none;font-weight:800;font-size:14px}
+.jetmp .rst{color:#2C5B6D;letter-spacing:2px;font-size:16px}
+.jetmp .rsheet{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center;padding:16px}
+.jetmp .rbox{background:var(--card);color:var(--ink);border-radius:26px;padding:22px;width:100%;max-width:480px;text-align:center}
+.jetmp .rbox .rst{display:block;font-size:30px;color:var(--yel);margin-bottom:6px}
+.jetmp .rbox p{font-size:14.5px;line-height:1.5;margin:10px 0 16px}
+.jetmp .calrow{display:flex;flex-wrap:wrap;gap:8px;padding:10px 16px 0}
+.jetmp .calrow a{flex:1 1 30%;text-align:center;text-decoration:none;background:var(--card);color:var(--head);font-weight:800;font-size:13px;padding:11px 8px;border-radius:16px}
+.jetmp .calrow a.wide{flex-basis:100%;background:var(--teal);color:#fff}
+.jetmp .foot{text-align:center;padding:30px 20px 0}
+.jetmp .foot .scr{font-size:34px;color:var(--head)}
+.jetmp .foot p{font-size:14px;line-height:1.5;margin-top:6px}
+.jetmp .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:var(--teal);color:#fff;font-weight:700;font-size:14px;padding:13px 20px;border-radius:999px;transition:transform .3s;z-index:99;box-shadow:0 10px 24px rgba(0,0,0,.25);white-space:nowrap}
+.jetmp .toast.show{transform:translate(-50%,0)}
+.jetmp canvas.conf{position:fixed;inset:0;pointer-events:none;z-index:98;width:100vw;height:100vh}
+@media (prefers-reduced-motion:reduce){.jetmp *{transition:none!important}}
+@media print{.jetmp .hero,.jetmp .tonight,.jetmp #jm-days,.jetmp .tabs,.jetmp .card,.jetmp .gtools,.jetmp .tile,.jetmp .foot,.jetmp .bar,.jetmp .bartxt{display:none!important}.jetmp .sec{break-inside:avoid}}
+</style>
+
+<div class="jetmp" id="jetmp">
+  <a class="allweeks" href="/">← All meal plans</a>
+  <div class="newweek" id="jm-newweek" role="status"></div>
+  <header class="hero">
+    <span class="blob" style="width:220px;height:220px;background:var(--mint);right:-70px;top:-60px"></span>
+    <span class="blob" style="width:140px;height:140px;background:var(--peach);left:-50px;bottom:10px"></span>
+    <div class="hi">
+      <div class="selfie" id="jm-selfie" role="img" aria-label="Julie">Julie’s<br>selfie<br>here</div>
+      <div><div class="scr hey">Hey friend!</div><div style="font-weight:700;font-size:14px;margin-top:4px">It’s Julie. Dinner’s handled this week.</div></div>
+    </div>
+    <h1 class="disp">This week’s dinner plan</h1>
+    <p>Seven easy dinners my family actually eats, one for every night of the week. Tap a day to see the recipe, pick the dinners you’re making, check off groceries as you shop, and pop the whole week right into your calendar.</p>
+    <span class="wk">November 2 to 8</span>
+  </header>
+
+  <div class="tonight" id="jm-tonight" aria-live="polite"></div>
+
+  <div class="hs" id="jm-hs"><button class="x" aria-label="Close tip">✕</button><b>📱 Open it like an app every night</b><span class="how"></span><small>Best tip: add it from the <a href="/">main page</a> so the icon opens all your weeks. Your picks and checkmarks stay saved on this phone.</small></div>
+  <a href="#" class="ordnote" id="jm-ordnote">↺ You moved some dinners around. Back to Julie’s order</a>
+  <div class="sh" id="jm-days"><h2 class="disp"><span class="scr">tap a day</span>The week</h2><span class="ring" id="jm-made"></span></div>
+  <div class="tabs" role="tablist" id="jm-tabs"></div>
+  <div class="card"><div class="flip" id="jm-flip"></div></div>
+
+  <div class="tile" style="background:var(--yel);color:#1A1A1A">
+    <div class="em" aria-hidden="true">📅</div>
+    <div><h3 class="disp" style="color:#2C5B6D">Add it to your calendar</h3><p>Every dinner you picked lands at 5:30, plus a reminder on any crock pot night.</p></div>
+  </div>
+  <div style="padding:10px 16px 0"><button class="btn p" style="width:100%" id="jm-cal">Add my dinners to my calendar</button></div>
+  <div style="padding:10px 20px 0;font-size:12.5px;font-weight:700;color:var(--muted)">Use Google Calendar? Tap a night:</div>
+  <div class="calrow" id="jm-calrow"></div>
+
+  <div id="jm-extras"></div>
+
+  <div class="sh"><h2 class="disp"><span class="scr">one trip, done</span>Grocery list</h2></div>
+  <div class="pickwrap"><div class="ptl">Which dinners are you making?</div><p class="pnote">Not making one this week? Tap it to cross it off and your grocery list adjusts automatically. Tap it again to add it back, or tap Recipe to open it.</p><div class="pickn" id="jm-pickn"></div><div class="pick" id="jm-pick"></div></div>
+  <div class="bar" aria-hidden="true"><i id="jm-bar"></i></div>
+  <div class="bartxt" id="jm-bartxt"></div>
+  <div class="gtools">
+    <button class="btn" id="jm-hide" aria-pressed="false">Hide checked</button>
+    <button class="btn wmbig" id="jm-walmart">🛒 Add my list to Walmart</button>
+    <button class="btn" id="jm-printmy">Print my list</button>
+    <button class="btn" id="jm-share">Text my list</button>
+    <button class="btn" id="jm-reset">Start over</button>
+  </div>
+  <p style="margin:10px 20px 0;font-size:13px;line-height:1.45;color:var(--muted)">Ordering groceries? Tap <b>Add my list to Walmart</b> to fill your Walmart cart with everything you haven’t checked off, or tap Instacart or Walmart next to any item.</p>
+  <div id="jm-list"></div>
+
+  <div class="tile" style="background:var(--mint);color:#1A1A1A">
+    <div class="em" aria-hidden="true">🖨️</div>
+    <div><h3 class="disp" style="color:#2C5B6D">Like paper better?</h3><p>Print your plan with the swaps and sides you picked. It matches what’s on your screen.</p></div>
+    <a class="btn p" style="flex:0 0 auto" id="jm-pdf" href="#" target="_blank" rel="noopener">PDF</a>
+  </div>
+
+  <div class="tile" style="background:var(--peach);color:#1A1A1A">
+    <div class="em" aria-hidden="true">💾</div>
+    <div><h3 class="disp" style="color:#2C5B6D">Keep your plan handy</h3><p>Get a link with your picks and checkmarks to open on any device.</p></div>
+    <button class="btn p" style="flex:0 0 auto" id="jm-savelink">Save my plan</button>
+  </div>
+  <div id="jm-weeks"></div>
+
+  <footer class="foot">
+    <div class="scr">happy eating, friend!</div>
+    <p>Want next week’s plan? Follow <a href="https://www.instagram.com/julieseatsandtreats/" target="_blank" rel="noopener" style="font-weight:800;color:var(--head)">@julieseatsandtreats</a> and comment MEALS when it drops.</p>
+  </footer>
+  <div class="toast" id="jm-toast" role="status"></div>
+</div>
+
+<script>
+(function(){
+/* ======== EDIT THESE TWO LINES ======== */
+var SELFIE_URL = '/julie-headshot.jpg';
+/* ===================================== */
+
+var PLAN={"week_start": "2026-11-02", "site": "https://www.julieseatsandtreats.com/", "ga_id": "G-CND2QDGF7C", "pdf_tip": "Wednesday is crock pot soup day. Start it right after lunch and dinner is ready at 5:30!", "pdf_shortcut": "Sunday’s stuffed turkey breast is a great Thanksgiving practice run, without the whole bird.", "days": [{"d": "Mon", "full": "Monday", "c": "mint", "name": "One Pot Cheeseburger Pasta", "slug": "cheeseburger-pasta", "img": "2025/08/Cheeseburger-Pasta-Square-Image.jpg", "time": "30 min", "rate": "", "emoji": "🧀", "line": "Cheesy, beefy pasta shells that taste like a cheeseburger. Everything cooks in one pot in 30 minutes!", "tip": "Stir it every few minutes while the shells simmer so nothing sticks to the bottom.", "sides": [["Garlic Bread", "garlic-bread"], ["Fruit Salad", "easy-fruit-salad"]], "swaps": [{"id": "s0a", "name": "Hamburger and Zucchini Skillet", "slug": "hamburger-and-zucchini-skillet", "img": "2020/07/Ground-Beef-Zucchini-5-of-8.jpg", "time": "30 min", "rate": "4.8 (262)", "emoji": "🥒", "line": "Ground beef, zucchini, peppers and rice in one skillet, topped with cheese."}, {"id": "s0b", "name": "Hamburger Stroganoff", "slug": "hamburger-stroganoff", "img": "2024/04/Hamubrger-Stroganoff-Recipe-Square.jpg", "time": "30 min", "rate": "3.9 (153)", "emoji": "🍝", "line": "Ground beef and mushrooms in a creamy sour cream sauce over egg noodles."}]}, {"d": "Tue", "full": "Tuesday", "c": "teal", "name": "Million Dollar Chicken Casserole", "slug": "million-dollar-chicken-casserole", "img": "2025/08/Million-Dollar-Chicken-Casserole-Square-Image.jpg", "time": "55 min", "rate": "3.0 (1)", "emoji": "🧈", "line": "Creamy chicken baked under a buttery Ritz cracker topping. Total comfort food!", "tip": "Grab a rotisserie chicken to skip cooking the chicken. You’ll need about 6 cups shredded.", "sides": [["Roasted Broccoli", "roasted-broccoli"], ["Texas Roadhouse Rolls", "texas-roadhouse-rolls"]], "swaps": [{"id": "s1a", "name": "Air Fryer Chicken Parmesan", "slug": "air-fryer-chicken-parmesan", "img": "2023/10/Chicken-Parmesan-Air-Fryer-SQUARE.jpg", "time": "20 min", "rate": "4.8 (536)", "emoji": "🍗", "line": "Crispy breaded chicken topped with marinara and mozzarella, made in the air fryer."}, {"id": "s1b", "name": "Cheesy Chicken Broccoli and Rice Casserole", "slug": "cheesy-chicken-broccoli-and-rice-casserole", "img": "2024/12/Cheesy-Chicken-Broccoli-and-Rice-Casserole-Square-Image.jpg", "time": "40 min", "rate": "5.0 (1)", "emoji": "🥦", "line": "Chicken, rice and broccoli in a cheesy, creamy sauce. A whole dinner in one dish."}]}, {"d": "Wed", "full": "Wednesday", "c": "peach", "name": "Slow Cooker King Ranch Chicken Soup", "slug": "slow-cooker-king-ranch-chicken-soup", "img": "2025/09/King-Ranch-Chicken-Soup-Square-Image.jpg", "time": "4 hrs 25 min (slow cooker)", "rate": "4.7 (71)", "emoji": "🥣", "line": "A creamy, cheesy chicken soup with Rotel and a little kick. Crunch some tortilla chips on top!", "tip": "Pick mild Rotel and skip the jalapeño if your kids don’t like heat.", "start": [13, 5, "4 hours 25 min"], "sides": [["Cornbread", "cornbread"], ["Fruit Salad", "easy-fruit-salad"]], "swaps": [{"id": "s2a", "name": "Crock Pot White Chicken Chili", "slug": "crock-pot-white-chicken-chili", "img": "2023/12/Crock-pot-white-chicken-chili-square-scaled.jpg", "time": "4 hrs 5 min (slow cooker)", "rate": "4.6 (29)", "emoji": "🌶️", "line": "Chicken, white beans, corn and green chiles in a creamy broth. The crock pot does the work.", "start": [13, 25, "4 hours"]}, {"id": "s2b", "name": "Crock Pot Chicken and Noodles", "slug": "crock-pot-chicken-and-noodles", "img": "2024/10/Crock-Pot-Chicken-and-Noodles-Square-1.jpg", "time": "6 hrs 10 min (slow cooker)", "rate": "4.0 (2)", "emoji": "🍜", "line": "Tender chicken and egg noodles in a creamy sauce. Cozy, simple and kid approved.", "start": [11, 20, "6 hours"]}]}, {"d": "Thu", "full": "Thursday", "c": "blue", "name": "Baked Pork Chops and Rice", "slug": "baked-pork-chops-and-rice", "img": "2025/01/Baked-Pork-Chops-and-Rice-Square.jpg", "time": "1 hr 30 min", "rate": "4.3 (4)", "emoji": "🍚", "line": "Pork chops bake right on top of creamy, savory rice. Dump, cover and bake!", "tip": "Keep the foil on tight so the rice cooks all the way through.", "sides": [["Creamed Peas", "easy-creamed-peas-recipe"], ["Roasted Vegetables", "easy-oven-roasted-vegetables"]], "swaps": [{"id": "s3a", "name": "Parmesan Crusted Pork Chops", "slug": "parmesan-crusted-pork-chops", "img": "2024/04/Parmesan-Crusted-Pork-Chops-Square.jpg", "time": "25 min", "rate": "4.9 (141)", "emoji": "🧀", "line": "Juicy pork chops with a crispy Parmesan crust, done in 25 minutes."}, {"id": "s3b", "name": "One Pan Parmesan Pork Chops and Veggies", "slug": "one-pan-parmesan-pork-chops-and-veggies-recipe", "img": "2017/05/One-Pan-Parmesan-Pork-Chops-and-Veggies-Main-3.jpg", "time": "30 min", "rate": "4.7 (138)", "emoji": "🥔", "line": "Pork chops, red potatoes and green beans roasted together on one sheet pan."}]}, {"d": "Fri", "full": "Friday", "c": "yel", "name": "Chicken Bacon Ranch Wraps", "slug": "chicken-bacon-ranch-wraps", "img": "2024/06/Chicken-Bacon-Ranch-Wraps-Square.jpg", "time": "10 min", "rate": "5.0 (1)", "emoji": "🌯", "line": "Chicken, crispy bacon, cheese and ranch rolled up in a big tortilla. Dinner in 10 minutes!", "tip": "Cook the bacon earlier in the week and these come together in no time.", "sides": [["Roasted Red Potato Salad", "roasted-red-potato-salad-recipe"], ["Ramen Noodle Salad", "asian-ramen-salad"]], "swaps": [{"id": "s4a", "name": "Chicken Quesadilla", "slug": "chicken-quesadilla", "img": "2024/10/Chicken-Quesadilla-Square.jpg", "time": "30 min", "rate": "5.0 (5)", "emoji": "🧀", "line": "Taco seasoned chicken and lots of cheese, crisped up in a tortilla."}, {"id": "s4b", "name": "Crock Pot French Dip Sandwiches", "slug": "french-dip-sandwiches", "img": "2023/10/French-Dip-Square.jpg", "time": "8 hrs 35 min (slow cooker)", "rate": "5.0 (241)", "emoji": "🥖", "line": "Tender roast beef and provolone on toasted rolls with au jus for dipping. The crock pot does the work.", "start": [8, 55, "8 hours 35 min"]}]}, {"d": "Sat", "full": "Saturday", "c": "mint", "name": "Ground Beef and Potato Casserole", "slug": "ground-beef-and-potato-casserole", "img": "2024/12/Ground-Beef-and-Potato-Casserole-Square-Image.jpg", "time": "1 hr 30 min", "rate": "3.8 (6)", "emoji": "🥔", "line": "Layers of thin potatoes, seasoned beef and a creamy cheese sauce. Hearty and cozy!", "tip": "Slice the potatoes thin and even, a mandoline makes it easy, so they all get tender.", "sides": [["Homemade Biscuits", "homemade-biscuits"], ["Roasted Broccoli", "roasted-broccoli"]], "swaps": [{"id": "s5a", "name": "Crock Pot Hamburger Wild Rice Casserole", "slug": "hamburger-wild-rice-casserole", "img": "2020/10/Crock-Pot-Hamburger-Wild-Rice-Casserole-8-of-25.jpg", "time": "4 hrs 30 min (slow cooker)", "rate": "4.7 (121)", "emoji": "🍲", "line": "A Minnesota classic! Beef, wild rice and creamy soup cooked low and slow.", "start": [13, 0, "4 hours 30 min"]}, {"id": "s5b", "name": "Crock Pot Swedish Meatballs", "slug": "swedish-meatballs", "img": "2026/05/Crockpot-Swedish-Meatballs-Square-Image.jpg", "time": "6 hrs 10 min (slow cooker)", "rate": "4.9 (58)", "emoji": "🍖", "line": "Frozen meatballs in a rich, creamy gravy. Serve over noodles or mashed potatoes.", "start": [11, 20, "6 hours"]}]}, {"d": "Sun", "full": "Sunday", "c": "teal", "name": "Stuffed Turkey Breast", "slug": "stuffed-turkey-breast", "img": "2026/10/Stuffed-Turkey-Breast-Square-Image.jpg", "time": "2 hrs 15 min", "rate": "", "emoji": "🦃", "line": "Turkey breast rolled up with homemade stuffing. A mini Thanksgiving dinner without the whole bird!", "tip": "Great practice run for Thanksgiving. Let it rest 10 minutes before slicing so it stays juicy.", "sides": [["Mashed Potatoes", "the-best-mashed-potatoes-recipe"], ["Garlic Green Beans", "garlic-green-beans"]], "swaps": [{"id": "s6a", "name": "Crock Pot Turkey Breast", "slug": "crock-pot-turkey-breast", "img": "2023/11/Slow-Cooker-Turkey-Breast-Sliced-1-of-1.jpg", "time": "6 hrs 15 min (slow cooker)", "rate": "5.0 (23)", "emoji": "🦃", "line": "Juicy turkey breast cooked in the crock pot, with easy gravy from the drippings.", "start": [11, 15, "6 hours"]}, {"id": "s6b", "name": "Baked Chicken Legs", "slug": "baked-chicken-legs", "img": "2020/07/Baked-Chicken-Legs-7-of-7.jpg", "time": "50 min", "rate": "5.0 (2484)", "emoji": "🍗", "line": "Crispy, seasoned drumsticks that bake on one pan. A reader favorite!"}]}], "sides": {"sd_gb": ["Garlic Bread", "garlic-bread"], "sd_fruit": ["Fruit Salad", "easy-fruit-salad"], "sd_broc": ["Roasted Broccoli", "roasted-broccoli"], "sd_txr": ["Texas Roadhouse Rolls", "texas-roadhouse-rolls"], "sd_corn": ["Cornbread", "cornbread"], "sd_peas": ["Creamed Peas", "easy-creamed-peas-recipe"], "sd_veg": ["Roasted Vegetables", "easy-oven-roasted-vegetables"], "sd_potsal": ["Roasted Red Potato Salad", "roasted-red-potato-salad-recipe"], "sd_ramen": ["Ramen Noodle Salad", "asian-ramen-salad"], "sd_bisc": ["Homemade Biscuits", "homemade-biscuits"], "sd_mash": ["Mashed Potatoes", "the-best-mashed-potatoes-recipe"], "sd_gbean": ["Garlic Green Beans", "garlic-green-beans"]}, "dessert": {"id": "dz", "kind": "dessert", "label": "Sweet treat of the week", "name": "Peanut Butter Cornflake Cookies", "slug": "peanut-butter-cornflake-cookies", "img": "2025/10/Peanut-Butter-Cornflake-Cookies-JET-Square.jpeg", "time": "24 min", "rate": "", "emoji": "🥜", "line": "No-bake, chewy and crunchy peanut butter cookies with just 6 ingredients. They disappear fast!"}, "items": [{"k": "beef", "s": 0, "need": {"d5": 1, "s0a": 1, "s5a": 1.5, "d0": 1, "s0b": 1}, "name": "Ground beef, {t} lb(s)", "note": "{days}", "wm": {"id": "15136791", "per": 1}}, {"k": "chk", "s": 0, "need": {"d1": 2.5, "d2": 1.5, "d4": 0.75, "s1a": 1, "s1b": 1, "s2a": 1, "s2b": 1.75, "s4a": 1.5}, "name": "Boneless skinless chicken breasts, {t} lb(s)", "note": "{days}. Rotisserie works too", "wm": {"id": "50067993", "per": 2}}, {"k": "bacon", "s": 0, "need": {"d4": 8}, "name": "Bacon, {t} slices", "wm": {"id": "10293911", "per": 16}}, {"k": "chops", "s": 0, "need": {"d3": 8, "s3a": 4}, "name": "Boneless pork chops, {n}", "wm": {"id": "51259109", "per": 4}}, {"k": "chopsbi", "s": 0, "need": {"s3b": 1}, "name": "Bone-in pork chops, 1 lb (4 to 5 chops)", "wm": {"id": "51259128", "per": 1}}, {"k": "turkb", "s": 0, "need": {"d6": 1}, "name": "Boneless turkey breast, 2 ½ to 3 lbs", "wm": {"id": "40619424", "per": 1}}, {"k": "turkbi", "s": 0, "need": {"s6a": 1}, "name": "Bone-in turkey breast, 4 to 5 lbs", "note": "thaw it completely first", "wm": {"id": "40619429", "per": 1}}, {"k": "drum", "s": 0, "need": {"s6b": 8}, "name": "Chicken drumsticks, 8 (about 2 lbs)", "wm": {"id": "613823324", "per": 8}}, {"k": "chuck", "s": 0, "need": {"s4b": 1}, "name": "Chuck roast, 3 to 4 lbs", "wm": {"id": "318012501", "per": 1}}, {"k": "fbread", "s": 1, "need": {"sd_gb": 1}, "name": "French bread, {n} loaf(s) (16 oz)", "wm": {"id": "46491756", "per": 1}}, {"k": "tortb", "s": 1, "need": {"d4": 4, "s4a": 4}, "name": "Burrito-size flour tortillas, 1 pack (16)", "wm": {"id": "15556308", "per": 16}}, {"k": "hoagie", "s": 1, "need": {"s4b": 8}, "name": "Hoagie rolls, 8", "wm": {"id": "10321776", "per": 6}}, {"k": "prov", "s": 1, "need": {"s4b": 1}, "name": "Provolone cheese, 12 slices", "wm": {"id": "10451510", "per": 1}}, {"k": "bcubes", "s": 1, "need": {"d6": 6}, "name": "Dried bread cubes (stuffing cubes), 6 cups", "wm": {"id": "850145920", "per": 99}}, {"k": "onion", "s": 2, "need": {"d5": 1, "d6": 0.5, "s0a": 1, "s1b": 1, "s2a": 1, "s2b": 0.5, "s5a": 1, "s6a": 2, "d0": 0.5, "s0b": 0.5}, "name": "Yellow onions, {n}", "wm": {"id": "51259212", "per": 1}}, {"k": "garlic", "s": 2, "need": {"d2": 1, "d5": 1, "s0a": 1, "s1b": 1, "s2a": 1, "s2b": 1, "s3b": 1, "d0": 1, "s0b": 1, "sd_gb": 1, "sd_broc": 1, "sd_gbean": 1, "sd_veg": 1}, "tiers": [[3, "Garlic, 1 head"], [999, "Garlic, 2 heads"]], "wm": {"id": "44391100", "per": 3}}, {"k": "celery", "s": 2, "need": {"d6": 1, "s5a": 1, "s6a": 1, "sd_potsal": 1}, "name": "Celery, 1 bunch", "wm": {"id": "51259411", "per": 99}}, {"k": "pars", "s": 2, "need": {"d5": 1, "d6": 1, "s3b": 1, "s4b": 1, "sd_mash": 1, "sd_gb": 1}, "name": "Fresh parsley", "note": "optional, for garnish", "wm": {"id": "44391168", "per": 99}}, {"k": "cilan", "s": 2, "need": {"d2": 1, "s2a": 1}, "name": "Fresh cilantro, 1 bunch", "note": "optional, for garnish", "wm": {"id": "160597260", "per": 99}}, {"k": "jalap", "s": 2, "need": {"d2": 1, "s2a": 1}, "name": "Jalapeño, {n} (optional)", "wm": {"id": "44391018", "per": 1}}, {"k": "bpep", "s": 2, "need": {"s0a": 1}, "name": "Green bell pepper, 1", "wm": {"id": "720640702", "per": 1}}, {"k": "zuc", "s": 2, "need": {"s0a": 3, "sd_veg": 1}, "name": "Zucchini, {n}", "wm": {"id": "44390947", "per": 1}}, {"k": "tomato", "s": 2, "need": {"d4": 1, "s0a": 2}, "name": "Roma tomatoes, {n}", "wm": {"id": "44390944", "per": 1}}, {"k": "romaine", "s": 2, "need": {"d4": 1}, "name": "Romaine hearts, 1 pack", "wm": {"id": "10532755", "per": 1}}, {"k": "broc", "s": 2, "need": {"s1b": 1, "sd_broc": 1}, "name": "Broccoli florets, {n} bag(s) (12 oz)", "wm": {"id": "51259378", "per": 1}}, {"k": "gbean", "s": 2, "need": {"s3b": 1, "sd_gbean": 1}, "name": "Fresh green beans, {t} lb(s)", "wm": {"id": "14053328", "per": 1}}, {"k": "redpot", "s": 2, "need": {"s3b": 1, "sd_potsal": 3}, "name": "Red potatoes, {t} lbs", "wm": {"id": "10449949", "per": 3}}, {"k": "yukon", "s": 2, "need": {"sd_mash": 4, "sd_veg": 1}, "name": "Yukon gold potatoes, {t} lbs", "wm": {"id": "42700530", "per": 3}}, {"k": "russet", "s": 2, "need": {"d5": 1}, "name": "Russet potatoes, 5 lb bag", "wm": {"id": "10447837", "per": 1}}, {"k": "gonion", "s": 2, "need": {"sd_ramen": 1, "sd_potsal": 1}, "name": "Green onions, 1 bunch", "wm": {"id": "51259361", "per": 99}}, {"k": "slaw", "s": 2, "need": {"sd_ramen": 1}, "name": "Coleslaw mix, 16 oz bag", "wm": {"id": "16785076", "per": 1}}, {"k": "carrot", "s": 2, "need": {"sd_veg": 3}, "name": "Carrots, {n}", "wm": {"id": "10535757", "per": 12}}, {"k": "swp", "s": 2, "need": {"sd_veg": 2}, "name": "Sweet potatoes, {n}", "wm": {"id": "44390964", "per": 1}}, {"k": "ronion", "s": 2, "need": {"sd_veg": 1}, "name": "Red onion, {n}", "wm": {"id": "51259215", "per": 1}}, {"k": "brus", "s": 2, "need": {"sd_veg": 0.5}, "name": "Brussels sprouts, {t} lb", "wm": {"id": "350018260", "per": 0.75}}, {"k": "straw", "s": 2, "need": {"sd_fruit": 1}, "name": "Strawberries, {t} lb", "wm": {"id": "44391605", "per": 1}}, {"k": "blue", "s": 2, "need": {"sd_fruit": 1}, "name": "Blueberries, {n} container(s) (11 oz)", "wm": {"id": "1732560925", "per": 1}}, {"k": "grape", "s": 2, "need": {"sd_fruit": 1}, "name": "Red grapes, {n} bunch(es)", "wm": {"id": "47770140", "per": 1}}, {"k": "pine", "s": 2, "need": {"sd_fruit": 1}, "name": "Pineapple, {n}", "wm": {"id": "44391200", "per": 1}}, {"k": "butter", "s": 3, "need": {"d1": 0.375, "d2": 0.5, "d5": 0.125, "d6": 0.4375, "s2b": 0.25, "s4b": 0.1875, "s5a": 0.1875, "s6a": 0.5, "sd_txr": 0.4375, "sd_peas": 0.25, "sd_mash": 0.5, "s0b": 0.25, "sd_gb": 0.5, "sd_gbean": 0.1875, "sd_corn": 0.5, "sd_bisc": 0.375}, "tiers": [[0.5, "Butter, 1 stick"], [1, "Butter, 2 sticks"], [2, "Butter, 1 lb"], [999, "Butter, {n2} lbs"]], "wm": {"id": "132893363", "per": 2}}, {"k": "sour", "s": 3, "need": {"d1": 1, "s1b": 0.5, "s0b": 1, "s5b": 1, "sd_potsal": 0.5}, "tiers": [[1, "Sour cream, 8 oz"], [2, "Sour cream, 16 oz"], [999, "Sour cream, 24 oz"]], "wm": {"id": "12335111", "per": 2}}, {"k": "cc", "s": 3, "need": {"d1": 1, "s2a": 0.5, "sd_potsal": 0.25}, "name": "Cream cheese, {n} block(s) (8 oz)", "wm": {"id": "10452429", "per": 1}}, {"k": "cottage", "s": 3, "need": {"d1": 1}, "name": "Cottage cheese, 16 oz", "wm": {"id": "10315021", "per": 1}}, {"k": "ched", "s": 3, "need": {"d4": 0.5, "s1b": 1.5, "d0": 1.5}, "name": "Shredded cheddar, {n2} bag(s) (8 oz)", "note": "you need {t} cup(s)", "wm": {"id": "10452431", "per": 2}}, {"k": "cjack", "s": 3, "need": {"d2": 2, "d5": 2, "s0a": 1}, "name": "Shredded Colby Jack, {n2} bag(s) (8 oz)", "note": "you need {t} cup(s)", "wm": {"id": "10452564", "per": 2}}, {"k": "mex", "s": 3, "need": {"s4a": 2}, "name": "Shredded Mexican blend cheese, 1 bag (8 oz)", "wm": {"id": "10452562", "per": 2}}, {"k": "mozz", "s": 3, "need": {"s1a": 0.5}, "name": "Shredded mozzarella, {n2} bag(s) (8 oz)", "wm": {"id": "10452419", "per": 2}}, {"k": "parmsh", "s": 3, "need": {"s1a": 1}, "name": "Shredded Parmesan, small bag", "wm": {"id": "10452414", "per": 1}}, {"k": "parm", "s": 3, "need": {"s3a": 1, "s3b": 1, "sd_broc": 1}, "name": "Grated Parmesan, small container", "wm": {"id": "10315402", "per": 99}}, {"k": "milk", "s": 3, "need": {"d5": 1, "s1b": 1, "sd_txr": 1, "sd_peas": 1, "sd_mash": 1}, "name": "Milk", "note": "half gallon covers it", "wm": {"id": "10450119", "per": 99}}, {"k": "hnh", "s": 3, "need": {"s2a": 1}, "name": "Half and half, 1 pint", "wm": {"id": "10450337", "per": 1}}, {"k": "eggs", "s": 3, "need": {"d6": 1, "s1a": 2, "sd_txr": 1, "sd_corn": 2, "sd_potsal": 2}, "name": "Eggs, {n}", "wm": {"id": "145051970", "per": 12}}, {"k": "bmilk", "s": 3, "need": {"sd_corn": 1.5, "sd_bisc": 0.75}, "name": "Buttermilk, 1 quart", "note": "you need {t} cup(s)", "wm": {"id": "501541937", "per": 4}}, {"k": "peas", "s": 4, "need": {"s2b": 5, "sd_peas": 20}, "name": "Frozen peas, about {t} oz", "note": "12 oz bags", "wm": {"id": "443429457", "per": 12}}, {"k": "mtball", "s": 4, "need": {"s5b": 1}, "name": "Frozen meatballs, 2 ½ lbs", "note": "a 32 oz bag plus a little more, or two bags"}, {"k": "tseas", "s": 5, "need": {"s4a": 1}, "name": "Taco seasoning, {n} packet(s)", "wm": {"id": "379517847", "per": 1}}, {"k": "rotel", "s": 5, "need": {"d2": 1}, "name": "Rotel, {n} can(s) (10 oz)", "wm": {"id": "10308581", "per": 1}}, {"k": "tpaste", "s": 5, "need": {"d0": 1}, "name": "Tomato paste, 1 can (6 oz)", "wm": {"id": "10415519", "per": 99}}, {"k": "bbroth", "s": 5, "need": {"d5": 1, "d0": 4, "s5b": 1.75}, "name": "Beef broth, {n4} carton(s) (32 oz)", "note": "you need {t} cup(s)", "wm": {"id": "10899014", "per": 4}}, {"k": "broth", "s": 5, "need": {"d2": 3, "d3": 2, "d6": 1, "s1b": 2, "s2a": 3, "s2b": 3.5}, "name": "Low sodium chicken broth, {n4} carton(s) (32 oz)", "note": "you need {t} cup(s)", "wm": {"id": "44391066", "per": 4}}, {"k": "egg", "s": 5, "need": {"s2b": 1, "s0b": 1}, "name": "Egg noodles, {n} bag(s) (16 oz)", "wm": {"id": "10534092", "per": 1}}, {"k": "rice", "s": 5, "need": {"d3": 1.5, "s1b": 1}, "name": "Long grain white rice", "note": "you need {t} cups", "wm": {"id": "10315394", "per": 99}}, {"k": "ibrice", "s": 5, "need": {"s0a": 1}, "name": "Instant brown rice", "note": "you need 1 cup", "wm": {"id": "10848971", "per": 99}}, {"k": "wildrice", "s": 5, "need": {"s5a": 1}, "name": "Ben’s Original Long Grain & Wild Rice, 6 oz box", "wm": {"id": "186625685", "per": 1}}, {"k": "coc", "s": 5, "need": {"d1": 1, "d3": 1, "s1b": 1, "s2b": 2, "s0b": 1}, "name": "Cream of chicken soup, {n} can(s)", "wm": {"id": "10321652", "per": 1}}, {"k": "com", "s": 5, "need": {"d3": 1, "d5": 1, "s5a": 1, "s5b": 1}, "name": "Cream of mushroom soup, {n} can(s)", "wm": {"id": "10321675", "per": 1}}, {"k": "chrice", "s": 5, "need": {"s5a": 1}, "name": "Chicken with rice soup, 1 can (10.5 oz)", "wm": {"id": "10321654", "per": 1}}, {"k": "cmush", "s": 5, "need": {"s5a": 1, "s0b": 1}, "name": "Canned mushrooms, {n} can(s) (8 oz)"}, {"k": "onsoup", "s": 5, "need": {"d3": 1}, "name": "Lipton onion soup mix, 1 packet", "wm": {"id": "10307791", "per": 1}}, {"k": "ritz", "s": 5, "need": {"d1": 2}, "name": "Ritz crackers, 1 box", "note": "you need 2 sleeves", "wm": {"id": "34632324", "per": 4}}, {"k": "tchips", "s": 5, "need": {"d2": 1}, "name": "Tortilla chips, 1 bag", "note": "for serving", "wm": {"id": "12335104", "per": 1}}, {"k": "gnb", "s": 5, "need": {"s2a": 2}, "name": "Great Northern beans, 2 cans (15 oz)", "wm": {"id": "10534042", "per": 1}}, {"k": "gchile", "s": 5, "need": {"s2a": 2}, "name": "Chopped green chiles, 2 cans (4.5 oz)", "wm": {"id": "10313175", "per": 1}}, {"k": "corn", "s": 5, "need": {"s2a": 1}, "name": "Whole kernel corn, 1 can (15 oz)", "wm": {"id": "119370451", "per": 1}}, {"k": "salsa", "s": 5, "need": {"s4a": 0.25}, "name": "Salsa, 16 oz jar", "wm": {"id": "13448693", "per": 2}}, {"k": "ranchd", "s": 5, "need": {"d4": 1}, "name": "Ranch dressing", "wm": {"id": "10451460", "per": 99}}, {"k": "mar", "s": 5, "need": {"s1a": 4}, "name": "Marinara sauce, 1 jar", "wm": {"id": "952045923", "per": 23}}, {"k": "bcrumbs", "s": 5, "need": {"s1a": 1, "s3a": 1}, "name": "Italian style bread crumbs", "wm": {"id": "10315088", "per": 99}}, {"k": "aujus", "s": 5, "need": {"s4b": 1}, "name": "Au jus gravy mix, 1 packet", "wm": {"id": "10308946", "per": 1}}, {"k": "beer", "s": 5, "need": {"s4b": 1}, "name": "Beer, 1 can (12 oz)", "note": "or more beef broth"}, {"k": "mayo", "s": 5, "need": {"sd_potsal": 1}, "name": "Mayonnaise", "wm": {"id": "17056888", "per": 99}}, {"k": "ramen", "s": 5, "need": {"sd_ramen": 2}, "name": "Ramen noodles, 2 packages (any flavor)", "wm": {"id": "15754233", "per": 1}}, {"k": "sunfl", "s": 5, "need": {"sd_ramen": 1}, "name": "Sunflower seeds, 1 cup"}, {"k": "almond", "s": 5, "need": {"sd_ramen": 1}, "name": "Sliced almonds, 4 oz bag", "wm": {"id": "386300370", "per": 1}}, {"k": "cflakes", "s": 5, "need": {"dz": 1}, "name": "Corn flakes cereal", "note": "you need 5 cups", "wm": {"id": "10818608", "per": 99}}, {"k": "csyrup", "s": 5, "need": {"dz": 1}, "name": "Light corn syrup", "note": "you need ⅔ cup", "wm": {"id": "10294410", "per": 99}}, {"k": "maple", "s": 5, "need": {"dz": 1}, "name": "Maple syrup", "note": "you need ¼ cup", "wm": {"id": "13925187", "per": 99}}, {"k": "pb", "s": 5, "need": {"dz": 1}, "name": "Creamy peanut butter", "note": "you need 1 cup", "wm": {"id": "3716446909", "per": 99}}, {"k": "yeast", "s": 5, "need": {"sd_txr": 1}, "name": "Active dry yeast, 1 packet", "wm": {"id": "13448681", "per": 3}}, {"k": "gmush", "s": 5, "need": {"s5b": 1}, "name": "Golden mushroom soup, 1 can (10.75 oz)"}, {"k": "gravy", "s": 5, "need": {"s5b": 1}, "name": "Brown gravy mix, 1 packet"}, {"k": "shells", "s": 5, "need": {"d0": 1}, "name": "Medium pasta shells, 16 oz"}, {"k": "mand", "s": 5, "need": {"sd_fruit": 1}, "name": "Mandarin oranges, {n} can(s) (15 oz)", "wm": {"id": "10316088", "per": 1}}, {"k": "pud", "s": 5, "need": {"sd_fruit": 1}, "name": "Instant vanilla pudding mix, small box", "wm": {"id": "10534174", "per": 1}}, {"k": "cmeal", "s": 5, "need": {"sd_corn": 1}, "name": "Yellow cornmeal", "wm": {"id": "10312465", "per": 99}}, {"k": "relish", "s": 5, "need": {"sd_potsal": 1}, "name": "Pickle relish", "wm": {"id": "314210624", "per": 99}}, {"k": "sp", "s": 6, "need": {"d1": 1, "d2": 1, "d3": 1, "d5": 1, "d6": 1, "s0a": 1, "s1b": 1, "s2a": 1, "s2b": 1, "s3a": 1, "s3b": 1, "s4b": 1, "s6a": 1, "s6b": 1, "sd_txr": 1, "sd_peas": 1, "sd_mash": 1, "sd_ramen": 1, "d0": 1, "s0b": 1, "s5b": 1, "sd_broc": 1, "sd_gbean": 1, "sd_veg": 1, "sd_corn": 1, "sd_potsal": 1, "sd_bisc": 1}, "name": "Salt and black pepper"}, {"k": "gp", "s": 6, "need": {"d1": 1, "d2": 1, "d6": 1, "s3a": 1, "s4b": 1, "s6a": 1, "s6b": 1, "sd_ramen": 1}, "name": "Garlic powder"}, {"k": "onpow", "s": 6, "need": {"d1": 1, "s4b": 1, "s6a": 1, "s6b": 1}, "name": "Onion powder"}, {"k": "oil", "s": 6, "need": {"s1b": 1, "s3a": 1, "s3b": 1, "s4a": 1, "s4b": 1, "s6b": 1, "d0": 1, "sd_broc": 1, "sd_veg": 1, "sd_potsal": 1}, "name": "Olive oil"}, {"k": "voil", "s": 6, "need": {"sd_ramen": 1}, "name": "Vegetable oil"}, {"k": "flour", "s": 6, "need": {"d2": 1, "d5": 1, "s6a": 1, "sd_txr": 1, "sd_peas": 1, "s0b": 1, "sd_corn": 1, "sd_bisc": 1}, "name": "All-purpose flour"}, {"k": "chilip", "s": 6, "need": {"d2": 1, "s0a": 1, "s2a": 1, "s6b": 1}, "name": "Chili powder"}, {"k": "cumin", "s": 6, "need": {"d2": 1, "s2a": 1}, "name": "Ground cumin"}, {"k": "oreg", "s": 6, "need": {"d5": 1, "s2a": 1}, "name": "Dried oregano"}, {"k": "papr", "s": 6, "need": {"d5": 1, "d6": 1, "s3a": 1, "s6a": 1, "s6b": 1}, "name": "Paprika (regular or smoked)"}, {"k": "cay", "s": 6, "need": {"s2a": 1}, "name": "Cayenne pepper"}, {"k": "poult", "s": 6, "need": {"d6": 1}, "name": "Poultry seasoning"}, {"k": "sage", "s": 6, "need": {"d6": 1}, "name": "Dried sage"}, {"k": "itseas", "s": 6, "need": {"s1b": 1}, "name": "Italian seasoning"}, {"k": "thyme", "s": 6, "need": {"s3b": 1, "s6a": 1}, "name": "Dried thyme"}, {"k": "dpars", "s": 6, "need": {"s3a": 1}, "name": "Dried parsley"}, {"k": "ssalt", "s": 6, "need": {"s6a": 1}, "name": "Seasoned salt"}, {"k": "soy", "s": 6, "need": {"s5a": 1, "sd_ramen": 1}, "name": "Soy sauce"}, {"k": "rwv", "s": 6, "need": {"sd_ramen": 1}, "name": "Rice wine vinegar"}, {"k": "sesoil", "s": 6, "need": {"sd_ramen": 1}, "name": "Sesame oil"}, {"k": "sesame", "s": 6, "need": {"sd_ramen": 1}, "name": "Sesame seeds"}, {"k": "sugar", "s": 6, "need": {"sd_txr": 1, "sd_ramen": 1, "dz": 1, "sd_bisc": 1}, "name": "Granulated sugar"}, {"k": "van", "s": 6, "need": {"dz": 1, "sd_fruit": 1}, "name": "Vanilla extract"}, {"k": "bals", "s": 6, "need": {"sd_veg": 1}, "name": "Balsamic vinegar"}, {"k": "bp", "s": 6, "need": {"sd_corn": 1, "sd_bisc": 1}, "name": "Baking powder"}, {"k": "bs", "s": 6, "need": {"sd_corn": 1}, "name": "Baking soda"}, {"k": "bsug", "s": 6, "need": {"sd_corn": 1}, "name": "Brown sugar"}, {"k": "cseed", "s": 6, "need": {"sd_potsal": 1}, "name": "Celery seed"}, {"k": "alm", "s": 6, "need": {"sd_fruit": 1}, "name": "Almond extract"}]};
+var U=PLAN.site, IMG=U+'wp-content/uploads/';
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var _ws=PLAN.week_start.split('-').map(Number);
+function _img(v){return v?(/^(data:|https?:)/.test(v)?v:IMG+v):''}
+var DAYS=PLAN.days.map(function(x,i){var dt=new Date(_ws[0],_ws[1]-1,_ws[2]+i),p2=function(n){return (n<10?'0':'')+n};
+  return {d:x.d,full:x.full,date:dt.getDate(),mon:MON[dt.getMonth()],ymd:''+dt.getFullYear()+p2(dt.getMonth()+1)+p2(dt.getDate()),c:x.c,id:'d'+i,name:x.name,url:U+x.slug+'/',img:_img(x.img),
+   time:x.time,rate:x.rate,emoji:x.emoji,line:x.line,tip:x.tip,start:!!x.start,startAt:x.start||null,sides:x.sides||[]}});
+var SW={};PLAN.days.forEach(function(x,i){SW[i]=(x.swaps||[]).map(function(o){return {id:o.id,name:o.name,slug:o.slug,img:_img(o.img),time:o.time,rate:o.rate,emoji:o.emoji,line:o.line,start:!!o.start,startAt:o.start||null}})});
+/* nights vs dinners: readers can move dinners to other nights */
+var NIGHT=DAYS.map(function(D){return {d:D.d,full:D.full,date:D.date,mon:D.mon,ymd:D.ymd,c:D.c}});
+var BASE=DAYS.map(function(D){return Object.assign({},D)}),SWB=DAYS.map(function(D,k){return SW[k]});
+function ord(){var o=st&&st.ord;return (o&&o.length===DAYS.length)?o:DAYS.map(function(_,k){return k})}
+function applyOrder(){var o=ord();o.forEach(function(k,i){DAYS[i]=Object.assign({},BASE[k],NIGHT[i]);SW[i]=SWB[k]})}
+function R(i){var D=DAYS[i],s=st.sw&&st.sw[i],x=s?SW[i].filter(function(o){return o.id===s})[0]:null;if(!x)return D;
+  return {d:D.d,full:D.full,date:D.date,mon:D.mon,ymd:D.ymd,c:D.c,id:x.id,name:x.name,url:U+x.slug+'/',time:x.time,rate:x.rate,emoji:x.emoji,img:x.img,line:x.line,start:x.start,startAt:x.startAt,sides:D.sides,swapped:true,
+   tip:'Swapped in! Your grocery list already has everything you need for this one.'}}
+function swapOpts(i){var cur=R(i).id,o=SW[i].filter(function(x){return x.id!==cur}).map(function(x){return {id:x.id,name:x.name,url:U+x.slug+'/'}});
+  if(cur!==DAYS[i].id)o.unshift({id:DAYS[i].id,name:DAYS[i].name,url:DAYS[i].url,back:true});return o}
+function doSwap(i,id){var was=R(i).name;track('planner_swap',{day:DAYS[i].d,from:was,to:id===DAYS[i].id?DAYS[i].name:(SW[i].filter(function(o){return o.id===id})[0]||{}).name});if(!st.sw)st.sw={};st.sw[i]=(id===DAYS[i].id)?null:id;save();
+  tonight();tabs();pick(i);picker();list();calRow();madeCount();toast(R(i).name+' swapped in. List updated!')}
+function chips(arr){return arr.map(function(x){return '<a class="xl" href="'+U+x[1]+'/" target="_blank" rel="noopener">'+x[0]+'</a>'}).join('')}
+function ratePrompt(D){
+  var w=document.createElement('div');w.className='rsheet';
+  w.innerHTML='<div class="rbox"><div class="rst" aria-hidden="true">★★★★★</div><div class="disp" style="font-size:26px;color:var(--head);line-height:1.05">How was the '+D.name+'?</div><p>It would mean the world to me if you left a quick star rating on the recipe. It helps other busy families find dinners that actually work!</p><a class="btn p" style="width:100%" href="'+D.url+'#respond" target="_blank" rel="noopener">Leave a star rating</a><button class="btn s" style="width:100%;margin-top:8px">Maybe later</button></div>';
+  root.appendChild(w);w.onclick=function(e){if(e.target===w||e.target.tagName==='BUTTON'||e.target.tagName==='A')setTimeout(function(){w.remove()},50)};
+}
+var COL={mint:['#B6D3C7','#2C5B6D'],teal:['#2C5B6D','#fff'],peach:['#F3B09E','#2C5B6D'],blue:['#C0D8DD','#2C5B6D'],yel:['#F3BC69','#2C5B6D']};
+/* grocery items: need = amount per dinner (0 Mon ... 6 Sun) */
+var plural=function(n,one,many){return n+' '+(n===1?one:many)};
+var frac=function(n){var w=Math.floor(n),f=Math.round((n-w)*4)/4;if(f===1){w++;f=0}var m={0:'',0.25:'¼',0.5:'½',0.75:'¾'}[f];return (w?w+(m?' ':''):'')+m||'0'};
+var DN=DAYS.map(function(D){return D.d});
+function fillQty(tpl,t){var n=function(k){return Math.ceil(t/k-1e-9)};
+  tpl=tpl.replace(/\{t\}/g,frac(t)).replace(/\{n24\}/g,n(24)).replace(/\{n4\}/g,n(4)).replace(/\{n2\}/g,n(2)).replace(/\{n\}/g,n(1));
+  return tpl.replace(/(\d+(?: [½¼¾])?|[½¼¾])([^\d(]*?)\((e?s)\)/g,function(m,num,mid,suf){var pl=/^[½¼¾]$/.test(num)?false:(parseInt(num,10)>1||/ [½¼¾]/.test(num));return num+mid+(pl?suf:'')})}
+var ITEMS=PLAN.items.map(function(x){return {k:x.k,s:x.s,need:x.need,wm:x.wm||null,f:function(t,u){var nm=x.name;
+  if(x.tiers){nm=x.tiers[x.tiers.length-1][1];for(var j=0;j<x.tiers.length;j++){if(t<=x.tiers[j][0]+1e-9){nm=x.tiers[j][1];break}}}
+  return [fillQty(nm,t),x.note?fillQty(x.note,t).replace('{days}',u):'']}}});
+var EXTRAS=[PLAN.dessert,PLAN.bonus].filter(Boolean).map(function(x){return Object.assign({},x,{url:U+x.slug+'/',img:_img(x.img)})});
+var SIDES=PLAN.sides;var SLUG2SD={};for(var _k in SIDES)SLUG2SD[SIDES[_k][1]]=_k;
+function sidesOf(i){return (st.sd&&st.sd[i])||[]}
+function toggleSide(i,sid){if(!st.sd)st.sd={};var a=sidesOf(i).slice(),j=a.indexOf(sid);if(j>-1)a.splice(j,1);else a.push(sid);st.sd[i]=a;save();track(j>-1?'planner_remove_side':'planner_add_side',{day:DAYS[i].d,side:SIDES[sid][0]});
+  pick(i);picker();list();tonight();calRow();toast(j>-1?SIDES[sid][0]+' removed from your list':SIDES[sid][0]+' added to your list!')}
+var SECS=[['Meat','teal'],['Deli & bakery','teal'],['Produce','mint'],['Dairy','peach'],['Freezer','blue'],['Pantry','yel'],['Check the cupboard','mint']];
+function shopping(){
+  var occ=[];DAYS.forEach(function(D,i){if(!st.sel[i])return;occ.push([R(i).id,i]);sidesOf(i).forEach(function(x){occ.push([x,i])})});EXTRAS.forEach(function(x){if(st.ex&&st.ex[x.id])occ.push([x.id,null])});
+  var out=SECS.map(function(x){return {name:x[0],c:x[1],rows:[]}});
+  ITEMS.forEach(function(it){var t=0,days=[];occ.forEach(function(o){if(o[0] in it.need){t+=it.need[o[0]];if(o[1]!=null&&days.indexOf(o[1])<0)days.push(o[1])}});t=Math.round(t*1000)/1000;
+    if(!t)return;days.sort();var u=days.map(function(d){return DN[d]});u=u.length>1?u.slice(0,-1).join(', ')+' and '+u[u.length-1]:u[0];
+    var r2=it.f(t,u);out[it.s].rows.push({k:it.k,name:r2[0],note:r2[1],wm:it.wm?{id:it.wm.id,q:Math.max(1,Math.ceil(t/(it.wm.per||1e9)-1e-9))}:null})});
+  return out.filter(function(x){return x.rows.length});
+}
+
+var root=document.getElementById('jetmp'),$=function(id){return document.getElementById(id)};
+/* analytics: sends events only where Google Analytics is loaded (the website version) */
+function track(name,params){try{if(typeof window.gtag==='function')window.gtag('event',name,Object.assign({plan_week:'2026-11-02'},params||{}))}catch(e){}}
+root.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+  if(/instacart\.com/.test(h))track('planner_instacart_click',{item:decodeURIComponent((h.split('k=')[1]||'')).slice(0,80)});
+  else if(/walmart\.com\/search/.test(h))track('planner_walmart_item_click',{item:decodeURIComponent((h.split('q=')[1]||'')).slice(0,80)});
+  else if(/calendar\.google\.com/.test(h))track('planner_calendar_google',{day:a.textContent.trim().slice(0,30)});
+  else if(/#respond$/.test(h))track('planner_rating_click',{recipe:h.replace(/https?:\/\/[^/]+\//,'').replace(/\/#respond$/,'')});
+  else if(/julieseatsandtreats\.com\/[a-z0-9-]+\/?$/.test(h))track('planner_recipe_click',{recipe:h.replace(/https?:\/\/[^/]+\//,'').replace(/\/$/,''),spot:a.className||'link'});
+  },true);
+var KEY='jet-mealplan-2026-11-02',st={g:{},m:{},sel:DAYS.map(function(){return true}),sw:{}};
+try{var _s=JSON.parse(localStorage.getItem(KEY));if(_s){st=_s;if(!st.sel)st.sel=DAYS.map(function(){return true});if(!st.sw)st.sw={}}}catch(e){}
+function nSel(){return st.sel.filter(Boolean).length}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function _sw(o,a,b){if(!o)return;var x=o[a];o[a]=o[b];o[b]=x;if(o[a]===undefined)delete o[a];if(o[b]===undefined)delete o[b]}
+/* load a "Save my plan" link (#plan=...) */
+(function(){var m=location.hash.match(/#plan=([\w-]+)/);if(!m)return;
+  try{var s=JSON.parse(decodeURIComponent(escape(atob(m[1].replace(/-/g,'+').replace(/_/g,'/')))));
+    if(s.w===PLAN.week_start){if(s.ord)st.ord=s.ord;if(s.ex)st.ex=s.ex;st.sel=s.sel||st.sel;st.sw=s.sw||{};st.sd=s.sd||{};st.g=s.g||{};st.m=s.m||{};save();track('planner_save_link_opened');
+      setTimeout(function(){toast('Your saved plan is loaded!')},500)}}catch(e){}
+  try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}})();
+function toast(t){var el=$('jm-toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){el.classList.remove('show')},2200)}
+function bg(el,url,fallback){if(!url){return}var i=new Image();i.onload=function(){el.style.backgroundImage='url("'+url+'")';el.textContent=''};i.src=url}
+
+if(SELFIE_URL){var s=$('jm-selfie');s.textContent='';s.style.backgroundImage='url("'+SELFIE_URL+'")'}
+$('jm-pdf').textContent='Get PDF';$('jm-pdf').removeAttribute('target');$('jm-pdf').onclick=function(e){e.preventDefault();fullPDF(this)};
+
+/* which day is it? */
+var now=new Date(),_t0=new Date(_ws[0],_ws[1]-1,_ws[2]),_dd=Math.floor((new Date(now.getFullYear(),now.getMonth(),now.getDate())-_t0)/864e5);
+var idx=(_dd>=0&&_dd<DAYS.length)?_dd:0;
+var before=_dd<0;
+var after=_dd>=DAYS.length;
+
+function tonight(){
+  var D=R(idx),lab=before?'first up, '+DAYS[0].full:(after?'kick off with':'tonight’s dinner');
+  var note=D.start?'Start the crock pot about '+D.startAt[2]+' before dinner!':(D.off?D.line:D.time+' and it’s on the table');
+  $('jm-tonight').innerHTML='<div class="ph" id="jm-tph"></div><div><div class="scr lab">'+lab+'</div><div class="disp nm">'+D.name+'</div>'+(sidesOf(idx).length&&st.sel[idx]?'<div class="withs" style="font-size:13px;margin-top:2px">+ '+sidesOf(idx).map(function(x){return SIDES[x][0]}).join(' + ')+'</div>':'')+'<div class="nt">'+note+'</div></div>';
+  var ph=$('jm-tph');ph.style.display='flex';ph.style.alignItems='center';ph.style.justifyContent='center';ph.style.fontSize='44px';ph.textContent=D.emoji;bg(ph,D.img);
+  $('jm-tonight').style.cursor='pointer';$('jm-tonight').onclick=function(){pick(idx);$('jm-days').scrollIntoView({behavior:'smooth'})};
+}
+
+function tabs(){
+  $('jm-tabs').innerHTML=DAYS.map(function(D,i){return '<button class="tab'+(st.m[i]?' made':'')+(st.sel[i]?'':' skip')+'" role="tab" aria-selected="false" data-i="'+i+'"><span class="dot"></span><b>'+D.d+'</b><small>'+D.mon+' '+D.date+'</small></button>'}).join('');
+  [].forEach.call($('jm-tabs').children,function(b){b.onclick=function(){pick(+b.dataset.i)}});
+}
+var cur=0;
+function pick(i){
+  cur=i;var D=R(i),c=COL[D.c];
+  [].forEach.call($('jm-tabs').children,function(b,j){b.setAttribute('aria-selected',j===i)});
+  var made=st.m[i];
+  var front='<div class="face'+(D.off?' off':'')+'"><div class="pic" id="jm-pic"'+(D.swapped?' style="aspect-ratio:16/7"':'')+'>'+D.emoji+'<span class="pill" style="background:'+c[0]+';color:'+c[1]+'">'+D.full+'</span>'+(D.swapped?'<span class="swb2">Your swap</span>':'')+'</div><div class="body"><h3 class="disp">'+D.name+'</h3>'+(sidesOf(i).length?'<div class="withs">+ '+sidesOf(i).map(function(x){return SIDES[x][0]}).join(' + ')+'</div>':'')+
+   (D.off?'':'<div class="meta"><span class="chip">⏱ '+D.time+'</span>'+(D.rate?'<span class="chip">★ '+D.rate+'</span>':'')+'</div>')+
+   '<p class="line">'+D.line+'</p>'+
+   (D.sides?'<div class="xt">Great with (tap Add to put it on your grocery list)</div><div class="swl">'+D.sides.map(function(x){var sid=SLUG2SD[x[1]],on=sidesOf(i).indexOf(sid)>-1;return '<div class="swr"><a href="'+U+x[1]+'/" target="_blank" rel="noopener">'+x[0]+'</a><button class="swbtn'+(on?' on':'')+'" data-sd="'+sid+'">'+(on?'Added ✓':'+ Add')+'</button></div>'}).join('')+'</div>':'')+
+   '<div class="xt">'+(D.swapped?'Change your mind?':'Not feeling it? Swap in')+'</div><div class="swl">'+swapOpts(i).map(function(o){return '<div class="swr"><a href="'+o.url+'" target="_blank" rel="noopener">'+o.name+'</a><button class="swbtn" data-sw="'+o.id+'">'+(o.back?'Switch back':'Swap in')+'</button></div>'}).join('')+'</div>'+
+   '<div class="acts">'+
+   (D.off?'':'<a class="btn p" href="'+D.url+'" target="_blank" rel="noopener">Get the recipe</a>')+
+   '<button class="btn s" data-a="flip">Julie’s tip</button>'+
+   (D.off?'':'<button class="btn '+(made?'made':'s')+'" data-a="made">'+(made?'Made it! ✓':'I made it')+'</button>')+
+   '<button class="btn s" data-a="sel">'+(st.sel[i]?'Skip this one':'Add back to my list')+'</button>'+
+   '<button class="btn s" data-a="move">Move to another night</button>'+
+   '</div>'+(D.url?'<a class="rate" href="'+D.url+'#respond" target="_blank" rel="noopener"><span class="rst" aria-hidden="true">★★★★★</span><span>Made it? Leave a star rating!</span></a>':'')+'</div></div>';
+  var back='<div class="face b"><div class="scr">Julie’s tip</div><p>'+D.tip+'</p><button class="btn" data-a="flip">Flip back</button></div>';
+  var f=$('jm-flip');f.classList.remove('back');f.innerHTML=front+back;
+  if(D.img){var p=$('jm-pic');var i2=new Image();i2.onload=function(){p.style.aspectRatio='';p.style.backgroundImage='url("'+D.img+'")';if(p.firstChild&&p.firstChild.nodeType===3)p.removeChild(p.firstChild)};i2.src=D.img}
+  [].forEach.call(f.querySelectorAll('[data-a],[data-sw],[data-sd]'),function(b){b.onclick=function(e){
+    if(b.dataset.a==='flip'){f.classList.toggle('back')}
+    else if(b.dataset.a==='sel'){toggleSel(i)}
+    else if(b.dataset.a==='move'){moveSheet(i)}
+    else if(b.dataset.sw){doSwap(i,b.dataset.sw)}
+    else if(b.dataset.sd){toggleSide(i,b.dataset.sd)}
+    else{st.m[i]=!st.m[i];save();tabs();pick(i);madeCount(true);if(st.m[i])track('planner_made_it',{day:DAYS[i].d,recipe:R(i).name});if(st.m[i]){burst(e.clientX,e.clientY);setTimeout(function(){ratePrompt(D)},700)}}
+  }});
+}
+function madeCount(fx){var n=0,t=nSel();DAYS.forEach(function(D,i){if(st.sel[i]&&st.m[i])n++});$('jm-made').textContent=n+' of '+t+' made'+(n===t?' 🎉':'');if(fx&&n===t)rain()}
+
+/* grocery list */
+var CHECK='<svg viewBox="0 0 14 11" fill="none"><path d="M1.5 5.5l4 4 7-8" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var total=0;
+function picker(){
+  $('jm-pick').innerHTML=DAYS.map(function(D0,i){var D=R(i),on=st.sel[i];return '<div class="pkrow"><button class="pk'+(on?' on':'')+'" data-i="'+i+'" aria-pressed="'+on+'"><b>'+D.d+'</b><span>'+D.name+'</span></button><a class="pkr" href="'+D.url+'" target="_blank" rel="noopener" aria-label="Get the '+D.name+' recipe">Recipe</a></div>'+(on?sidesOf(i).map(function(x){return '<div class="pkside"><span>+ '+SIDES[x][0]+'</span><a class="pkr" href="'+U+SIDES[x][1]+'/" target="_blank" rel="noopener" aria-label="Get the '+SIDES[x][0]+' recipe">Recipe</a></div>'}).join(''):'')}).join('');
+  [].forEach.call($('jm-pick').querySelectorAll('.pk'),function(b){b.onclick=function(){toggleSel(+b.dataset.i)}});
+  EXTRAS.forEach(function(x){if(st.ex&&st.ex[x.id])$('jm-pick').insertAdjacentHTML('beforeend','<div class="pkside" style="margin-left:0"><span>'+x.emoji+' '+x.label+': '+x.name+'</span><a class="pkr" href="'+x.url+'" target="_blank" rel="noopener">Recipe</a></div>')});
+  $('jm-pickn').textContent=nSel()+' of '+DAYS.length+' dinners on my list';
+}
+function toggleSel(i){track(st.sel[i]?'planner_skip_dinner':'planner_add_back_dinner',{day:DAYS[i].d,recipe:R(i).name});
+  if(st.sel[i]&&nSel()===1){toast('Keep at least one dinner on the list!');return}
+  st.sel[i]=!st.sel[i];save();picker();list();calRow();tabs();pick(cur);madeCount();
+  toast(st.sel[i]?R(i).name+' is back on the list':R(i).name+' skipped. List updated!');
+}
+function list(){
+  var h='';total=0;
+  shopping().forEach(function(sec){var c=COL[sec.c];
+    h+='<div class="sec"><h3 style="background:'+c[0]+';color:'+c[1]+'">'+sec.name+'</h3>';
+    sec.rows.forEach(function(it){var k=it.k,q=it.name.split(',')[0];total++;
+      h+='<div class="irow"><label class="it'+(st.g[k]?' on':'')+'" data-k="'+k+'"><input type="checkbox"'+(st.g[k]?' checked':'')+'><span class="bx">'+CHECK+'</span><span class="tx">'+it.name+(it.note?'<small>'+it.note+'</small>':'')+'</span></label><span class="shop"><a class="ic" target="_blank" rel="noopener" href="https://www.instacart.com/store/s?k='+encodeURIComponent(q)+'" aria-label="Find '+q.replace(/"/g,'')+' on Instacart">Instacart</a><a class="ic wm" target="_blank" rel="noopener" href="https://www.walmart.com/search?q='+encodeURIComponent(q)+'" aria-label="Find '+q.replace(/"/g,'')+' at Walmart">Walmart</a></span></div>'});
+    h+='</div>'});
+  $('jm-list').innerHTML=h;
+  [].forEach.call($('jm-list').querySelectorAll('input'),function(inp){inp.onchange=function(e){
+    var l=inp.parentNode,k=l.dataset.k;st.g[k]=inp.checked;l.classList.toggle('on',inp.checked);save();prog(true);
+  }});
+  prog(false);
+}
+function prog(fx){
+  var n=$('jm-list').querySelectorAll('input:checked').length;
+  $('jm-bar').style.width=(total?n/total*100:0)+'%';
+  $('jm-bartxt').textContent=n===total?'Cart’s full! You’re ready for the week 🎉':n+' of '+total+' items in the cart';
+  if(fx&&n===total){rain();toast('Grocery run: DONE! 🛒');track('planner_list_complete',{items:total})}
+}
+$('jm-hide').onclick=function(){var on=root.classList.toggle('hide-done');this.setAttribute('aria-pressed',on);this.textContent=on?'Show checked':'Hide checked'};
+$('jm-reset').onclick=function(){if(confirm('Uncheck everything on the list?')){st.g={};save();list();toast('Fresh list, ready to go')}};
+$('jm-share').onclick=function(){track('planner_text_my_list',{dinners:nSel()});
+  var out='Grocery list for Julie’s dinner plan (Nov 2 to 8)\n';
+  out+=DAYS.map(function(D,i){return st.sel[i]?D.d+': '+R(i).name+'\n   '+R(i).url+sidesOf(i).map(function(x){return '\n   + '+SIDES[x][0]+'\n   '+U+SIDES[x][1]+'/'}).join(''):null}).filter(Boolean).join('\n')+EXTRAS.filter(function(x){return st.ex&&st.ex[x.id]}).map(function(x){return '\n'+x.label+': '+x.name+'\n   '+x.url}).join('')+'\n';
+  shopping().forEach(function(sec){var rows=sec.rows.filter(function(it){return !st.g[it.k]});if(rows.length){out+='\n'+sec.name.toUpperCase()+'\n';rows.forEach(function(it){out+='☐ '+it.name+'\n'})}});
+  
+  function modal(){var w=document.createElement('div');w.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:20px';
+    w.innerHTML='<div style="background:var(--card);color:var(--ink);border-radius:22px;padding:18px;width:100%;max-width:480px"><div class="disp" style="font-size:24px;color:var(--head)">Copy your list</div><textarea readonly style="width:100%;height:260px;margin-top:10px;border-radius:12px;border:2px solid var(--rule);padding:10px;font:14px Montserrat,sans-serif;background:var(--tan);color:var(--ink)"></textarea><button class="btn p" style="width:100%;margin-top:10px">Done</button></div>';
+    root.appendChild(w);var ta=w.querySelector('textarea');ta.value=out;ta.focus();ta.select();w.querySelector('button').onclick=function(){w.remove()}}
+  function clip(){if(navigator.clipboard){navigator.clipboard.writeText(out).then(function(){toast('List copied! Paste it anywhere')},modal)}else modal()}
+  if(navigator.share){navigator.share({title:'My grocery list',text:out}).catch(function(e){if(!e||e.name!=='AbortError')clip()})}else clip();
+};
+
+/* print my list (custom PDF) */
+function loadPDF(){if(window.jspdf)return Promise.resolve(window.jspdf.jsPDF);return new Promise(function(r,j){var sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';sc.onload=function(){r(window.jspdf.jsPDF)};sc.onerror=j;document.head.appendChild(sc)})}
+function clean(t){return String(t).replace(/&amp;/g,'&').replace(/[^\x20-\xFF’‘“”–½¼¾]/g,'').replace(/\s+/g,' ').trim()}
+function buildPDF(J){
+  var d=new J({unit:'pt',format:'letter'}),W=612,H=792,M=40,TEAL=[44,91,109];
+  function foot(){d.setFont('helvetica','bold');d.setFontSize(9);d.setTextColor.apply(d,TEAL);d.text("JULIE'S EATS & TREATS",M,H-24);d.text('JULIESEATSANDTREATS.COM',W-M,H-24,{align:'right'})}
+  d.setFillColor(244,242,237);d.rect(0,0,W,H,'F');
+  d.setFillColor.apply(d,TEAL);d.roundedRect(M,M,W-2*M,66,14,14,'F');
+  d.setTextColor(255);d.setFont('helvetica','bold');d.setFontSize(24);d.text('MY DINNER PLAN',M+20,M+36);
+  d.setFont('helvetica','normal');d.setFontSize(11);d.text('November 2 to 8',M+20,M+54);
+  var y=M+92;d.setTextColor.apply(d,TEAL);d.setFont('helvetica','bold');d.setFontSize(14);d.text("THIS WEEK'S DINNERS",M,y);y+=8;
+  DAYS.forEach(function(D0,i){if(!st.sel[i])return;var D=R(i),sd=sidesOf(i).map(function(x){return SIDES[x][0]});
+    y+=16;d.setFillColor(255,255,255);
+    d.setFont('helvetica','bold');d.setFontSize(10.5);d.setTextColor.apply(d,TEAL);d.text(D.full.toUpperCase(),M,y);
+    d.setFont('helvetica','normal');d.setTextColor(26,26,26);
+    var nm=clean(D.name);d.setTextColor.apply(d,TEAL);d.setFont('helvetica','bold');d.textWithLink(nm,M+90,y,{url:D.url});var nx=M+90+d.getTextWidth(nm);
+    d.setFont('helvetica','normal');d.setFontSize(8.5);d.setTextColor(120,120,120);d.textWithLink('   tap for recipe',nx,y,{url:D.url});
+    sidesOf(i).forEach(function(x){y+=13;d.setFontSize(10);d.setFont('helvetica','normal');d.setTextColor(26,26,26);d.text('+',M+90,y);d.setTextColor.apply(d,TEAL);d.setFont('helvetica','bold');var sn=clean(SIDES[x][0]);d.textWithLink(sn,M+100,y,{url:U+SIDES[x][1]+'/'});var sw=d.getTextWidth(sn);d.setFont('helvetica','normal');d.setFontSize(8.5);d.setTextColor(120,120,120);d.textWithLink('   tap for recipe',M+100+sw,y,{url:U+SIDES[x][1]+'/'})})});
+  EXTRAS.forEach(function(x){if(!(st.ex&&st.ex[x.id]))return;y+=16;d.setFont('helvetica','bold');d.setFontSize(10.5);d.setTextColor.apply(d,TEAL);d.text(clean(x.label).toUpperCase(),M,y);d.textWithLink(clean(x.name),M+150,y,{url:x.url})});
+  y+=28;d.setFont('helvetica','bold');d.setFontSize(14);d.setTextColor.apply(d,TEAL);d.text('MY GROCERY LIST',M,y);y+=6;
+  var colW=(W-2*M-24)/2,col=0,top=y,x=M;
+  function nextCol(){if(col===0){col=1;x=M+colW+24;y=top}else{foot();d.addPage();d.setFillColor(244,242,237);d.rect(0,0,W,H,'F');col=0;x=M;top=M;y=M}}
+  shopping().forEach(function(sec){
+    if(y>H-90)nextCol();
+    y+=18;d.setFont('helvetica','bold');d.setFontSize(10);d.setTextColor.apply(d,TEAL);d.text(sec.name.toUpperCase(),x,y);y+=4;
+    sec.rows.forEach(function(it){
+      var nm=d.splitTextToSize(clean(it.name),colW-18),nt=it.note?d.splitTextToSize(clean(it.note),colW-18):[],h=nm.length*12+nt.length*10+4;
+      if(y+h>H-50)nextCol();
+      y+=13;var done=!!st.g[it.k];d.setDrawColor.apply(d,TEAL);d.setLineWidth(1.2);d.roundedRect(x,y-8.5,9,9,2,2,done?'FD':'S');
+      d.setFont('helvetica','bold');d.setFontSize(9.5);d.setTextColor(done?150:26,done?150:26,done?150:26);d.text(nm,x+16,y);y+=(nm.length-1)*12;
+      if(nt.length){d.setFont('helvetica','normal');d.setFontSize(8);d.setTextColor(120,120,120);y+=10;d.text(nt,x+16,y);y+=(nt.length-1)*10}
+    })});
+  foot();return d;
+}
+$('jm-printmy').onclick=async function(){
+  var b=this;b.disabled=true;b.textContent='Making your list...';track('planner_print_my_list',{dinners:nSel()});
+  try{
+    var J=await loadPDF(),blob=buildPDF(J).output('blob');
+    var dl=window.claude&&window.claude.use?await window.claude.use('downloads'):null;
+    if(dl){await dl.save({filename:'My-Dinner-Plan-Nov-2.pdf',data:blob});toast('Your list is saved! Print away')}
+    else{var u=URL.createObjectURL(blob),w=window.open(u,'_blank');if(!w){var a=document.createElement('a');a.href=u;a.download='My-Dinner-Plan-Nov-2.pdf';document.body.appendChild(a);a.click();a.remove()}}
+  }catch(e){if(!(e&&e.code==='declined'))toast('Couldn’t make your list. Try again in a moment.')}
+  b.disabled=false;b.textContent='Print my list';
+};
+
+/* calendar file (Apple, Outlook, Google) */
+$('jm-cal').onclick=function(){
+  var p=function(n){return (n<10?'0':'')+n},L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Julies Eats and Treats//Meal Plan//EN','CALSCALE:GREGORIAN'];
+  var stamp=new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
+  function esc(t){return String(t).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/’/g,"'")}
+  function ev(id,day,h,m,dur,title,desc,url){L.push('BEGIN:VEVENT','UID:jet-'+id+'-20261102@julieseatsandtreats.com','DTSTAMP:'+stamp,'DTSTART:'+day+'T'+p(h)+p(m)+'00','DURATION:PT'+dur+'M','SUMMARY:'+esc(title),'DESCRIPTION:'+esc(desc)+(url?'\\n'+url:''));if(url)L.push('URL:'+url);L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+esc(title),'TRIGGER:-PT30M','END:VALARM','END:VEVENT')}
+  DAYS.forEach(function(D0,i){if(!st.sel[i])return;var D=R(i);var sd=sidesOf(i).map(function(x){return SIDES[x][0]});ev(i,D.ymd,17,30,60,'Dinner: '+D.name+(sd.length?' + '+sd.join(' + '):''),D.line,D.url);
+    if(D.start&&D.startAt)ev('crock'+i,D.ymd,D.startAt[0],D.startAt[1],15,'Start the crock pot! ('+D.name+')','It needs about '+D.startAt[2]+' to be ready for dinner.',D.url)});
+  L.push('END:VCALENDAR');
+  var blob=new Blob([L.join('\r\n')],{type:'text/calendar'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='julies-dinner-plan-Nov-2.ics';document.body.appendChild(a);a.click();a.remove();
+  toast('Calendar file ready! Open it to add 📅');track('planner_calendar_file',{dinners:nSel()});
+};
+
+async function fullPDF(b){
+  var keep=st,lab=b.textContent;b.textContent='Making it...';track('planner_pdf_download');
+  try{var J=await loadPDF();var blob=buildPDF(J).output('blob');
+    var u=URL.createObjectURL(blob),w=window.open(u,'_blank');if(!w){var a=document.createElement('a');a.href=u;a.download='Julies-Dinner-Plan-Nov-2.pdf';document.body.appendChild(a);a.click();a.remove()}}
+  catch(e){st=keep;toast('Couldn’t make the PDF. Try again in a moment.')}
+  b.textContent=lab;
+}
+
+/* Walmart: one link that adds every unchecked item to the reader's Walmart cart */
+function walmartRows(){var r=[];shopping().forEach(function(sec){sec.rows.forEach(function(x){if(x.wm&&!st.g[x.k])r.push(x)})});return r}
+(function(){var b=$('jm-walmart');if(!ITEMS.some(function(x){return x.wm})){b.style.display='none';return}
+  b.onclick=function(){var r=walmartRows();if(!r.length){toast('Everything’s checked off. Nothing left to add!');return}
+    var url='https://affil.walmart.com/cart/addToCart?items='+r.map(function(x){return x.wm.id+'|'+x.wm.q}).join(',')+(PLAN.walmart_suffix||'');
+    track('planner_walmart_cart',{items:r.length,dinners:nSel()});
+    var w=window.open(url,'_blank');if(!w)location.href=url;
+    wmSheet(r)}})();
+function wmSheet(r){var miss=[];shopping().forEach(function(sec){sec.rows.forEach(function(x){if(!x.wm&&!st.g[x.k]&&sec.name!=='Check the cupboard')miss.push(x)})});
+  var row=function(x){return '<div class="mrow" style="cursor:default"><b style="font-weight:700;color:var(--ink)">'+x.name+'</b><a class="ic wm" target="_blank" rel="noopener" href="https://www.walmart.com/search?q='+encodeURIComponent(x.name.split(',')[0])+'">Walmart</a></div>'};
+  var w=document.createElement('div');w.className='msheet';
+  w.innerHTML='<div class="mbox" style="max-height:85vh;overflow:auto"><div class="disp" style="font-size:22px;color:var(--head)">We sent '+r.length+' items to Walmart</div>'+
+   '<p style="margin:6px 0 12px;font-size:14px;line-height:1.45;color:var(--ink)">Check your Walmart cart against this list. <b>If something isn\u2019t there, it may be out of stock at your store.</b> Tap Walmart next to it to pick another brand.</p>'+
+   r.map(row).join('')+(miss.length?'<div class="disp" style="font-size:18px;color:var(--head);margin:14px 0 8px">Add these yourself</div><p style="margin:0 0 10px;font-size:13.5px;color:var(--muted)">These couldn\u2019t go in the cart automatically.</p>'+miss.map(row).join(''):'')+
+   '<button class="btn p" style="width:100%;margin-top:10px" data-x="1">Got it</button></div>';
+  root.appendChild(w);w.onclick=function(e){if(e.target===w||e.target.closest('[data-x]'))w.remove()}}
+
+/* Save my plan: a personal link with this reader's picks */
+$('jm-savelink').onclick=function(){
+  var s={w:PLAN.week_start,ord:st.ord,ex:st.ex,sel:st.sel,sw:st.sw,sd:st.sd||{},g:st.g,m:st.m};
+  var url=location.origin+location.pathname+'#plan='+btoa(unescape(encodeURIComponent(JSON.stringify(s)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  track('planner_save_link');
+  if(navigator.share){navigator.share({title:'My dinner plan',text:'My dinner plan from Julie’s Eats & Treats',url:url}).catch(function(){})}
+  else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied! Text or email it to yourself')},function(){window.prompt('Copy your link:',url)})}
+  else window.prompt('Copy your link:',url)};
+
+/* Home Screen tip */
+(function(){var h=$('jm-hs'),sa=false;try{sa=!!(window.navigator.standalone||matchMedia('(display-mode: standalone)').matches)}catch(e){}
+  try{if(sa||localStorage.getItem('jet-hs-tip')){h.style.display='none';return}}catch(e){}
+  h.querySelector('.how').textContent=/iPhone|iPad|iPod/.test(navigator.userAgent)?'Tap the Share button (the square with the arrow), then “Add to Home Screen.”':'Tap the ⋮ menu, then “Add to Home screen.” On a computer, bookmark this page.';
+  h.querySelector('.x').onclick=function(){h.style.display='none';try{localStorage.setItem('jet-hs-tip','1')}catch(e){}}})();
+
+/* other weeks + "new plan is up" banner (reads /weeks.json, newest first) */
+(function(){if(!window.fetch)return;fetch('/weeks.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():[]}).then(function(W){
+  if(!W||!W.length)return;var me=PLAN.week_start,nw=W[0],sa=false;try{sa=!!(window.navigator.standalone||matchMedia('(display-mode: standalone)').matches)}catch(e){}
+  if(nw.week>me){var b=$('jm-newweek');b.innerHTML='🎉 Next week’s plan is up! <a href="'+nw.url+'">See '+nw.label+' →</a><br><small>This week’s plan and your picks stay right here.</small>';b.style.display='block'}
+  var o=W.filter(function(w){return w.week!==me});if(!o.length)return;
+  $('jm-weeks').innerHTML='<div class="sh"><h2 class="disp"><span class="scr">more dinners</span>Other weeks</h2></div><div class="wklist">'+o.map(function(w){var d=w.dinners||[];return '<a class="wk" href="'+w.url+'"><b>'+w.label+(w.week>me?' <i>NEW</i>':'')+'</b><span>'+d.slice(0,3).join(', ')+(d.length>3?' and more':'')+'</span></a>'}).join('')+'</div>'
+}).catch(function(){})})();
+
+/* move a dinner to another night (the two nights trade dinners) */
+function moveNight(a,b,quiet){if(a===b)return;var o=ord().slice(),x=o[a];o[a]=o[b];o[b]=x;st.ord=o;
+  [st.sw,st.sd,st.m].forEach(function(m){_sw(m,a,b)});var s=st.sel[a];st.sel[a]=st.sel[b];st.sel[b]=s;
+  applyOrder();save();if(quiet)return;
+  track('planner_move_night',{recipe:R(b).name,from:NIGHT[a].d,to:NIGHT[b].d});
+  tonight();tabs();pick(b);picker();list();calRow();madeCount();orderNote();
+  toast(R(b).name+' moved to '+NIGHT[b].full+'!')}
+function moveSheet(i){var w=document.createElement('div');w.className='msheet';
+  w.innerHTML='<div class="mbox"><div class="disp" style="font-size:22px;color:var(--head)">Move '+R(i).name+' to…</div><p style="margin:4px 0 12px;font-size:13.5px;color:var(--muted)">The two nights trade dinners. Your grocery list stays the same.</p>'+
+   DAYS.map(function(D,k){return k===i?'':'<button class="mrow" data-k="'+k+'"><b>'+D.full+'</b><span>'+R(k).name+'</span></button>'}).join('')+'<button class="btn" style="width:100%;margin-top:10px" data-x="1">Never mind</button></div>';
+  root.appendChild(w);w.onclick=function(e){var t=e.target.closest('[data-k],[data-x]');if(!t&&e.target!==w)return;w.remove();if(t&&t.dataset.k)moveNight(i,+t.dataset.k)}}
+function orderNote(){var n=$('jm-ordnote'),moved=ord().some(function(k,i){return k!==i});n.style.display=moved?'block':'none'}
+$('jm-ordnote').onclick=function(e){e.preventDefault();var o;for(var i=0;i<DAYS.length;i++){o=ord();var j=o.indexOf(i);if(j!==i)moveNight(i,j,true)}
+  delete st.ord;applyOrder();save();track('planner_reset_order');tonight();tabs();pick(idx);picker();list();calRow();madeCount();orderNote();toast('Back to Julie’s order')};
+
+/* sweet treat of the week (and any special-week bonus) */
+function extras(){var h=EXTRAS.map(function(x){var on=!!(st.ex&&st.ex[x.id]);
+  return '<div class="sh"><h2 class="disp"><span class="scr">'+(x.kind==='bonus'?'bonus pick':'save room!')+'</span>'+x.label+'</h2></div><div class="card xcard"><div class="xph" style="background-image:url(\''+x.img+'\')"><span>'+x.emoji+'</span></div><div class="xbody"><div class="disp xnm">'+x.name+'</div><div class="xmeta">⏱ '+x.time+(x.rate?' · ★ '+x.rate:'')+'</div><p>'+x.line+'</p>'+
+   '<div class="xbtns"><a class="btn p" href="'+x.url+'" target="_blank" rel="noopener">Get the recipe</a><button class="btn'+(on?' made':' s')+'" data-x="'+x.id+'">'+(on?'Added ✓':'+ Add to my list')+'</button></div></div></div>'}).join('');
+  $('jm-extras').innerHTML=h;[].forEach.call($('jm-extras').querySelectorAll('[data-x]'),function(b){b.onclick=function(){var id=b.dataset.x,x=EXTRAS.filter(function(e){return e.id===id})[0];if(!st.ex)st.ex={};
+    st.ex[id]=!st.ex[id];save();track(st.ex[id]?'planner_add_extra':'planner_remove_extra',{recipe:x.name,kind:x.kind||'dessert'});extras();picker();list();toast(st.ex[id]?x.name+' added to your list!':x.name+' removed from your list')}})}
+
+/* calendar (Google Calendar links) */
+function calRow(){
+  var p=function(n){return (n<10?'0':'')+n};
+  function link(day,h,m,dur,title,details){var st=day+'T'+p(h)+p(m)+'00',e=new Date(2000,0,1,h,m+dur),en=day+'T'+p(e.getHours())+p(e.getMinutes())+'00';
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates='+st+'/'+en+'&details='+encodeURIComponent(details)}
+  var h='';DAYS.forEach(function(D0,i){if(!st.sel[i])return;var D=R(i);h+='<a target="_blank" rel="noopener" href="'+link(D.ymd,17,30,60,'Dinner: '+D.name+(sidesOf(i).length?' + '+sidesOf(i).map(function(x){return SIDES[x][0]}).join(' + '):''),D.line+(D.url?'\n'+D.url:''))+'">'+D.d+'</a>'});
+  DAYS.forEach(function(D0,i){var cp=R(i);if(!cp.start||!st.sel[i])return;var a=cp.startAt;
+    h+='<a class="wide" target="_blank" rel="noopener" href="'+link(cp.ymd,a[0],a[1],15,'Start the crock pot! ('+cp.name+')','It needs about '+a[2]+' to be ready for dinner.\n'+cp.url)+'">'+cp.d+' '+(a[0]>12?a[0]-12:a[0])+':'+p(a[1])+(a[0]>=12?' pm':' am')+' crock pot reminder</a>'});
+  $('jm-calrow').innerHTML=h;
+}
+
+/* confetti */
+var colors=['#2C5B6D','#B6D3C7','#F3B09E','#F3BC69','#C0D8DD'];
+function canvas(){var c=document.createElement('canvas');c.className='conf';root.appendChild(c);c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;return c}
+function run(parts){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var c=canvas(),x=c.getContext('2d'),r=devicePixelRatio,t=0;
+  (function f(){x.clearRect(0,0,c.width,c.height);t++;parts.forEach(function(p){p.vy+=.25;p.x+=p.vx;p.y+=p.vy;p.a+=p.va;x.save();x.translate(p.x*r,p.y*r);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.s*r/2,-p.s*r/4,p.s*r,p.s*r/2);x.restore()});
+   if(t<160)requestAnimationFrame(f);else c.remove()})()}
+function burst(cx,cy){var a=[];for(var i=0;i<40;i++){var ang=Math.random()*Math.PI*2,sp=3+Math.random()*6;a.push({x:cx||innerWidth/2,y:cy||innerHeight/2,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-4,a:0,va:Math.random()*.3,s:6+Math.random()*6,c:colors[i%5]})}run(a)}
+function rain(){var a=[];for(var i=0;i<140;i++)a.push({x:Math.random()*innerWidth,y:-20-Math.random()*innerHeight*.6,vx:Math.random()*2-1,vy:Math.random()*3,a:0,va:Math.random()*.2,s:7+Math.random()*7,c:colors[i%5]});run(a)}
+
+applyOrder();tonight();tabs();pick(idx);madeCount();picker();list();calRow();orderNote();extras();
+})();
+</script>
+<!-- ===== END JET MEAL PLAN ===== -->
+</body>
+</html>
