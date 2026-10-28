@@ -1,5 +1,45 @@
 [
  {
+  "week": "2026-11-02",
+  "label": "November 2 to 8",
+  "url": "/2026-11-02/",
+  "dinners": [
+   "One Pot Cheeseburger Pasta",
+   "Million Dollar Chicken Casserole",
+   "Slow Cooker King Ranch Chicken Soup",
+   "Baked Pork Chops and Rice",
+   "Chicken Bacon Ranch Wraps",
+   "Ground Beef and Potato Casserole",
+   "Stuffed Turkey Breast"
+  ],
+  "slugs": [
+   "cheeseburger-pasta",
+   "million-dollar-chicken-casserole",
+   "slow-cooker-king-ranch-chicken-soup",
+   "baked-pork-chops-and-rice",
+   "chicken-bacon-ranch-wraps",
+   "ground-beef-and-potato-casserole",
+   "stuffed-turkey-breast"
+  ],
+  "swaps": [
+   "hamburger-and-zucchini-skillet",
+   "hamburger-stroganoff",
+   "air-fryer-chicken-parmesan",
+   "cheesy-chicken-broccoli-and-rice-casserole",
+   "crock-pot-white-chicken-chili",
+   "crock-pot-chicken-and-noodles",
+   "parmesan-crusted-pork-chops",
+   "one-pan-parmesan-pork-chops-and-veggies-recipe",
+   "chicken-quesadilla",
+   "french-dip-sandwiches",
+   "hamburger-wild-rice-casserole",
+   "swedish-meatballs",
+   "crock-pot-turkey-breast",
+   "baked-chicken-legs"
+  ],
+  "dessert": "peanut-butter-cornflake-cookies"
+ },
+ {
   "week": "2026-10-26",
   "label": "October 26 to November 1",
   "url": "/2026-10-26/",
