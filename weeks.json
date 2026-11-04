@@ -1,5 +1,45 @@
 [
  {
+  "week": "2026-11-09",
+  "label": "November 9 to 15",
+  "url": "/2026-11-09/",
+  "dinners": [
+   "Chicken and Corn Chowder",
+   "Bacon Wrapped Pork Tenderloin",
+   "Crockpot Spaghetti",
+   "Cheesy Meatloaf",
+   "Ham and Cheese Sliders",
+   "Parmesan Crusted Tilapia",
+   "No Peek Beef Tips"
+  ],
+  "slugs": [
+   "chicken-and-corn-chowder",
+   "bacon-wrapped-pork-tenderloin",
+   "crock-pot-italian-sausage-spaghetti",
+   "cheesy-meatloaf",
+   "ham-and-cheese-sliders",
+   "parmesan-crusted-tilapia",
+   "no-peek-beef-tips"
+  ],
+  "swaps": [
+   "wild-rice-soup",
+   "chicken-pot-pie-soup-recipe",
+   "air-fryer-pork-tenderloin",
+   "shake-and-bake-pork-chops",
+   "crock-pot-pizza-pasta",
+   "slow-cooker-lasagna",
+   "salisbury-steak",
+   "homemade-hamburger-helper",
+   "cheeseburger-sliders",
+   "sub-in-a-tub-sliders",
+   "shrimp-scampi-with-linguini",
+   "air-fryer-shrimp",
+   "mississippi-pot-roast-crock-pot",
+   "crock-pot-ranch-roast"
+  ],
+  "dessert": "lace-cookies"
+ },
+ {
   "week": "2026-11-02",
   "label": "November 2 to 8",
   "url": "/2026-11-02/",
