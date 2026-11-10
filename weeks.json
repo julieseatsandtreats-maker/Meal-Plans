@@ -1,5 +1,45 @@
 [
  {
+  "week": "2026-11-16",
+  "label": "November 16 to 22",
+  "url": "/2026-11-16/",
+  "dinners": [
+   "Beef Cabbage Soup",
+   "Shrimp Enchiladas",
+   "Crockpot Chicken Parmesan",
+   "Cheesy Ham Casserole",
+   "Patty Melt",
+   "Baked Chicken Thighs",
+   "Chicken Stew"
+  ],
+  "slugs": [
+   "beef-cabbage-soup",
+   "shrimp-enchiladas",
+   "slow-cooker-chicken-parmesan",
+   "ham-cheese-bowties",
+   "patty-melt",
+   "baked-chicken-thighs",
+   "chicken-stew"
+  ],
+  "swaps": [
+   "hamburger-soup",
+   "hamburger-macaroni-soup",
+   "baja-shrimp-tacos",
+   "shrimp-penne-with-garlic-sauce",
+   "crock-pot-olive-garden-chicken-pasta",
+   "crock-pot-chicken-cacciatore",
+   "tempting-tortellini-ham",
+   "ham-and-spinach-casserole",
+   "large-batch-sloppy-joes",
+   "mushroom-swiss-burger",
+   "honey-garlic-chicken-drumsticks-recipe",
+   "air-fryer-chicken-thighs",
+   "chicken-and-dumpling-casserole",
+   "chicken-gnocchi-soup"
+  ],
+  "dessert": "oatmeal-cookies"
+ },
+ {
   "week": "2026-11-09",
   "label": "November 9 to 15",
   "url": "/2026-11-09/",
