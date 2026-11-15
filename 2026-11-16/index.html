@@ -190,6 +190,28 @@
 .jetmp canvas.conf{position:fixed;inset:0;pointer-events:none;z-index:98;width:100vw;height:100vh}
 @media (prefers-reduced-motion:reduce){.jetmp *{transition:none!important}}
 @media print{.jetmp .hero,.jetmp .tonight,.jetmp #jm-days,.jetmp .tabs,.jetmp .card,.jetmp .gtools,.jetmp .tile,.jetmp .foot,.jetmp .bar,.jetmp .bartxt{display:none!important}.jetmp .sec{break-inside:avoid}}
+.jetmp .morebtn{width:100%;margin-top:8px;border:2px dashed var(--teal);background:transparent;color:var(--head);border-radius:14px;padding:11px;font:800 13.5px Montserrat,system-ui,sans-serif;cursor:pointer}
+.jetmp .lsheet{align-items:flex-end}
+.jetmp .lbox{max-width:620px;height:92vh;height:92dvh;display:flex;flex-direction:column;padding-bottom:0;box-sizing:border-box}
+.jetmp .lhead{display:flex;gap:10px;align-items:flex-start}
+.jetmp .lhead p{margin:4px 0 0;font-size:13.5px;color:var(--muted);line-height:1.4}
+.jetmp .lx{margin-left:auto;border:0;background:var(--chip);color:var(--head);border-radius:999px;width:38px;height:38px;font-size:16px;font-weight:800;flex:0 0 auto;cursor:pointer}
+.jetmp .lsrch{width:100%;box-sizing:border-box;margin-top:12px;border:2px solid var(--rule);border-radius:14px;padding:11px 14px;font:600 16px Montserrat,system-ui,sans-serif;background:var(--chip);color:var(--ink)}
+.jetmp .lcats{display:flex;flex-wrap:wrap;gap:6px;padding:10px 0 10px;flex:0 0 auto}
+.jetmp .lcats::-webkit-scrollbar{display:none}
+.jetmp .lcat{flex:0 0 auto;border:0;border-radius:999px;padding:7px 11px;background:var(--chip);color:var(--head);font:800 12.5px Montserrat,system-ui,sans-serif;cursor:pointer}
+.jetmp .lcat.on{background:var(--teal);color:#fff}
+.jetmp .lgrid{flex:1;min-height:0;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;grid-auto-rows:max-content;align-content:start;padding:2px 0 calc(18px + env(safe-area-inset-bottom,0px));-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.jetmp .lcard{background:var(--chip);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-height:max-content}
+.jetmp .lph{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:var(--blue);font-size:38px;text-decoration:none;overflow:hidden}
+.jetmp .lph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.jetmp .lbd{padding:8px 10px 10px;display:flex;flex-direction:column;gap:4px;flex:1}
+.jetmp .lbd b{font-size:13.5px;line-height:1.25;color:var(--head)}
+.jetmp .lbd small{font-size:11.5px;color:var(--muted);font-weight:600}
+.jetmp .lbd .swbtn{margin-top:auto;cursor:pointer}
+.jetmp .lbd .swbtn[disabled]{background:var(--peach);color:#2C5B6D;cursor:default}
+.jetmp .lmsg{grid-column:1/-1;text-align:center;color:var(--muted);font-size:14px;padding:24px 8px}
+@media(min-width:560px){.jetmp .lgrid{grid-template-columns:1fr 1fr 1fr}}
 </style>
 
 <div class="jetmp" id="jetmp">
@@ -282,7 +304,7 @@ function applyOrder(){var o=ord();o.forEach(function(k,i){DAYS[i]=Object.assign(
 function R(i){var D=DAYS[i],s=st.sw&&st.sw[i],x=s?SW[i].filter(function(o){return o.id===s})[0]:null;if(!x)return D;
   return {d:D.d,full:D.full,date:D.date,mon:D.mon,ymd:D.ymd,c:D.c,id:x.id,name:x.name,url:U+x.slug+'/',time:x.time,rate:x.rate,emoji:x.emoji,img:x.img,line:x.line,start:x.start,startAt:x.startAt,sides:D.sides,swapped:true,
    tip:'Swapped in! Your grocery list already has everything you need for this one.'}}
-function swapOpts(i){var cur=R(i).id,o=SW[i].filter(function(x){return x.id!==cur}).map(function(x){return {id:x.id,name:x.name,url:U+x.slug+'/'}});
+function swapOpts(i){var cur=R(i).id,o=SW[i].filter(function(x){return x.id!==cur&&!x.lib}).map(function(x){return {id:x.id,name:x.name,url:U+x.slug+'/'}});
   if(cur!==DAYS[i].id)o.unshift({id:DAYS[i].id,name:DAYS[i].name,url:DAYS[i].url,back:true});return o}
 function doSwap(i,id){var was=R(i).name;track('planner_swap',{day:DAYS[i].d,from:was,to:id===DAYS[i].id?DAYS[i].name:(SW[i].filter(function(o){return o.id===id})[0]||{}).name});if(!st.sw)st.sw={};st.sw[i]=(id===DAYS[i].id)?null:id;save();
   tonight();tabs();pick(i);picker();list();calRow();madeCount();toast(R(i).name+' swapped in. List updated!')}
@@ -300,14 +322,54 @@ var DN=DAYS.map(function(D){return D.d});
 function fillQty(tpl,t){var n=function(k){return Math.ceil(t/k-1e-9)};
   tpl=tpl.replace(/\{t\}/g,frac(t)).replace(/\{n24\}/g,n(24)).replace(/\{n4\}/g,n(4)).replace(/\{n2\}/g,n(2)).replace(/\{n\}/g,n(1));
   return tpl.replace(/(\d+(?: [½¼¾])?|[½¼¾])([^\d(]*?)\((e?s)\)/g,function(m,num,mid,suf){var pl=/^[½¼¾]$/.test(num)?false:(parseInt(num,10)>1||/ [½¼¾]/.test(num));return num+mid+(pl?suf:'')})}
-var ITEMS=PLAN.items.map(function(x){return {k:x.k,s:x.s,need:x.need,wm:x.wm||null,f:function(t,u){var nm=x.name;
+var _lsig=function(x){return (x.tiers?JSON.stringify(x.tiers):x.name||'').toLowerCase().replace(/\((e?s)\)/g,'').replace(/\blbs\b/g,'lb').replace(/\bcups\b/g,'cup')};
+function mkItem(x){return {k:x.k,s:x.s,need:x.need,wm:x.wm||null,sig:_lsig(x),f:function(t,u){var nm=x.name;
   if(x.tiers){nm=x.tiers[x.tiers.length-1][1];for(var j=0;j<x.tiers.length;j++){if(t<=x.tiers[j][0]+1e-9){nm=x.tiers[j][1];break}}}
-  return [fillQty(nm,t),x.note?fillQty(x.note,t).replace('{days}',u):'']}}});
+  return [fillQty(nm,t),x.note?fillQty(x.note,t).replace('{days}',u):'']}}}
+var ITEMS=PLAN.items.map(mkItem);
 var EXTRAS=[PLAN.dessert,PLAN.bonus].filter(Boolean).map(function(x){return Object.assign({},x,{url:U+x.slug+'/',img:_img(x.img)})});
 var SIDES=PLAN.sides;var SLUG2SD={};for(var _k in SIDES)SLUG2SD[SIDES[_k][1]]=_k;
 function sidesOf(i){return (st.sd&&st.sd[i])||[]}
 function toggleSide(i,sid){if(!st.sd)st.sd={};var a=sidesOf(i).slice(),j=a.indexOf(sid);if(j>-1)a.splice(j,1);else a.push(sid);st.sd[i]=a;save();track(j>-1?'planner_remove_side':'planner_add_side',{day:DAYS[i].d,side:SIDES[sid][0]});
   pick(i);picker();list();tonight();calRow();toast(j>-1?SIDES[sid][0]+' removed from your list':SIDES[sid][0]+' added to your list!')}
+
+/* ===== "More recipes": any dinner from past plans (library.json at the site root) ===== */
+var LIB=window.JET_LIB||null,LIBP=null,LREG={};
+function getLib(){if(LIB)return Promise.resolve(LIB);if(!LIBP)LIBP=fetch('/library.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('lib');return r.json()}).then(function(j){LIB=j;return j},function(e){LIBP=null;throw e});return LIBP}
+function libId(slug){return 'lb_'+slug}
+function regLib(r){var id=libId(r.slug);if(LREG[id])return LREG[id];
+  r.items.forEach(function(x){var sg=_lsig(x),k2=x.k+'~'+sg.replace(/[^a-z0-9]/g,'').slice(0,30),hit=null;
+    ITEMS.forEach(function(it){if(!hit&&it.k===x.k&&(it.sig===sg||(sg.indexOf('{')<0&&it.sig.indexOf('{')<0)))hit=it});
+    if(!hit)ITEMS.forEach(function(it){if(!hit&&it.k===k2)hit=it});
+    if(!hit){var src={};for(var f in x)if(f!=='a')src[f]=x[f];src.k=ITEMS.some(function(it){return it.k===x.k})?k2:x.k;src.need={};hit=mkItem(src);ITEMS.push(hit)}
+    hit.need[id]=(hit.need[id]||0)+x.a});
+  return LREG[id]={id:id,lib:true,name:r.name,slug:r.slug,img:_img(r.img),time:r.time,rate:r.rate||'',emoji:r.emoji||'🍽️',line:r.line||'',start:!!r.start,startAt:r.start||null}}
+function libPut(i,r){if(!r)return false;var o=regLib(r);if(SW[i].indexOf(o)<0)SW[i].push(o);if(!st.lib)st.lib={};st.lib[o.id]=r;return o}
+function libPrune(){if(!st.lib)return;var keep={};for(var i in st.sw)if(st.sw[i])keep[st.sw[i]]=1;for(var k in st.lib)if(!keep[k])delete st.lib[k]}
+function libBoot(){var ids=[];DAYS.forEach(function(D,i){var s=st.sw&&st.sw[i];if(s&&/^lb_/.test(s))ids.push(i)});if(!ids.length)return;
+  var later=ids.filter(function(i){return !libPut(i,st.lib&&st.lib[st.sw[i]])});
+  if(later.length)getLib().then(function(L){later.forEach(function(i){libPut(i,L.recipes.filter(function(r){return libId(r.slug)===st.sw[i]})[0])});
+    save();tonight();tabs();pick(cur);picker();list();calRow();madeCount()}).catch(function(){})}
+var LCATS=[['all','All'],['chicken','Chicken'],['beef','Beef'],['pork','Pork & ham'],['seafood','Seafood'],['crockpot','Crock pot'],['pasta','Pasta'],['soup','Soups & chili'],['casserole','Casseroles'],['mexican','Mexican'],['sandwich','Sandwiches'],['quick','30 min or less']];
+function _rc(r){var m=/\((\d+)\)/.exec(r.rate||'');return m?+m[1]:0}
+function libSheet(i){track('planner_library_open',{day:DAYS[i].d});
+  var w=document.createElement('div');w.className='msheet lsheet';var ov=document.body.style.overflow;document.body.style.overflow='hidden';
+  w.innerHTML='<div class="mbox lbox" role="dialog" aria-label="More recipes"><div class="lhead"><div><div class="disp" style="font-size:24px;color:var(--head);line-height:1.05">More of my recipes for '+DAYS[i].full+'</div><p>Every dinner from my past meal plans. Tap Swap in and your grocery list updates automatically.</p></div><button class="lx" data-x="1" aria-label="Close">✕</button></div>'+
+   '<input class="lsrch" type="search" placeholder="Search tacos, soup, meatballs..." aria-label="Search recipes"><div class="lcats">'+LCATS.map(function(c,j){return '<button class="lcat'+(j?'':' on')+'" data-c="'+c[0]+'">'+c[1]+'</button>'}).join('')+'</div><div class="lgrid"><p class="lmsg">Loading recipes...</p></div></div>';
+  root.appendChild(w);var grid=w.querySelector('.lgrid'),inp=w.querySelector('.lsrch'),cat='all',L=null;
+  function close(){document.body.style.overflow=ov;w.remove()}
+  var onweek={};PLAN.days.forEach(function(d){onweek[d.slug]=1;(d.swaps||[]).forEach(function(o){onweek[o.slug]=1})});
+  function draw(){if(!L)return;var q=inp.value.trim().toLowerCase(),used={};DAYS.forEach(function(D,k){var x=R(k);if(x.lib||(x.id&&/^lb_/.test(x.id)))used[x.id]=D.d});
+    var rs=L.recipes.filter(function(r){return !onweek[r.slug]&&(cat==='all'||(r.tags||[]).indexOf(cat)>-1)&&(!q||q.split(/\s+/).every(function(wd){wd=wd.replace(/[^a-z0-9]/g,'');return (r.name+r.slug+(r.tags||[]).join('')).toLowerCase().replace(/[^a-z0-9]/g,'').indexOf(wd)>-1}))});
+    rs.sort(function(a,b){return _rc(b)-_rc(a)||a.name.localeCompare(b.name)});
+    grid.innerHTML=rs.length?rs.map(function(r){var id=libId(r.slug),on=used[id],u=U+r.slug+'/',im=_img(r.img);
+      return '<div class="lcard"><a class="lph" href="'+u+'" target="_blank" rel="noopener" aria-label="'+r.name.replace(/"/g,'')+' recipe">'+(r.emoji||'🍽️')+(im?'<img loading="lazy" alt="" src="'+im+'" onerror="this.remove()">':'')+'</a><div class="lbd"><b>'+r.name+'</b><small>⏱ '+r.time+(r.rate?' · ★ '+r.rate:'')+'</small><button class="swbtn" data-l="'+r.slug+'"'+(on?' disabled':'')+'>'+(on?'On '+on+' ✓':'Swap in')+'</button></div></div>'}).join(''):'<p class="lmsg">No recipes match that. Try another word or tap All.</p>'}
+  getLib().then(function(j){L=j;draw()}).catch(function(){grid.innerHTML='<p class="lmsg">Couldn’t load more recipes right now. Check your connection and try again.</p>'});
+  var tq;inp.oninput=function(){clearTimeout(tq);tq=setTimeout(function(){draw();if(inp.value.trim().length>2)track('planner_library_search',{q:inp.value.trim().slice(0,40)})},200)};
+  w.onclick=function(e){if(e.target===w||e.target.closest('[data-x]'))return close();
+    var c=e.target.closest('[data-c]');if(c){cat=c.dataset.c;[].forEach.call(w.querySelectorAll('.lcat'),function(b){b.classList.toggle('on',b===c)});grid.scrollTop=0;draw();return}
+    var b=e.target.closest('[data-l]');if(b&&!b.disabled){var r=L.recipes.filter(function(x){return x.slug===b.dataset.l})[0];if(!r)return;
+      track('planner_library_swap',{day:DAYS[i].d,from:R(i).name,to:r.name});var o=libPut(i,r);close();doSwap(i,o.id);libPrune();save()}}}
 var SECS=[['Meat','teal'],['Deli & bakery','teal'],['Produce','mint'],['Dairy','peach'],['Freezer','blue'],['Pantry','yel'],['Check the cupboard','mint']];
 function shopping(){
   var occ=[];DAYS.forEach(function(D,i){if(!st.sel[i])return;occ.push([R(i).id,i]);sidesOf(i).forEach(function(x){occ.push([x,i])})});EXTRAS.forEach(function(x){if(st.ex&&st.ex[x.id])occ.push([x.id,null])});
@@ -331,7 +393,7 @@ root.addEventListener('click',function(e){var a=e.target.closest&&e.target.close
 var KEY='jet-mealplan-2026-11-16',st={g:{},m:{},sel:DAYS.map(function(){return true}),sw:{}};
 try{var _s=JSON.parse(localStorage.getItem(KEY));if(_s){st=_s;if(!st.sel)st.sel=DAYS.map(function(){return true});if(!st.sw)st.sw={}}}catch(e){}
 function nSel(){return st.sel.filter(Boolean).length}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function save(){libPrune();try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
 function _sw(o,a,b){if(!o)return;var x=o[a];o[a]=o[b];o[b]=x;if(o[a]===undefined)delete o[a];if(o[b]===undefined)delete o[b]}
 /* load a "Save my plan" link (#plan=...) */
 (function(){var m=location.hash.match(/#plan=([\w-]+)/);if(!m)return;
@@ -373,6 +435,7 @@ function pick(i){
    '<p class="line">'+D.line+'</p>'+
    (D.sides?'<div class="xt">Great with (tap Add to put it on your grocery list)</div><div class="swl">'+D.sides.map(function(x){var sid=SLUG2SD[x[1]],on=sidesOf(i).indexOf(sid)>-1;return '<div class="swr"><a href="'+U+x[1]+'/" target="_blank" rel="noopener">'+x[0]+'</a><button class="swbtn'+(on?' on':'')+'" data-sd="'+sid+'">'+(on?'Added ✓':'+ Add')+'</button></div>'}).join('')+'</div>':'')+
    '<div class="xt">'+(D.swapped?'Change your mind?':'Not feeling it? Swap in')+'</div><div class="swl">'+swapOpts(i).map(function(o){return '<div class="swr"><a href="'+o.url+'" target="_blank" rel="noopener">'+o.name+'</a><button class="swbtn" data-sw="'+o.id+'">'+(o.back?'Switch back':'Swap in')+'</button></div>'}).join('')+'</div>'+
+   '<button class="morebtn" data-a="lib">🔎 More recipes: pick any dinner from my past plans</button>'+
    '<div class="acts">'+
    (D.off?'':'<a class="btn p" href="'+D.url+'" target="_blank" rel="noopener">Get the recipe</a>')+
    '<button class="btn s" data-a="flip">Julie’s tip</button>'+
@@ -389,6 +452,7 @@ function pick(i){
     else if(b.dataset.a==='move'){moveSheet(i)}
     else if(b.dataset.sw){doSwap(i,b.dataset.sw)}
     else if(b.dataset.sd){toggleSide(i,b.dataset.sd)}
+    else if(b.dataset.a==='lib'){libSheet(i)}
     else{st.m[i]=!st.m[i];save();tabs();pick(i);madeCount(true);if(st.m[i])track('planner_made_it',{day:DAYS[i].d,recipe:R(i).name});if(st.m[i]){burst(e.clientX,e.clientY);setTimeout(function(){ratePrompt(D)},700)}}
   }});
 }
@@ -590,7 +654,7 @@ function run(parts){if(matchMedia('(prefers-reduced-motion: reduce)').matches)re
 function burst(cx,cy){var a=[];for(var i=0;i<40;i++){var ang=Math.random()*Math.PI*2,sp=3+Math.random()*6;a.push({x:cx||innerWidth/2,y:cy||innerHeight/2,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp-4,a:0,va:Math.random()*.3,s:6+Math.random()*6,c:colors[i%5]})}run(a)}
 function rain(){var a=[];for(var i=0;i<140;i++)a.push({x:Math.random()*innerWidth,y:-20-Math.random()*innerHeight*.6,vx:Math.random()*2-1,vy:Math.random()*3,a:0,va:Math.random()*.2,s:7+Math.random()*7,c:colors[i%5]});run(a)}
 
-applyOrder();tonight();tabs();pick(idx);madeCount();picker();list();calRow();orderNote();extras();
+applyOrder();libBoot();tonight();tabs();pick(idx);madeCount();picker();list();calRow();orderNote();extras();
 })();
 </script>
 <!-- ===== END JET MEAL PLAN ===== -->
