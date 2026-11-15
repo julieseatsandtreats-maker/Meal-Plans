@@ -336,6 +336,7 @@ function toggleSide(i,sid){if(!st.sd)st.sd={};var a=sidesOf(i).slice(),j=a.index
 /* ===== "More recipes": any dinner from past plans (library.json at the site root) ===== */
 var LIB=window.JET_LIB||null,LIBP=null,LREG={};
 function getLib(){if(LIB)return Promise.resolve(LIB);if(!LIBP)LIBP=fetch('/library.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('lib');return r.json()}).then(function(j){LIB=j;return j},function(e){LIBP=null;throw e});return LIBP}
+function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 function libId(slug){return 'lb_'+slug}
 function regLib(r){var id=libId(r.slug);if(LREG[id])return LREG[id];
   r.items.forEach(function(x){var sg=_lsig(x),k2=x.k+'~'+sg.replace(/[^a-z0-9]/g,'').slice(0,30),hit=null;
@@ -354,7 +355,7 @@ var LCATS=[['all','All'],['chicken','Chicken'],['beef','Beef'],['pork','Pork & h
 function _rc(r){var m=/\((\d+)\)/.exec(r.rate||'');return m?+m[1]:0}
 function libSheet(i){track('planner_library_open',{day:DAYS[i].d});
   var w=document.createElement('div');w.className='msheet lsheet';var ov=document.body.style.overflow;document.body.style.overflow='hidden';
-  w.innerHTML='<div class="mbox lbox" role="dialog" aria-label="More recipes"><div class="lhead"><div><div class="disp" style="font-size:24px;color:var(--head);line-height:1.05">More of my recipes for '+DAYS[i].full+'</div><p>Every dinner from my past meal plans. Tap Swap in and your grocery list updates automatically.</p></div><button class="lx" data-x="1" aria-label="Close">✕</button></div>'+
+  w.innerHTML='<div class="mbox lbox" role="dialog" aria-label="More recipes"><div class="lhead"><div><div class="disp" style="font-size:24px;color:var(--head);line-height:1.05">More of my recipes for '+DAYS[i].full+'</div><p>Tap Swap in to replace <b>'+esc(R(i).name)+'</b> on '+DAYS[i].full+'. Your grocery list updates automatically.</p></div><button class="lx" data-x="1" aria-label="Close">✕</button></div>'+
    '<input class="lsrch" type="search" placeholder="Search tacos, soup, meatballs..." aria-label="Search recipes"><div class="lcats">'+LCATS.map(function(c,j){return '<button class="lcat'+(j?'':' on')+'" data-c="'+c[0]+'">'+c[1]+'</button>'}).join('')+'</div><div class="lgrid"><p class="lmsg">Loading recipes...</p></div></div>';
   root.appendChild(w);var grid=w.querySelector('.lgrid'),inp=w.querySelector('.lsrch'),cat='all',L=null;
   function close(){document.body.style.overflow=ov;w.remove()}
