@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}body{margin:0;background:var(--page-bg,#F4F2ED)}</style>
+<meta name="description" content="Julie’s Thanksgiving dinner planner: pick your menu, get a grocery list that builds itself and a countdown so everything is hot at the same time.">
+<meta property="og:title" content="My Thanksgiving Dinner Planner | Julie’s Eats &amp; Treats">
+<meta property="og:description" content="Pick your Thanksgiving menu and get your grocery list and cooking countdown.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CND2QDGF7C"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CND2QDGF7C');</script>
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/julie-headshot.jpg">
+<meta name="theme-color" content="#2C5B6D">
+<title>Thanksgiving Dinner Planner | Julie’s Eats &amp; Treats</title>
+</head>
+<body>
+<!-- ===== JET THANKSGIVING PLANNER ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2C5B6D;--mint:#B6D3C7;--peach:#F3B09E;--yel:#F3BC69;--blue:#C0D8DD;--tan:#F4F2ED;--ink:#1A1A1A;--card:#fff;--head:#2C5B6D;--muted:#555;--soft:#777;--rule:#eee;--chip:#F4F2ED;--page-bg:#F4F2ED;--rust:#B5562F;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tan:#14232A;--ink:#F4F2ED;--card:#1E3640;--head:#B6D3C7;--muted:#C9D6DA;--soft:#9FB3BA;--rule:#2C4752;--chip:#14232A;--page-bg:#14232A;--rust:#F3B09E;color-scheme:dark}}
+:root[data-theme="dark"]{--tan:#14232A;--ink:#F4F2ED;--card:#1E3640;--head:#B6D3C7;--muted:#C9D6DA;--soft:#9FB3BA;--rule:#2C4752;--chip:#14232A;--page-bg:#14232A;--rust:#F3B09E;color-scheme:dark}
+.jtg{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--tan);max-width:620px;margin:0 auto;padding:0 0 48px;position:relative;-webkit-tap-highlight-color:transparent}
+.jtg *{box-sizing:border-box}
+.jtg h1,.jtg h2,.jtg h3,.jtg p{margin:0}
+.jtg button,.jtg select,.jtg input{font:inherit}
+.jtg button{cursor:pointer}
+.jtg a{color:inherit}
+.jtg :focus-visible{outline:3px solid var(--yel);outline-offset:2px}
+.jtg .disp{font-family:Oswald,Impact,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+.jtg .scr{font-family:"Dancing Script",cursive;font-weight:700}
+.jtg .allweeks{display:inline-block;margin:10px 16px 0;font-weight:800;font-size:14px;color:var(--head);text-decoration:none}
+.jtg .hero{background:var(--teal);color:#fff;padding:30px 22px 34px;position:relative;border-radius:0 0 40px 40px;overflow:hidden;margin-top:8px}
+.jtg .blob{position:absolute;border-radius:50%;opacity:.25}
+.jtg .hi{display:flex;gap:16px;align-items:center;position:relative}
+.jtg .selfie{flex:0 0 92px;height:92px;border-radius:50%;border:5px solid #fff;background:var(--peach) center/cover;transform:rotate(-4deg);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.jtg .hey{font-size:34px;color:var(--yel);line-height:1}
+.jtg .hero h1{font-size:clamp(36px,9.5vw,54px);line-height:.98;margin-top:16px;position:relative}
+.jtg .hero p{font-size:15px;line-height:1.55;margin-top:12px;position:relative;opacity:.95}
+.jtg .pill{display:inline-block;background:var(--peach);color:var(--teal);font-weight:800;font-size:12px;padding:7px 12px;border-radius:999px;margin-top:14px;position:relative}
+.jtg .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin:14px 12px 0;background:var(--card);border-radius:18px;padding:10px 10px 10px 14px;display:flex;gap:8px;align-items:center;box-shadow:0 8px 24px rgba(44,91,109,.18)}
+.jtg .bar b{display:block;font-size:14px;color:var(--head)}
+.jtg .bar small{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.jtg .bar .grow{flex:1;min-width:0}
+.jtg .bar a{flex:0 0 auto;text-decoration:none;background:var(--teal);color:#fff;font-weight:800;font-size:12.5px;padding:9px 12px;border-radius:999px}
+.jtg .bar a.s{background:var(--chip);color:var(--head)}
+.jtg .sh{margin:30px 16px 12px}
+.jtg .sh h2{font-size:30px;color:var(--head);line-height:1}
+.jtg .sh .scr{font-size:23px;color:var(--rust);display:block;margin-bottom:2px}
+.jtg .sh p{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+.jtg .list{display:flex;flex-direction:column;gap:10px;margin:0 12px}
+.jtg .dish{background:var(--card);border-radius:22px;padding:10px;display:flex;gap:12px;align-items:flex-start;border:2px solid transparent;transition:border-color .15s,opacity .15s}
+.jtg .dish.on{border-color:var(--mint)}
+.jtg .dish.off .ph{filter:saturate(.35);opacity:.7}
+.jtg .ph{flex:0 0 92px;height:92px;border-radius:16px;background:var(--blue) center/cover;display:flex;align-items:center;justify-content:center;font-size:36px;text-decoration:none;position:relative;overflow:hidden}
+.jtg .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.jtg .db{flex:1;min-width:0}
+.jtg .db h3{font-size:16.5px;line-height:1.2;color:var(--head);font-weight:800}
+.jtg .db h3 a{text-decoration:none}
+.jtg .meta{font-size:11.5px;color:var(--muted);font-weight:700;margin-top:3px}
+.jtg .ln{font-size:13.5px;line-height:1.45;margin-top:5px}
+.jtg .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.jtg .tg{border:0;border-radius:999px;padding:8px 12px;font-weight:800;font-size:12.5px;background:var(--chip);color:var(--head)}
+.jtg .tg.on{background:var(--teal);color:#fff}
+.jtg .tg.x2.on{background:var(--yel);color:#2C5B6D}
+.jtg .tg.rc{text-decoration:none}
+.jtg .swp{display:block;margin-top:8px;border:0;background:none;padding:0;color:var(--rust);font-weight:800;font-size:12.5px;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.jtg .card{margin:0 12px;background:var(--card);border-radius:24px;padding:16px}
+.jtg .ctl{display:flex;flex-wrap:wrap;gap:12px}
+.jtg .ctl label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:800;color:var(--head);flex:1 1 140px}
+.jtg .ctl select{border:2px solid var(--rule);border-radius:12px;padding:10px;background:var(--chip);color:var(--ink);font-weight:700;font-size:15px}
+.jtg .day{margin-top:16px}
+.jtg .day h3{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:19px;color:var(--head);display:flex;align-items:baseline;gap:8px}
+.jtg .day h3 small{font-family:Montserrat,sans-serif;text-transform:none;font-size:12px;color:var(--muted);font-weight:700}
+.jtg .task{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--rule);cursor:pointer}
+.jtg .task:last-child{border-bottom:0}
+.jtg .task input{position:absolute;opacity:0;pointer-events:none}
+.jtg .bx{flex:0 0 22px;height:22px;border-radius:7px;border:2.5px solid var(--teal);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.jtg .bx svg{width:13px;opacity:0}
+.jtg .on>.bx{background:var(--teal)}.jtg .on>.bx svg{opacity:1}
+.jtg .task .tm{flex:0 0 70px;font-weight:800;font-size:13px;color:var(--rust);font-variant-numeric:tabular-nums;padding-top:2px}
+.jtg .task .tx{font-size:14px;line-height:1.4}
+.jtg .task.on .tx{text-decoration:line-through;color:var(--soft)}
+.jtg .tip{margin-top:12px;font-size:12.5px;line-height:1.45;color:var(--muted);background:var(--chip);border-radius:14px;padding:10px 12px}
+.jtg .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.jtg .btn{border:0;border-radius:999px;padding:12px 16px;font-weight:800;font-size:13.5px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--chip);color:var(--head)}
+.jtg .btn.p{background:var(--teal);color:#fff}
+.jtg .btn.wm{background:#0071dc;color:#fff;flex:1 0 100%;font-size:15.5px;padding:14px}
+.jtg .prog{margin:14px 12px 4px;height:14px;background:var(--card);border-radius:999px;overflow:hidden}
+.jtg .prog i{display:block;height:100%;width:0;background:var(--mint);transition:width .3s}
+.jtg .progt{margin:0 14px;font-size:13px;font-weight:700;color:var(--head)}
+.jtg .sec{margin:12px 12px 0;background:var(--card);border-radius:22px;padding:12px 14px 4px}
+.jtg .sec h3{display:inline-block;font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:14px;letter-spacing:.5px;padding:4px 12px;border-radius:999px;margin-bottom:4px}
+.jtg .irow{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--rule)}
+.jtg .irow:last-child{border-bottom:0}
+.jtg .it{flex:1;display:flex;gap:10px;align-items:flex-start;padding:10px 0;cursor:pointer;min-width:0}
+.jtg .it input{position:absolute;opacity:0;pointer-events:none}
+.jtg .it .tx{font-size:14.5px;font-weight:700;line-height:1.35}
+.jtg .it .tx small{display:block;font-weight:600;font-size:12px;color:var(--muted);margin-top:2px}
+.jtg .it.on .tx{text-decoration:line-through;color:var(--soft)}
+.jtg.hide-done .irow.done{display:none}
+.jtg .shop{display:flex;gap:4px;flex:0 0 auto}
+.jtg .ic{font-size:11px;font-weight:800;text-decoration:none;border-radius:999px;padding:6px 8px;background:var(--chip);color:var(--head)}
+.jtg .ic.wmi{background:#0071dc;color:#fff}
+.jtg .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;background:var(--teal);color:#fff;font-weight:800;font-size:14px;padding:12px 18px;border-radius:999px;transition:.25s;z-index:60;pointer-events:none;max-width:90vw;text-align:center}
+.jtg .toast.show{opacity:1;transform:translate(-50%,0)}
+.jtg .msheet{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center}
+.jtg .mbox{background:var(--card);color:var(--ink);width:100%;max-width:520px;border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));max-height:85vh;overflow:auto}
+.jtg .mrow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.jtg .foot{margin:30px 16px 0;text-align:center;font-size:13px;color:var(--muted);line-height:1.5}
+.jtg .foot a{font-weight:800;color:var(--head)}
+@media (prefers-reduced-motion:reduce){.jtg *{transition:none!important}}
+</style>
+
+<div class="jtg" id="jtg">
+  <a class="allweeks" href="/">← All meal plans</a>
+  <header class="hero">
+    <span class="blob" style="width:220px;height:220px;background:var(--yel);right:-70px;top:-60px"></span>
+    <span class="blob" style="width:140px;height:140px;background:var(--peach);left:-50px;bottom:-30px"></span>
+    <div class="hi">
+      <div class="selfie" id="tg-selfie" role="img" aria-label="Julie"></div>
+      <div><div class="scr hey">Hey friend!</div><div style="font-weight:700;font-size:14px;margin-top:4px">It’s Julie. Let’s make Thanksgiving easy.</div></div>
+    </div>
+    <h1 class="disp">My Thanksgiving dinner planner</h1>
+    <p>Pick the dishes you’re making and your grocery list builds itself. Then follow the countdown so the turkey, the sides and the rolls all hit the table hot at the same time. Need to feed a crowd? Tap Double it.</p>
+    <span class="pill">Thursday, November 26</span>
+  </header>
+
+  <div class="bar" id="tg-bar"><div class="grow"><b id="tg-count">Your menu</b><small id="tg-count2"></small></div><a href="#tg-plan" class="s">Countdown</a><a href="#tg-list">Grocery list</a></div>
+
+  <div id="tg-menu"></div>
+
+  <div class="sh" id="tg-plan"><span class="scr">no stress</span><h2 class="disp">Your countdown</h2><p>Built from the dishes on your menu. Check things off as you go.</p></div>
+  <div class="card">
+    <div class="ctl">
+      <label for="tg-dinner">Dinner is at<select id="tg-dinner"></select></label>
+      <label for="tg-lbs" id="tg-lbsw">My turkey weighs<select id="tg-lbs"></select></label>
+    </div>
+    <div id="tg-days"></div>
+    <p class="tip" id="tg-tip">Turkey time is an estimate: about 15 minutes per pound at 325°F plus time to brown, so the countdown builds in extra. Always check that the thickest part of the thigh reaches 165°F. Oven tight? Swap in a crock pot side and it frees up room.</p>
+    <div class="btns"><button class="btn p" id="tg-cal">📅 Add countdown to my calendar</button></div>
+  </div>
+
+  <div class="sh" id="tg-list"><span class="scr">let’s shop</span><h2 class="disp">Your grocery list</h2><p>Everything for the dishes on your menu, added up. Check things off as they go in the cart.</p></div>
+  <div class="prog"><i id="tg-prog"></i></div>
+  <p class="progt" id="tg-progt"></p>
+  <div class="card" style="margin-top:12px;padding:12px">
+    <div class="btns" style="margin-top:0">
+      <button class="btn wm" id="tg-walmart">🛒 Add my list to Walmart</button>
+      <button class="btn p" id="tg-share">Text my list</button>
+      <button class="btn" id="tg-print">Print my list</button>
+      <button class="btn" id="tg-hide" aria-pressed="false">Hide checked</button>
+    </div>
+  </div>
+  <div id="tg-groc"></div>
+
+  <p class="foot">Happy Thanksgiving from my family to yours! 🦃<br>All recipes are on <a href="https://www.julieseatsandtreats.com/" target="_blank" rel="noopener">julieseatsandtreats.com</a>.</p>
+  <div class="toast" id="tg-toast" role="status"></div>
+</div>
+<script>
+(function(){
+var PLAN={"id": "thanksgiving-2026", "year": 2026, "date": "2026-11-26", "site": "https://www.julieseatsandtreats.com/", "ga_id": "G-CND2QDGF7C", "dishes": [{"id": "ap_dip", "sec": "app", "name": "Cream Cheese Cranberry Dip", "slug": "cream-cheese-cranberry-dip", "img": "2017/10/Cranberry-Cream-Cheese-Dip-6.jpg", "time": "15 min", "rate": "4.5 (283)", "serves": 12, "emoji": "🍒", "on": true, "line": "Sweet cranberry topping over creamy cream cheese. Scoop it up with crackers and watch it disappear!", "ahead": {"day": "wed", "text": "Make the cranberry topping for the dip and refrigerate."}, "thu": {"kind": "app", "m": 15, "text": "Spread the cream cheese and spoon the cranberry topping over it."}, "alt": null, "mins": 0}, {"id": "ap_meat", "sec": "app", "name": "Cranberry Meatballs", "slug": "cranberry-meatballs", "img": "2025/10/Cranberry-Meatballs-Square-Image.jpg", "time": "4 hrs 10 min (slow cooker)", "rate": "", "serves": 8, "emoji": "🍒", "on": true, "line": "Frozen meatballs in a sweet and tangy cranberry sauce. Just four ingredients and the crock pot does the rest!", "ahead": null, "thu": {"kind": "app", "m": 250, "text": "Start the cranberry meatballs in the crock pot on LOW (4 hours). Keep them on WARM for guests."}, "alt": null, "mins": 0}, {"id": "ap_pin", "sec": "app", "name": "Tortilla Pinwheels", "slug": "tortilla-pinwheels", "img": "2024/10/Tortilla-Pinwheels-Square.jpg", "time": "2 hrs 20 min (with chilling)", "rate": "4.7 (128)", "serves": 50, "emoji": "🌯", "on": false, "line": "Cream cheese, green chiles, olives and cheddar rolled up and sliced. Makes about 50!", "ahead": {"day": "wed", "text": "Roll up the tortilla pinwheels, wrap them and chill overnight. Slice before serving."}, "thu": {"kind": "app", "m": 10, "text": "Slice the pinwheels and set them out."}, "alt": null, "mins": 0}, {"id": "ap_brie", "sec": "app", "name": "Cranberry Brie Bites", "slug": "cranberry-brie-bites", "img": "2026/10/Cranberry-Brie-Bites-Square-Image-.jpg", "time": "27 min", "rate": "5.0 (1)", "serves": 24, "emoji": "🧀", "on": false, "line": "Puff pastry, melty brie and cranberry sauce baked in a mini muffin tin. New on the blog!", "ahead": {"day": "wed", "text": "Move the puff pastry to the fridge to thaw (it needs 24 hours)."}, "thu": {"kind": "app", "m": 30, "text": "Assemble and bake the cranberry brie bites (375°F, about 17 minutes). Serve warm."}, "alt": null, "mins": 0}, {"id": "tk_whole", "sec": "turkey", "name": "Roast Turkey", "slug": "roast-turkey", "img": "2020/11/Roast-Turkey-Recipe-8-of-17.jpg", "time": "about 4¾ hrs", "rate": "5.0 (12)", "serves": 12, "emoji": "🦃", "on": true, "line": "My classic herb butter turkey. A 12 lb bird feeds about 12 people.", "ahead": {"day": "sun", "text": "Move the frozen turkey to the fridge to thaw. Give it several days, longer for a bigger bird."}, "thu": {"kind": "turkey", "text": "Turkey goes in the oven (325°F)."}, "alt": null, "mins": 0}, {"id": "tk_breast", "sec": "turkey", "name": "Roasted Turkey Breast", "slug": "roasted-turkey-breast", "img": "2021/11/Roasted-Turkey-Breast-square.jpg", "time": "1 hr 45 min", "rate": "5.0 (9)", "serves": 8, "emoji": "🍗", "on": false, "line": "Smaller crowd? A 4 to 5 lb bone-in breast is ready in under 2 hours.", "ahead": {"day": "tue", "text": "Move the turkey breast to the fridge to thaw (at least a day for 4 to 5 lbs)."}, "thu": {"kind": "before", "m": 120, "text": "Turkey breast goes in the oven (375°F, about 20 minutes per pound, then rest 15 minutes)."}, "alt": null, "mins": 0}, {"id": "tk_crock", "sec": "turkey", "name": "Crock Pot Turkey Breast", "slug": "crock-pot-turkey-breast", "img": "2023/11/Slow-Cooker-Turkey-Breast-Sliced-1-of-1.jpg", "time": "6 to 7 hrs (slow cooker)", "rate": "5.0 (23)", "serves": 6, "emoji": "🍲", "on": false, "line": "Frees up your whole oven for the sides! Comes with its own gravy.", "ahead": {"day": "tue", "text": "Move the turkey breast to the fridge to thaw (about 24 hours for 5 lbs)."}, "thu": {"kind": "before", "m": 435, "text": "Turkey breast goes in the crock pot on LOW (6 to 7 hours)."}, "alt": null, "mins": 0}, {"id": "gv", "sec": "turkey", "name": "Easy Homemade Gravy", "slug": "easy-homemade-gravy-recipe", "img": "2017/10/Easy-Homemade-Gravy-Main.jpg", "time": "20 min", "rate": "4.3 (53)", "serves": 12, "emoji": "🥄", "on": true, "line": "Made with your turkey drippings (or broth) in 20 minutes.", "ahead": null, "thu": {"kind": "before", "m": 20, "text": "Make the gravy with the turkey drippings (or broth) while the turkey rests."}, "alt": null, "mins": 0}, {"id": "sd_mash", "sec": "side", "name": "Mashed Potatoes", "slug": "the-best-mashed-potatoes-recipe", "img": "2018/11/Mashed-Potatoes.jpg", "time": "30 min", "rate": "5.0 (28)", "serves": 10, "emoji": "🥔", "on": true, "line": "Buttery, fluffy Yukon gold mashed potatoes. Simple and perfect.", "ahead": null, "thu": {"kind": "before", "m": 35, "text": "Boil and mash the potatoes."}, "alt": "sd_mash2", "mins": 0}, {"id": "sd_mash2", "sec": "side", "name": "Make Ahead Mashed Potatoes", "slug": "make-ahead-mashed-potatoes", "img": "2018/11/Make-Ahead-Mashed-Potatoes-Casserole-Square.jpg", "time": "1 hr 35 min", "rate": "5.0 (61)", "serves": 12, "emoji": "🥔", "on": false, "line": "Made with cream cheese and sour cream the day before. Just bake on Thanksgiving!", "ahead": {"day": "wed", "text": "Make the mashed potatoes, spread in a 9x13, cover and refrigerate."}, "thu": {"kind": "before", "m": 60, "text": "Set the make-ahead mashed potatoes out, then bake at 350°F for 30 to 45 minutes."}, "alt": "sd_mash", "mins": 0}, {"id": "sd_stuff", "sec": "side", "name": "Easy Stuffing", "slug": "easy-stuffing-recipe", "img": "2019/11/Stuffing-5-of-7.jpg", "time": "50 min", "rate": "5.0 (6)", "serves": 12, "emoji": "🍞", "on": true, "line": "Classic buttery stuffing with onion, celery and sage.", "ahead": {"day": "wed", "text": "Cook the onion and celery for the stuffing and refrigerate (they keep a day)."}, "thu": {"kind": "before", "m": 55, "text": "Mix and bake the stuffing."}, "alt": "sd_stuff2", "mins": 0}, {"id": "sd_stuff2", "sec": "side", "name": "Crockpot Stuffing", "slug": "crock-pot-stuffing", "img": "2023/11/Crockpot-Stuffing-4.jpg", "time": "5 hrs 15 min (slow cooker)", "rate": "4.2 (109)", "serves": 16, "emoji": "🍞", "on": false, "line": "Stuffing made in the crock pot so your oven stays free. Feeds 16!", "ahead": null, "thu": {"kind": "before", "m": 320, "text": "Start the crockpot stuffing."}, "alt": "sd_stuff", "mins": 0}, {"id": "sd_wild", "sec": "side", "name": "Wild Rice Dressing", "slug": "wild-rice-dressing", "img": "2026/11/Wild-Rice-Stuffing-Square-Image.jpg", "time": "1 hr 20 min", "rate": "", "serves": 8, "emoji": "🌾", "on": false, "line": "Wild rice, sausage and dried cranberries. A Midwest favorite and brand new on the blog!", "ahead": null, "thu": {"kind": "before", "m": 85, "text": "Make the wild rice dressing."}, "alt": null, "mins": 0}, {"id": "sd_gbc", "sec": "side", "name": "Green Bean Casserole", "slug": "the-best-green-bean-casserole", "img": "2025/10/Green-Bean-Casserole-Square-Image.jpg", "time": "40 min", "rate": "5.0 (49)", "serves": 8, "emoji": "🫘", "on": true, "line": "The classic with a cheesy twist and plenty of crispy onions on top.", "ahead": null, "thu": {"kind": "before", "m": 45, "text": "Bake the green bean casserole."}, "alt": "sd_gbc2", "mins": 0}, {"id": "sd_gbc2", "sec": "side", "name": "Crockpot Green Bean Casserole", "slug": "the-best-crockpot-green-bean-casserole", "img": "2018/10/Crockpot-Green-Bean-Casserole.jpg", "time": "2 hrs 40 min (slow cooker)", "rate": "4.9 (24)", "serves": 8, "emoji": "🫘", "on": false, "line": "All the flavor without using the oven. Mix it up the day before!", "ahead": {"day": "wed", "text": "Mix up the crockpot green bean casserole and refrigerate."}, "thu": {"kind": "before", "m": 165, "text": "Start the crockpot green bean casserole."}, "alt": "sd_gbc", "mins": 0}, {"id": "sd_sweet", "sec": "side", "name": "Sweet Potato Casserole", "slug": "sweet-potato-casserole", "img": "2024/11/Sweet-Potato-Casserole-Square-Image.jpg", "time": "1 hr", "rate": "5.0 (7)", "serves": 8, "emoji": "🍠", "on": true, "line": "Brown sugar sweet potatoes topped with pecans and toasty marshmallows.", "ahead": null, "thu": {"kind": "before", "m": 65, "text": "Make and bake the sweet potato casserole."}, "alt": "sd_sweet2", "mins": 0}, {"id": "sd_sweet2", "sec": "side", "name": "Crock Pot Sweet Potato Casserole", "slug": "crock-pot-sweet-potato-casserole", "img": "2022/10/Crock-Pot-Sweet-Potato-Casserole-Square.jpg", "time": "8½ hrs (slow cooker)", "rate": "5.0 (2)", "serves": 8, "emoji": "🍠", "on": false, "line": "The crock pot version. Saves oven space on the big day.", "ahead": null, "thu": {"kind": "before", "m": 515, "text": "Start the crock pot sweet potato casserole."}, "alt": "sd_sweet", "mins": 0}, {"id": "sd_corn", "sec": "side", "name": "Corn Pudding Casserole", "slug": "corn-pudding-casserole-recipe", "img": "2015/11/Corn-Pudding-Casserole-Main-1.jpg", "time": "1 hr 15 min", "rate": "5.0 (13)", "serves": 8, "emoji": "🌽", "on": true, "line": "Creamy corn pudding with a crunchy corn flake topping.", "ahead": null, "thu": {"kind": "before", "m": 80, "text": "Make and bake the corn pudding casserole."}, "alt": null, "mins": 0}, {"id": "sd_cran", "sec": "side", "name": "Cranberry Sauce", "slug": "the-best-cranberry-sauce-recipe", "img": "2023/11/Cranberry-Sauce-Square.jpg", "time": "25 min", "rate": "5.0 (23)", "serves": 6, "emoji": "🍒", "on": true, "line": "Fresh cranberries, orange and a little cinnamon. So much better than the can!", "ahead": {"day": "wed", "text": "Make the cranberry sauce so it has time to chill."}, "thu": null, "alt": null, "mins": 0}, {"id": "sd_mac", "sec": "side", "name": "Crock Pot Mac and Cheese", "slug": "crock-pot-mac-cheese", "img": "2023/04/Slow-Cooker-Mac-and-Cheese-Square.jpg", "time": "2 hrs 20 min (slow cooker)", "rate": "4.7 (139)", "serves": 8, "emoji": "🧀", "on": true, "line": "Super creamy and made in the crock pot. The kids will fight over it!", "ahead": null, "thu": {"kind": "before", "m": 145, "text": "Start the crock pot mac and cheese."}, "alt": null, "mins": 0}, {"id": "br_tx", "sec": "bread", "name": "Texas Roadhouse Rolls", "slug": "texas-roadhouse-rolls", "img": "2021/03/Texas-Roadhouse-Rolls-Square.jpg", "time": "2½ hrs (with rising)", "rate": "4.9 (874)", "serves": 24, "emoji": "🍞", "on": true, "line": "My most popular roll recipe with almost 900 five star reviews. Don’t forget the cinnamon butter!", "ahead": {"day": "wed", "text": "Bake the rolls. Store them in an airtight container (they keep a few days)."}, "thu": null, "alt": "br_cres", "mins": 0}, {"id": "br_cres", "sec": "bread", "name": "Homemade Crescent Rolls", "slug": "homemade-crescent-rolls", "img": "2024/11/Crescent-Rolls-Square.jpg", "time": "52 min", "rate": "4.5 (27)", "serves": 24, "emoji": "🥐", "on": false, "line": "Flaky, buttery homemade crescents.", "ahead": {"day": "wed", "text": "Bake the crescent rolls and store them airtight."}, "thu": null, "alt": "br_tx", "mins": 0}, {"id": "dz_sheet", "sec": "dessert", "name": "Sheet Pan Pumpkin Pie", "slug": "sheet-pan-pumpkin-pie", "img": "2025/11/Sheet-Pan-Pumpkin-Pie-Square-Image-scaled.jpg", "time": "1 hr 50 min", "rate": "5.0 (3)", "serves": 20, "emoji": "🥧", "on": true, "line": "All the pumpkin pie you love, baked in one big pan. It serves 20, so it’s perfect for a crowd!", "ahead": {"day": "tue", "text": "Bake the sheet pan pumpkin pie and refrigerate once cool (it keeps 4 days)."}, "thu": null, "alt": null, "mins": 0}, {"id": "dz_pump", "sec": "dessert", "name": "Pumpkin Pie", "slug": "pumpkin-pie", "img": "2025/10/Pumpkin-Pie-Square-Image.jpg", "time": "3 hrs 10 min (with cooling)", "rate": "4.7 (24)", "serves": 8, "emoji": "🥧", "on": false, "line": "Creamy, classic and made with sweetened condensed milk. Thanksgiving isn’t complete without it!", "ahead": {"day": "wed", "text": "Bake the pumpkin pie. Refrigerate once it’s cool."}, "thu": null, "alt": null, "mins": 0}, {"id": "dz_pecan", "sec": "dessert", "name": "Pecan Pie", "slug": "pecan-pie-2", "img": "2020/11/Pecan-Pie-6-of-7.jpg", "time": "1 hr 10 min", "rate": "4.9 (10)", "serves": 8, "emoji": "🥧", "on": true, "line": "Gooey, nutty and can be made up to four days ahead.", "ahead": {"day": "tue", "text": "Bake the pecan pie and refrigerate (it keeps 4 days)."}, "thu": null, "alt": "dz_pbars", "mins": 0}, {"id": "dz_pbars", "sec": "dessert", "name": "Pecan Pie Bars", "slug": "easy-pecan-pie-bars", "img": "2017/11/Pecan-Pie-Bars-11-of-11.jpg", "time": "2½ hrs", "rate": "5.0 (9)", "serves": 20, "emoji": "🍫", "on": false, "line": "All the pecan pie flavor in an easy cake mix bar. Feeds a crowd!", "ahead": {"day": "tue", "text": "Bake the pecan pie bars and refrigerate (up to 2 days ahead)."}, "thu": null, "alt": "dz_pecan", "mins": 0}, {"id": "dz_apple", "sec": "dessert", "name": "Apple Pie", "slug": "apple-pie", "img": "2019/09/Apple-Pie-Recipe.jpg", "time": "1 hr 10 min", "rate": "5.0 (16)", "serves": 8, "emoji": "🍎", "on": false, "line": "Homemade apple pie with a flaky double crust.", "ahead": {"day": "wed", "text": "Bake the apple pie (it keeps a day or two at room temperature)."}, "thu": null, "alt": null, "mins": 0}, {"id": "dz_chess", "sec": "dessert", "name": "Chocolate Chess Pie", "slug": "chocolate-chess-pie", "img": "2026/09/Chocolate-Chess-Pie-Square-Image.jpg", "time": "2 hrs", "rate": "5.0 (1)", "serves": 8, "emoji": "🍫", "on": false, "line": "Rich, fudgy and so easy. New this fall!", "ahead": {"day": "tue", "text": "Bake the chocolate chess pie and refrigerate (it keeps 4 days)."}, "thu": null, "alt": null, "mins": 0}, {"id": "dz_mini", "sec": "dessert", "name": "Mini Pumpkin Pies", "slug": "mini-pumpkin-pies", "img": "2026/10/Mini-Pumpkin-Pies-Square-Image.jpg", "time": "1 hr 38 min", "rate": "", "serves": 18, "emoji": "🎃", "on": false, "line": "Bite size pumpkin pies made in a muffin tin. Perfect for a dessert table!", "ahead": {"day": "tue", "text": "Bake the mini pumpkin pies and refrigerate (they keep 4 days). Top with whipped cream before serving."}, "thu": null, "alt": "dz_bag", "mins": 0}, {"id": "dz_bag", "sec": "dessert", "name": "Pumpkin Pie in a Bag", "slug": "pumpkin-pie-in-a-bag", "img": "2024/09/Pumpkin-Pie-in-a-Bag-Square-JET.jpg", "time": "15 min", "rate": "5.0 (1)", "serves": 25, "emoji": "🎃", "on": false, "line": "No bake and the kids can make it. Fun for the kids’ table!", "ahead": {"day": "wed", "text": "Make the pumpkin pie in a bag cups and refrigerate (up to 2 days)."}, "thu": null, "alt": "dz_mini", "mins": 0}], "items": [{"k": "turkey", "s": 0, "need": {"tk_whole": 12}, "name": "Whole turkey, about {t} lb(s)", "note": "frozen, thaw in the fridge several days", "wm": {"id": "140956487", "per": 99}}, {"k": "tbreast", "s": 0, "need": {"tk_breast": 1, "tk_crock": 1}, "name": "Bone-in turkey breast, {n} (4 to 5 lbs each)", "wm": {"id": "40619429", "per": 1}}, {"k": "saus", "s": 0, "need": {"sd_wild": 1}, "name": "Ground pork sausage, {t} lb(s)", "wm": {"id": "10533854", "per": 1}}, {"k": "brie", "s": 1, "need": {"ap_brie": 1}, "name": "Brie cheese, {n} wedge(s) (8 oz)", "note": "you need 4 oz per batch", "wm": {"id": "10293707", "per": 2}}, {"k": "tortb", "s": 1, "need": {"ap_pin": 8}, "name": "Large flour tortillas (10 inch), {t}", "wm": {"id": "15556308", "per": 16}}, {"k": "cubes", "s": 1, "need": {"sd_stuff": 12, "sd_stuff2": 16}, "tiers": [[16, "Dried bread cubes, 1 bag (18 oz)"], [32, "Dried bread cubes, 2 bags (18 oz)"], [999, "Dried bread cubes, 3 bags (18 oz)"]], "note": "you need about {t} cups, or dry your own bread", "wm": {"id": "850145920", "per": 16}}, {"k": "cubes2", "s": 1, "need": {"sd_wild": 1}, "name": "Stuffing bread cubes, {n} bag(s) (18 oz)", "note": "you need 10 oz", "wm": {"id": "850145920", "per": 1}}, {"k": "onion", "s": 2, "need": {"tk_whole": 1, "tk_crock": 2, "sd_stuff": 1, "sd_stuff2": 2, "sd_wild": 1}, "name": "Yellow onions, {n}", "wm": {"id": "51259212", "per": 1}}, {"k": "garlic", "s": 2, "need": {"tk_whole": 1, "sd_gbc2": 0.25}, "tiers": [[1, "Garlic, 1 head"], [999, "Garlic, 2 heads"]], "wm": {"id": "44391100", "per": 3}}, {"k": "celery", "s": 2, "need": {"tk_crock": 4, "sd_stuff": 4, "sd_stuff2": 4, "sd_wild": 2}, "tiers": [[10, "Celery, 1 bunch"], [999, "Celery, 2 bunches"]], "note": "you need about {t} stalks", "wm": {"id": "51259411", "per": 10}}, {"k": "yukon", "s": 2, "need": {"sd_mash": 4}, "name": "Yukon gold potatoes, {t} lb(s)", "wm": {"id": "42700530", "per": 3}}, {"k": "redpot", "s": 2, "need": {"sd_mash2": 5}, "name": "Red potatoes, {t} lb(s)", "wm": {"id": "10449949", "per": 3}}, {"k": "swp", "s": 2, "need": {"sd_sweet": 2.5, "sd_sweet2": 4}, "name": "Sweet potatoes, {t} lb(s)", "note": "sold in 3 lb bags", "wm": {"id": "132720824", "per": 3}}, {"k": "cran", "s": 2, "need": {"sd_cran": 1}, "name": "Fresh cranberries, {n} bag(s) (12 oz)", "wm": {"id": "13908231", "per": 1}}, {"k": "orange", "s": 2, "need": {"sd_cran": 1}, "name": "Orange, {n}", "note": "for the peel (and zest to garnish)", "wm": {"id": "162577028", "per": 1}}, {"k": "apples", "s": 2, "need": {"dz_apple": 6}, "name": "Apples, about {n}", "note": "5½ cups sliced per pie", "wm": {"id": "44390991", "per": 6}}, {"k": "lemon", "s": 2, "need": {"ap_dip": 0.5, "dz_apple": 0.5}, "name": "Lemon, {n}", "wm": {"id": "41752773", "per": 1}}, {"k": "gonion", "s": 2, "need": {"ap_dip": 1, "ap_pin": 1}, "name": "Green onions, 1 bunch", "wm": {"id": "51259361", "per": 99}}, {"k": "cil", "s": 2, "need": {"ap_dip": 1}, "name": "Fresh cilantro, 1 bunch", "wm": {"id": "160597260", "per": 1}}, {"k": "pars", "s": 2, "need": {"sd_stuff": 1, "sd_stuff2": 1, "sd_mash": 1}, "name": "Fresh parsley, 1 bunch", "wm": {"id": "44391168", "per": 99}}, {"k": "thyme", "s": 2, "need": {"tk_crock": 1}, "name": "Fresh thyme, 1 package", "note": "or use 3 tsp dried thyme", "wm": {"id": "3953481268", "per": 1}}, {"k": "rosem", "s": 2, "need": {"ap_brie": 1}, "name": "Fresh rosemary, 1 package", "note": "for garnish", "wm": {"id": "3325006363", "per": 1}}, {"k": "butter", "s": 3, "need": {"tk_whole": 0.25, "tk_crock": 0.5, "gv": 0.5, "sd_mash": 0.5, "sd_mash2": 0.125, "sd_stuff": 0.625, "sd_stuff2": 1, "sd_wild": 0.25, "sd_sweet": 0.25, "sd_sweet2": 0.25, "sd_corn": 0.2, "sd_mac": 0.25, "br_tx": 0.4375, "br_cres": 1, "dz_pecan": 0.125, "dz_apple": 0.0625, "dz_chess": 0.25, "dz_pbars": 0.33}, "tiers": [[0.5, "Butter, 1 stick"], [1, "Butter, 2 sticks"], [2, "Butter, 1 lb"], [999, "Butter, {n2} lbs"]], "note": "you need about {t} cup(s)", "wm": {"id": "132893363", "per": 2}}, {"k": "milk", "s": 3, "need": {"sd_mash": 1, "sd_mash2": 0.25, "sd_corn": 1, "sd_mac": 1, "br_tx": 1.25, "br_cres": 1, "sd_gbc2": 0.33, "dz_bag": 2.67}, "name": "Milk, {t} cup(s)", "note": "a half gallon is 8 cups", "wm": {"id": "10450119", "per": 8}}, {"k": "sour", "s": 3, "need": {"sd_mash2": 1, "sd_mac": 0.5, "ap_pin": 1}, "tiers": [[1, "Sour cream, 8 oz"], [2, "Sour cream, 16 oz"], [999, "Sour cream, 24 oz"]], "wm": {"id": "12335111", "per": 2}}, {"k": "cc", "s": 3, "need": {"sd_mash2": 0.5, "ap_dip": 2, "ap_pin": 1}, "name": "Cream cheese, {n} block(s) (8 oz)", "wm": {"id": "10452429", "per": 1}}, {"k": "ched", "s": 3, "need": {"sd_gbc": 1, "sd_mac": 2.5, "ap_pin": 1}, "name": "Shredded sharp cheddar, {t} cup(s)", "note": "{n2} bag(s) (8 oz)", "wm": {"id": "10452431", "per": 2}}, {"k": "parm", "s": 3, "need": {"sd_gbc2": 1}, "name": "Grated Parmesan, 8 oz", "wm": {"id": "10315402", "per": 99}}, {"k": "eggs", "s": 3, "need": {"sd_stuff": 1, "sd_stuff2": 2, "sd_wild": 2, "sd_corn": 2, "br_tx": 1, "br_cres": 2, "dz_sheet": 4, "dz_pump": 2, "dz_mini": 2, "dz_pecan": 3, "dz_pbars": 4, "dz_apple": 1, "dz_chess": 2}, "name": "Eggs, {n}", "wm": {"id": "145051970", "per": 12}}, {"k": "oj", "s": 3, "need": {"sd_cran": 1}, "tiers": [[2.75, "Orange juice, 1 small bottle (11 oz)"], [999, "Orange juice, 2 small bottles (11 oz)"]], "note": "you need ½ cup per batch of cranberry sauce", "wm": {"id": "5478608956", "per": 2.75}}, {"k": "piecr", "s": 3, "need": {"dz_sheet": 3, "dz_pump": 1, "dz_pecan": 1, "dz_apple": 2, "dz_chess": 1, "dz_mini": 2}, "name": "Refrigerated pie crusts, {n2} box(es) (2 per box)", "note": "or frozen deep dish pie shells", "wm": {"id": "16504401", "per": 2}}, {"k": "cwhip", "s": 3, "need": {"dz_sheet": 1, "dz_mini": 1, "dz_pump": 1, "dz_chess": 1, "dz_bag": 1}, "name": "Whipped topping, {n} tub(s) (8 oz)", "note": "for topping the pies", "wm": {"id": "10801133", "per": 1}}, {"k": "mtball", "s": 4, "need": {"ap_meat": 1}, "name": "Frozen fully cooked meatballs, {n} bag(s) (32 oz)", "wm": {"id": "14336389", "per": 1}}, {"k": "puff", "s": 4, "need": {"ap_brie": 1}, "name": "Frozen puff pastry, 1 box", "note": "thaw in the fridge for 24 hours", "wm": {"id": "10996982", "per": 1}}, {"k": "fcorn", "s": 4, "need": {"sd_corn": 2}, "name": "Frozen corn, {t} cup(s)", "note": "a 12 oz bag is about 2½ cups", "wm": {"id": "659879040", "per": 2.5}}, {"k": "broth", "s": 5, "need": {"tk_whole": 2, "gv": 4, "sd_stuff": 2, "sd_stuff2": 3, "sd_wild": 3}, "name": "Chicken broth, {n4} carton(s) (32 oz)", "note": "you need {t} cup(s) (gravy can use turkey drippings instead)", "wm": {"id": "44391066", "per": 4}}, {"k": "wrice", "s": 5, "need": {"sd_wild": 1}, "name": "Ben's Original Long Grain & Wild Rice, {n} box(es) (6 oz)", "wm": {"id": "763239786", "per": 1}}, {"k": "frbean", "s": 5, "need": {"sd_gbc": 4, "sd_gbc2": 3}, "name": "French style green beans, {n} cans (14.5 oz)", "wm": {"id": "10451508", "per": 1}}, {"k": "com", "s": 5, "need": {"sd_gbc": 2, "sd_gbc2": 2}, "name": "Cream of mushroom soup, {n} cans (10.75 oz)", "wm": {"id": "10321675", "per": 1}}, {"k": "fonion", "s": 5, "need": {"sd_gbc": 1, "sd_gbc2": 1}, "name": "French's fried onions, {n} container(s) (6 oz)", "wm": {"id": "15716579", "per": 1}}, {"k": "mush", "s": 5, "need": {"sd_stuff2": 2}, "name": "Canned mushroom pieces, {n} can(s) (8 oz)", "note": "drained", "wm": {"id": "10898794", "per": 1}}, {"k": "mush6", "s": 5, "need": {"sd_wild": 1}, "name": "Sliced mushrooms, {n} jar(s) (6 oz)", "note": "drained", "wm": {"id": "6818303384", "per": 1}}, {"k": "dcran", "s": 5, "need": {"sd_wild": 1}, "name": "Sweetened dried cranberries, 1 bag (24 oz)", "note": "you need 1 cup per batch", "wm": {"id": "46460961", "per": 99}}, {"k": "marsh", "s": 5, "need": {"sd_sweet": 2, "sd_sweet2": 1.5}, "name": "Mini marshmallows, {n4} bag(s) (10 oz)", "wm": {"id": "21881845", "per": 4}}, {"k": "pecans", "s": 5, "need": {"sd_sweet": 0.5, "sd_sweet2": 1, "dz_pecan": 1.5, "dz_pbars": 1}, "name": "Pecans, {t} cup(s)", "note": "a 16 oz bag is about 4 cups", "wm": {"id": "721921443", "per": 4}}, {"k": "brsug", "s": 5, "need": {"ap_meat": 0.125, "sd_sweet": 0.75, "sd_sweet2": 0.75, "sd_cran": 0.25, "dz_pbars": 0.5}, "tiers": [[4.5, "Brown sugar, 1 bag (2 lbs)"], [999, "Brown sugar, 2 bags (2 lbs)"]], "note": "you need {t} cup(s), packed", "wm": {"id": "10315012", "per": 4.5}}, {"k": "cflake", "s": 5, "need": {"sd_corn": 1}, "name": "Corn flakes cereal, 1 box (18 oz)", "note": "you need 1 cup crushed per batch", "wm": {"id": "730184952", "per": 99}}, {"k": "chsoup", "s": 5, "need": {"sd_mac": 1}, "name": "Condensed cheddar cheese soup, {n} can(s) (10.75 oz)"}, {"k": "mac", "s": 5, "need": {"sd_mac": 1}, "name": "Elbow macaroni, 16 oz box", "wm": {"id": "10534107", "per": 1}}, {"k": "yeast", "s": 5, "need": {"br_tx": 1, "br_cres": 1.5}, "tiers": [[3, "Active dry yeast, 1 strip (3 packets)"], [999, "Active dry yeast, 2 strips (3 packets each)"]], "note": "you need {n} packet(s)", "wm": {"id": "13448681", "per": 3}}, {"k": "jcran", "s": 5, "need": {"ap_dip": 1, "ap_meat": 1}, "name": "Jellied cranberry sauce, {n} can(s) (14 oz)", "note": "the meatballs can use whole berry or jellied", "wm": {"id": "14551180", "per": 1}}, {"k": "chili", "s": 5, "need": {"ap_meat": 1}, "name": "Chili sauce, {n} bottle(s) (12 oz)", "wm": {"id": "10533372", "per": 1}}, {"k": "wcran", "s": 5, "need": {"ap_brie": 1}, "name": "Whole berry cranberry sauce, 1 can (14 oz)", "note": "or use some of your homemade cranberry sauce", "wm": {"id": "15240705", "per": 1}}, {"k": "gchile", "s": 5, "need": {"ap_pin": 1}, "name": "Diced green chiles, {n} can(s) (4 oz)", "wm": {"id": "3637149143", "per": 1}}, {"k": "olives", "s": 5, "need": {"ap_pin": 1}, "name": "Chopped black olives, {n} can(s) (4.25 oz)", "wm": {"id": "10315446", "per": 1}}, {"k": "pump", "s": 5, "need": {"dz_sheet": 2, "dz_pump": 1, "dz_mini": 1, "dz_bag": 1}, "name": "Pure pumpkin, {n} can(s) (15 oz)", "wm": {"id": "10306750", "per": 1}}, {"k": "scmilk", "s": 5, "need": {"dz_sheet": 2, "dz_pump": 1, "dz_mini": 1}, "name": "Sweetened condensed milk, {n} can(s) (14 oz)", "wm": {"id": "10534165", "per": 1}}, {"k": "lcorn", "s": 5, "need": {"dz_pecan": 1}, "name": "Light corn syrup, 16 oz bottle", "wm": {"id": "10294409", "per": 1}}, {"k": "dcorn", "s": 5, "need": {"dz_pbars": 1}, "name": "Dark corn syrup, 16 oz bottle", "wm": {"id": "10294408", "per": 1}}, {"k": "cake", "s": 5, "need": {"dz_pbars": 1}, "name": "Yellow cake mix, {n} box(es) (15.25 oz)", "wm": {"id": "702079441", "per": 1}}, {"k": "evapm", "s": 5, "need": {"dz_chess": 1}, "tiers": [[2, "Evaporated milk, 1 can (12 oz)"], [999, "Evaporated milk, 2 cans (12 oz)"]], "note": "you need 5 oz per pie (about ⅔ cup)", "wm": {"id": "10534163", "per": 2}}, {"k": "cocoa", "s": 5, "need": {"dz_chess": 1}, "name": "Hershey's unsweetened cocoa, 8 oz", "note": "you need ¼ cup per pie", "wm": {"id": "21092535", "per": 99}}, {"k": "pud", "s": 5, "need": {"dz_bag": 2}, "name": "Instant vanilla pudding, {n} box(es) (3.4 oz)", "wm": {"id": "10534174", "per": 1}}, {"k": "graham", "s": 5, "need": {"dz_bag": 1}, "name": "Graham crackers, 1 box", "wm": {"id": "10292699", "per": 1}}, {"k": "crackers", "s": 5, "need": {"ap_dip": 1}, "name": "Toasteds crackers variety pack, {n} box(es) (12 oz)", "note": "for scooping the dip", "wm": {"id": "11045794", "per": 1}}, {"k": "sp", "s": 6, "need": {"ap_dip": 1, "ap_meat": 1, "ap_pin": 1, "ap_brie": 1, "tk_whole": 1, "tk_breast": 1, "tk_crock": 1, "gv": 1, "sd_mash": 1, "sd_mash2": 1, "sd_stuff": 1, "sd_stuff2": 1, "sd_wild": 1, "sd_gbc": 1, "sd_gbc2": 1, "sd_sweet": 1, "sd_sweet2": 1, "sd_corn": 1, "sd_cran": 1, "sd_mac": 1, "br_tx": 1, "br_cres": 1, "dz_sheet": 1, "dz_pump": 1, "dz_pecan": 1, "dz_pbars": 1, "dz_apple": 1, "dz_chess": 1, "dz_mini": 1, "dz_bag": 1}, "name": "Salt and black pepper"}, {"k": "oil", "s": 6, "need": {"tk_whole": 1, "tk_breast": 1}, "name": "Olive oil"}, {"k": "flour", "s": 6, "need": {"gv": 1, "tk_crock": 1, "sd_corn": 1, "br_tx": 1, "br_cres": 1, "dz_apple": 1, "ap_brie": 1}, "name": "All-purpose flour"}, {"k": "sugar", "s": 6, "need": {"sd_cran": 1, "sd_corn": 1, "br_tx": 1, "br_cres": 1, "dz_pecan": 1, "dz_apple": 1, "dz_chess": 1}, "name": "Granulated sugar"}, {"k": "van", "s": 6, "need": {"sd_sweet": 1, "sd_sweet2": 1, "dz_pecan": 1, "dz_pbars": 1, "dz_chess": 1}, "name": "Vanilla extract"}, {"k": "cinn", "s": 6, "need": {"dz_sheet": 1, "sd_sweet": 1, "sd_sweet2": 1, "sd_cran": 1, "dz_pump": 1, "dz_mini": 1, "dz_bag": 1, "dz_apple": 1}, "name": "Ground cinnamon"}, {"k": "pps", "s": 6, "need": {"dz_sheet": 1, "sd_sweet2": 1, "dz_pump": 1, "dz_mini": 1, "dz_bag": 1}, "name": "Pumpkin pie spice"}, {"k": "nutm", "s": 6, "need": {"dz_apple": 1}, "name": "Ground nutmeg"}, {"k": "gp", "s": 6, "need": {"tk_whole": 1, "tk_breast": 1, "tk_crock": 1, "ap_pin": 1}, "name": "Garlic powder"}, {"k": "op", "s": 6, "need": {"tk_breast": 1, "tk_crock": 1}, "name": "Onion powder"}, {"k": "pap", "s": 6, "need": {"tk_whole": 1, "tk_breast": 1}, "name": "Paprika"}, {"k": "smpap", "s": 6, "need": {"tk_crock": 1}, "name": "Smoked paprika"}, {"k": "basil", "s": 6, "need": {"tk_whole": 1}, "name": "Dried basil"}, {"k": "sage", "s": 6, "need": {"tk_whole": 1, "sd_stuff": 1, "sd_stuff2": 1, "sd_wild": 1}, "name": "Ground sage"}, {"k": "rosd", "s": 6, "need": {"tk_breast": 1}, "name": "Dried rosemary"}, {"k": "thymd", "s": 6, "need": {"tk_breast": 1, "sd_wild": 1}, "name": "Dried thyme"}, {"k": "parsd", "s": 6, "need": {"tk_breast": 1}, "name": "Dried parsley"}, {"k": "sseas", "s": 6, "need": {"tk_crock": 1, "ap_pin": 1}, "name": "Seasoned salt"}, {"k": "poult", "s": 6, "need": {"sd_stuff": 1, "sd_stuff2": 1}, "name": "Poultry seasoning"}, {"k": "osalt", "s": 6, "need": {"sd_mash2": 1}, "name": "Onion salt"}, {"k": "dmust", "s": 6, "need": {"sd_mac": 1}, "name": "Dry mustard"}, {"k": "cumin", "s": 6, "need": {"ap_dip": 1}, "name": "Ground cumin"}], "sections": [["app", "Appetizers", "Pick a few for guests to snack on"], ["turkey", "The turkey", "Pick one turkey, plus the gravy"], ["side", "Sides", "The good stuff"], ["bread", "Rolls", "Every table needs them"], ["dessert", "Desserts", "Save room for pie!"]]};
+var SELFIE_URL='/julie-headshot.jpg';
+var U=PLAN.site,IMG=U+'wp-content/uploads/';
+function _img(v){return v?(/^(data:|https?:)/.test(v)?v:IMG+v):''}
+var $=function(id){return document.getElementById(id)},root=$('jtg');
+var DISH={};PLAN.dishes.forEach(function(d){d.url=U+d.slug+'/';d.src=_img(d.img);DISH[d.id]=d});
+var SECOND={};PLAN.dishes.forEach(function(d){if(d.alt&&!SECOND[d.id])SECOND[d.alt]=d.id});
+var SLOTS=PLAN.dishes.filter(function(d){return !SECOND[d.id]});
+var TURKEYS=['tk_whole','tk_breast','tk_crock'];
+function track(n,p){try{if(typeof window.gtag==='function')window.gtag('event',n,Object.assign({planner:PLAN.id},p||{}))}catch(e){}}
+var KEY='jet-'+PLAN.id,st=null;
+try{st=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!st||!st.on){st={on:{},pick:{},x2:{},g:{},t:{},dinner:'14:00',lbs:12};SLOTS.forEach(function(d){st.on[d.id]=!!d.on;st.pick[d.id]=d.id})}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function cur(slot){return DISH[st.pick[slot]]||DISH[slot]}
+function chosen(){var a=[];SLOTS.forEach(function(s){if(st.on[s.id])a.push({d:cur(s.id),m:st.x2[s.id]?2:1})});return a}
+function toast(t){var el=$('tg-toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){el.classList.remove('show')},2200)}
+var CHECK='<svg viewBox="0 0 14 11" fill="none"><path d="M1.5 5.5l4 4 7-8" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+if(SELFIE_URL){$('tg-selfie').style.backgroundImage='url("'+SELFIE_URL+'")'}
+
+/* ---------- menu ---------- */
+function menu(){
+  var h='';PLAN.sections.forEach(function(sec){
+    var ds=SLOTS.filter(function(d){return d.sec===sec[0]});
+    h+='<div class="sh"><span class="scr">'+esc(sec[2])+'</span><h2 class="disp">'+esc(sec[1])+'</h2></div><div class="list">';
+    ds.forEach(function(s){var d=cur(s.id),on=!!st.on[s.id],other=d.alt?DISH[d.alt]:null,isT=TURKEYS.indexOf(s.id)>-1;
+      h+='<div class="dish '+(on?'on':'off')+'"><a class="ph" href="'+d.url+'" target="_blank" rel="noopener" aria-label="'+esc(d.name)+' recipe">'+d.emoji+(d.src?'<img alt="" loading="lazy" src="'+d.src+'" onerror="this.remove()">':'')+'</a><div class="db">'+
+        '<h3><a href="'+d.url+'" target="_blank" rel="noopener">'+esc(d.name)+'</a></h3><div class="meta">⏱ '+esc(d.time)+(d.rate?' · ★ '+esc(d.rate):'')+' · serves '+d.serves*(st.x2[s.id]?2:1)+'</div>'+
+        '<p class="ln">'+esc(d.line)+'</p><div class="acts">'+
+        '<button class="tg'+(on?' on':'')+'" data-on="'+s.id+'">'+(on?'On my menu ✓':(isT?'Make this turkey':'+ Add to my menu'))+'</button>'+
+        (isT?'':'<button class="tg x2'+(st.x2[s.id]?' on':'')+'" data-x2="'+s.id+'" aria-pressed="'+!!st.x2[s.id]+'">'+(st.x2[s.id]?'Doubled ✓':'Double it')+'</button>')+
+        '<a class="tg rc" href="'+d.url+'" target="_blank" rel="noopener">Recipe</a></div>'+
+        (other?'<button class="swp" data-sw="'+s.id+'">Or make '+esc(other.name)+' instead</button>':'')+
+        '</div></div>'});
+    h+='</div>'});
+  $('tg-menu').innerHTML=h;
+  [].forEach.call($('tg-menu').querySelectorAll('[data-on],[data-x2],[data-sw]'),function(b){b.onclick=function(){
+    if(b.dataset.on){var id=b.dataset.on,was=!!st.on[id];
+      if(TURKEYS.indexOf(id)>-1&&!was)TURKEYS.forEach(function(t){st.on[t]=false});
+      st.on[id]=!was;track(was?'tg_remove':'tg_add',{dish:cur(id).name});toast(was?cur(id).name+' is off your menu':cur(id).name+' added. List updated!')}
+    else if(b.dataset.x2){var id2=b.dataset.x2;st.x2[id2]=!st.x2[id2];if(st.x2[id2])st.on[id2]=true;track('tg_double',{dish:cur(id2).name,on:st.x2[id2]});toast(st.x2[id2]?'Doubled! Your list has twice the groceries for '+cur(id2).name:cur(id2).name+' back to one batch')}
+    else{var sl=b.dataset.sw,nx=cur(sl).alt;st.pick[sl]=nx;st.on[sl]=true;track('tg_swap',{to:DISH[nx].name});toast(DISH[nx].name+' swapped in. List updated!')}
+    save();all()}});
+}
+
+/* ---------- grocery list ---------- */
+var frac=function(n){var w=Math.floor(n),f=Math.round((n-w)*4)/4;if(f===1){w++;f=0}var m={0:'',0.25:'¼',0.5:'½',0.75:'¾'}[f];return (w?w+(m?' ':''):'')+m||'0'};
+function fillQty(tpl,t){var n=function(k){return Math.ceil(t/k-1e-9)};
+  tpl=tpl.replace(/\{t\}/g,frac(t)).replace(/\{n4\}/g,n(4)).replace(/\{n2\}/g,n(2)).replace(/\{n\}/g,n(1));
+  return tpl.replace(/(\d+(?: [½¼¾])?|[½¼¾])([^\d(]*?)\((e?s)\)/g,function(m,num,mid,suf){var pl=/^[½¼¾]$/.test(num)?false:(parseInt(num,10)>1||/ [½¼¾]/.test(num));return num+mid+(pl?suf:'')})}
+function label(x,t){var nm=x.name;if(x.tiers){nm=x.tiers[x.tiers.length-1][1];for(var j=0;j<x.tiers.length;j++){if(t<=x.tiers[j][0]+1e-9){nm=x.tiers[j][1];break}}}return [fillQty(nm,t),x.note?fillQty(x.note,t):'']}
+var SECS=[['Meat','teal'],['Deli & bakery','teal'],['Produce','mint'],['Dairy & refrigerated','peach'],['Freezer','blue'],['Pantry','yel'],['Check the cupboard','mint']];
+var COL={mint:['#B6D3C7','#2C5B6D'],teal:['#2C5B6D','#fff'],peach:['#F3B09E','#2C5B6D'],blue:['#C0D8DD','#2C5B6D'],yel:['#F3BC69','#2C5B6D']};
+function shopping(){var ch=chosen(),out=SECS.map(function(s){return {name:s[0],c:s[1],rows:[]}});
+  PLAN.items.forEach(function(x){var t=0,who=[];ch.forEach(function(c){if(c.d.id in x.need){t+=x.need[c.d.id]*c.m;who.push(c.d.name)}});t=Math.round(t*1000)/1000;if(!t)return;
+    var l=label(x,t);out[x.s].rows.push({k:x.k,name:l[0],note:l[1]||(x.s<6&&who.length<=2?'for '+who.join(' and '):''),wm:x.wm?{id:x.wm.id,q:Math.max(1,Math.ceil(t/(x.wm.per||1e9)-1e-9))}:null})});
+  return out.filter(function(s){return s.rows.length})}
+var total=0;
+function groc(){var h='';total=0;
+  shopping().forEach(function(sec){var c=COL[sec.c];h+='<div class="sec"><h3 style="background:'+c[0]+';color:'+c[1]+'">'+sec.name+'</h3>';
+    sec.rows.forEach(function(it){var on=!!st.g[it.k],q=it.name.split(',')[0];total++;
+      h+='<div class="irow'+(on?' done':'')+'"><label class="it'+(on?' on':'')+'"><input type="checkbox" data-k="'+it.k+'"'+(on?' checked':'')+'><span class="bx">'+CHECK+'</span><span class="tx">'+esc(it.name)+(it.note?'<small>'+esc(it.note)+'</small>':'')+'</span></label>'+
+      (sec.name==='Check the cupboard'?'':'<span class="shop"><a class="ic" target="_blank" rel="noopener" href="https://www.instacart.com/store/s?k='+encodeURIComponent(q)+'">Instacart</a><a class="ic wmi" target="_blank" rel="noopener" href="https://www.walmart.com/search?q='+encodeURIComponent(q)+'">Walmart</a></span>')+'</div>'});
+    h+='</div>'});
+  $('tg-groc').innerHTML=h||'<div class="card" style="margin-top:12px">Add a dish to your menu and your list shows up here.</div>';
+  [].forEach.call($('tg-groc').querySelectorAll('input'),function(i){i.onchange=function(){st.g[i.dataset.k]=i.checked;save();var r=i.closest('.irow');r.classList.toggle('done',i.checked);i.parentNode.classList.toggle('on',i.checked);prog()}});
+  prog()}
+function prog(){var n=$('tg-groc').querySelectorAll('input:checked').length;$('tg-prog').style.width=(total?n/total*100:0)+'%';$('tg-progt').textContent=total?(n===total?'Everything’s in the cart! 🎉':n+' of '+total+' items in the cart'):''}
+$('tg-hide').onclick=function(){var on=root.classList.toggle('hide-done');this.setAttribute('aria-pressed',on);this.textContent=on?'Show checked':'Hide checked'};
+
+/* ---------- countdown ---------- */
+var DAYS=[['sun','Sunday','Nov 22'],['mon','Monday','Nov 23'],['tue','Tuesday','Nov 24'],['wed','Wednesday','Nov 25'],['thu','Thanksgiving Day','Nov 26']];
+(function(){var s='';for(var h=11;h<=18;h++)for(var m=0;m<60;m+=30){if(h===18&&m)break;var v=(h<10?'0':'')+h+':'+(m?'30':'00');s+='<option value="'+v+'">'+((h>12?h-12:h)+':'+(m?'30':'00')+(h>=12?' PM':' AM'))+'</option>'}$('tg-dinner').innerHTML=s;
+  var w='';for(var l=8;l<=24;l++)w+='<option value="'+l+'">'+l+' lbs</option>';$('tg-lbs').innerHTML=w})();
+$('tg-dinner').onchange=function(){st.dinner=this.value;save();plan();track('tg_dinner_time',{time:st.dinner})};
+$('tg-lbs').onchange=function(){st.lbs=+this.value;save();plan()};
+function clock(min){min=((min%1440)+1440)%1440;var h=Math.floor(min/60),m=Math.round(min%60/5)*5;if(m===60){h++;m=0}return (h%12||12)+':'+(m<10?'0':'')+m+(h>=12&&h<24?' pm':' am')}
+function tasks(){var ch=chosen(),dm=(function(){var p=st.dinner.split(':');return +p[0]*60+ +p[1]})(),out={sun:[],mon:[],tue:[],wed:[],thu:[]};
+  if(ch.length)out.sun.push({id:'shop',text:'Shop for everything on your grocery list.'});
+  var cubes=ch.some(function(c){return c.d.id==='sd_stuff'||c.d.id==='sd_stuff2'});
+  if(cubes)out.tue.push({id:'cubes',text:'Drying your own bread for stuffing? Cube it and leave it out uncovered for at least 24 hours.'});
+  ch.forEach(function(c){var d=c.d;
+    if(d.ahead)out[d.ahead.day].push({id:d.id+'-a',text:d.ahead.text+(c.m>1?' (double batch)':''),d:d});
+    if(d.thu){var at;
+      if(d.thu.kind==='turkey'){at=dm-30-(st.lbs*15+60);out.thu.push({id:d.id+'-p',at:at-20,text:'Preheat the oven to 325°F and rub the turkey with the herb butter.',d:d})}
+      else if(d.thu.kind==='app')at=dm-60-d.thu.m;
+      else at=dm-d.thu.m;
+      out.thu.push({id:d.id+'-t',at:at,text:(d.thu.kind==='turkey'?'Turkey goes in the oven, covered. Start checking the thigh temperature after about '+Math.round(st.lbs*15/60*2)/2+' hours. It\u2019s done at 165°F.':d.thu.text)+(c.m>1?' (double batch)':''),d:d});
+      if(d.thu.kind==='turkey'){out.thu.push({id:d.id+'-r',at:dm-30,text:'Turkey out of the oven. Tent with foil and let it rest 30 minutes before carving.'})}}});
+  if(ch.some(function(c){return c.d.sec==='app'}))out.thu.push({id:'apps',at:dm-60,text:'Set out the appetizers as guests arrive.'});
+  out.thu.push({id:'eat',at:dm,text:'Dinner is served! Happy Thanksgiving! 🦃'});
+  out.thu.sort(function(a,b){return a.at-b.at});return out}
+function plan(){$('tg-dinner').value=st.dinner;$('tg-lbs').value=String(st.lbs);$('tg-lbsw').style.display=st.on.tk_whole?'':'none';
+  var T=tasks(),h='';DAYS.forEach(function(D){var a=T[D[0]];if(!a.length)return;
+    h+='<div class="day"><h3>'+D[1]+' <small>'+D[2]+'</small></h3>'+a.map(function(t){var on=!!st.t[t.id];return '<label class="task'+(on?' on':'')+'"><input type="checkbox" data-t="'+t.id+'"'+(on?' checked':'')+'><span class="bx">'+CHECK+'</span>'+(t.at!=null?'<span class="tm">'+clock(t.at)+'</span>':'')+'<span class="tx">'+esc(t.text)+(t.d?' <a href="'+t.d.url+'" target="_blank" rel="noopener" style="font-weight:800;color:var(--head)">Recipe</a>':'')+'</span></label>'}).join('')+'</div>'});
+  $('tg-days').innerHTML=h;
+  [].forEach.call($('tg-days').querySelectorAll('input'),function(i){i.onchange=function(){st.t[i.dataset.t]=i.checked;i.parentNode.classList.toggle('on',i.checked);save()}})}
+$('tg-cal').onclick=function(){var T=tasks(),p=function(n){return (n<10?'0':'')+n},L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Julies Eats and Treats//Thanksgiving//EN','CALSCALE:GREGORIAN'],stamp=new Date().toISOString().replace(/[-:]/g,'').split('.')[0]+'Z',k=0;
+  var day={sun:'20261122',mon:'20261123',tue:'20261124',wed:'20261125',thu:'20261126'};
+  function e(t){return String(t).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/’/g,"'")}
+  DAYS.forEach(function(D){T[D[0]].forEach(function(t){var start=t.at!=null?t.at:(9*60+k%4*15),h=Math.floor(((start%1440)+1440)%1440/60),m=Math.round(((start%60)+60)%60/5)*5%60;k++;
+    L.push('BEGIN:VEVENT','UID:jet-tg-'+t.id+'-2026@julieseatsandtreats.com','DTSTAMP:'+stamp,'DTSTART:'+day[D[0]]+'T'+p(h)+p(m)+'00','DURATION:PT15M','SUMMARY:'+e(t.text.length>70?t.text.slice(0,67)+'...':t.text),'DESCRIPTION:'+e(t.text)+(t.d?'\\n'+t.d.url:''),'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+e(t.text.slice(0,60)),'TRIGGER:-PT10M','END:VALARM','END:VEVENT')})});
+  L.push('END:VCALENDAR');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([L.join('\r\n')],{type:'text/calendar'}));a.download='thanksgiving-countdown.ics';document.body.appendChild(a);a.click();a.remove();toast('Calendar file ready! Open it to add 📅');track('tg_calendar')};
+
+/* ---------- sharing, Walmart, print ---------- */
+function listText(){var out='My Thanksgiving menu (Julie’s Eats & Treats)\n';chosen().forEach(function(c){out+='• '+c.d.name+(c.m>1?' (x2)':'')+'\n  '+c.d.url+'\n'});
+  shopping().forEach(function(sec){var r=sec.rows.filter(function(it){return !st.g[it.k]});if(r.length){out+='\n'+sec.name.toUpperCase()+'\n';r.forEach(function(it){out+='☐ '+it.name+'\n'})}});return out}
+$('tg-share').onclick=function(){var out=listText();track('tg_text_list');
+  function modal(){var w=document.createElement('div');w.className='msheet';w.innerHTML='<div class="mbox"><div class="disp" style="font-size:22px;color:var(--head)">Copy your list</div><textarea readonly style="width:100%;height:260px;margin-top:10px;border-radius:12px;border:2px solid var(--rule);padding:10px;font:14px Montserrat,sans-serif;background:var(--chip);color:var(--ink)"></textarea><button class="btn p" style="width:100%;margin-top:10px">Done</button></div>';root.appendChild(w);var ta=w.querySelector('textarea');ta.value=out;ta.select();w.querySelector('button').onclick=function(){w.remove()}}
+  if(navigator.share){navigator.share({title:'My Thanksgiving list',text:out}).catch(function(e){if(!e||e.name!=='AbortError')modal()})}else if(navigator.clipboard){navigator.clipboard.writeText(out).then(function(){toast('List copied! Paste it anywhere')},modal)}else modal()};
+$('tg-walmart').onclick=function(){var r=[];shopping().forEach(function(s){s.rows.forEach(function(x){if(x.wm&&!st.g[x.k])r.push(x)})});if(!r.length){toast('Nothing left to add!');return}
+  var url='https://affil.walmart.com/cart/addToCart?items='+r.map(function(x){return x.wm.id+'|'+x.wm.q}).join(',')+(PLAN.walmart_suffix||'');track('tg_walmart_cart',{items:r.length});var w=window.open(url,'_blank');if(!w)location.href=url;
+  var miss=[];shopping().forEach(function(s){if(s.name==='Check the cupboard')return;s.rows.forEach(function(x){if(!x.wm&&!st.g[x.k])miss.push(x)})});
+  var row=function(x){return '<div class="mrow"><b>'+esc(x.name)+'</b><a class="ic wmi" target="_blank" rel="noopener" href="https://www.walmart.com/search?q='+encodeURIComponent(x.name.split(',')[0])+'">Walmart</a></div>'};
+  var s=document.createElement('div');s.className='msheet';s.innerHTML='<div class="mbox"><div class="disp" style="font-size:22px;color:var(--head)">We sent '+r.length+' items to Walmart</div><p style="margin:6px 0 10px;font-size:14px;line-height:1.45">Check your cart against this list. <b>If something isn’t there, it may be out of stock at your store.</b> Tap Walmart next to it to pick another brand.</p>'+r.map(row).join('')+(miss.length?'<div class="disp" style="font-size:18px;color:var(--head);margin:14px 0 6px">Add these yourself</div>'+miss.map(row).join(''):'')+'<button class="btn p" style="width:100%;margin-top:12px" data-x="1">Got it</button></div>';root.appendChild(s);s.onclick=function(e){if(e.target===s||e.target.closest('[data-x]'))s.remove()}};
+function loadPDF(){if(window.jspdf)return Promise.resolve(window.jspdf.jsPDF);return new Promise(function(r,j){var sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';sc.onload=function(){r(window.jspdf.jsPDF)};sc.onerror=j;document.head.appendChild(sc)})}
+function clean(t){return String(t).replace(/[^\x20-\xFF’‘“”½¼¾]/g,'').replace(/\s+/g,' ').trim()}
+$('tg-print').onclick=async function(){var b=this;b.disabled=true;b.textContent='Making your list...';track('tg_print');
+  try{var J=await loadPDF(),d=new J({unit:'pt',format:'letter'}),W=612,H=792,M=40,TL=[44,91,109];
+    function foot(){d.setFont('helvetica','bold');d.setFontSize(9);d.setTextColor.apply(d,TL);d.text("JULIE'S EATS & TREATS",M,H-24);d.text('JULIESEATSANDTREATS.COM',W-M,H-24,{align:'right'})}
+    function page(){d.setFillColor(244,242,237);d.rect(0,0,W,H,'F')}
+    page();d.setFillColor.apply(d,TL);d.roundedRect(M,M,W-2*M,62,14,14,'F');d.setTextColor(255);d.setFont('helvetica','bold');d.setFontSize(22);d.text('MY THANKSGIVING MENU',M+18,M+34);d.setFont('helvetica','normal');d.setFontSize(11);d.text('Thursday, November 26',M+18,M+51);
+    var y=M+86,x=M,colW=(W-2*M-24)/2,col=0,top;
+    d.setTextColor(26,26,26);chosen().forEach(function(c){d.setFont('helvetica','bold');d.setFontSize(10.5);d.setTextColor.apply(d,TL);d.textWithLink(clean(c.d.name)+(c.m>1?' (x2)':''),M,y,{url:c.d.url});y+=14});
+    y+=14;d.setFont('helvetica','bold');d.setFontSize(14);d.setTextColor.apply(d,TL);d.text('MY GROCERY LIST',M,y);y+=6;top=y;
+    function next(){if(col===0){col=1;x=M+colW+24;y=top}else{foot();d.addPage();page();col=0;x=M;top=M;y=M}}
+    shopping().forEach(function(sec){if(y>H-90)next();y+=18;d.setFont('helvetica','bold');d.setFontSize(10);d.setTextColor.apply(d,TL);d.text(sec.name.toUpperCase(),x,y);y+=4;
+      sec.rows.forEach(function(it){var nm=d.splitTextToSize(clean(it.name),colW-18);if(y+nm.length*12+6>H-50)next();y+=13;var done=!!st.g[it.k];d.setDrawColor.apply(d,TL);d.setLineWidth(1.2);d.roundedRect(x,y-8.5,9,9,2,2,'S');d.setFont('helvetica','bold');d.setFontSize(9.5);d.setTextColor(done?150:26,done?150:26,done?150:26);d.text(nm,x+16,y);y+=(nm.length-1)*12})});
+    foot();var blob=d.output('blob'),u=URL.createObjectURL(blob),w=window.open(u,'_blank');if(!w){var a=document.createElement('a');a.href=u;a.download='My-Thanksgiving-List.pdf';document.body.appendChild(a);a.click();a.remove()}}
+  catch(e){toast('Couldn’t make your list. Try again in a moment.')}
+  b.disabled=false;b.textContent='Print my list'};
+
+function count(){var ch=chosen(),n=0;shopping().forEach(function(s){if(s.name!=='Check the cupboard')n+=s.rows.length});$('tg-count').textContent=ch.length+' dish'+(ch.length===1?'':'es')+' on your menu';$('tg-count2').textContent=n+' things to buy'}
+function all(){menu();groc();plan();count()}
+all();
+})();
+</script>
+<!-- ===== END JET THANKSGIVING PLANNER ===== -->
+</body>
+</html>
