@@ -1,5 +1,45 @@
 [
  {
+  "week": "2026-11-23",
+  "label": "November 23 to 29",
+  "url": "/2026-11-23/",
+  "dinners": [
+   "Garlic Parmesan Chicken",
+   "Baked Spaghetti",
+   "Crockpot Chicken Tacos",
+   "Roasted Turkey Breast",
+   "Cheesy Bacon Turkey Sliders",
+   "Turkey and Rice Soup",
+   "French Onion Meatballs"
+  ],
+  "slugs": [
+   "garlic-parmesan-chicken",
+   "spasanga",
+   "crockpot-chicken-tacos",
+   "roasted-turkey-breast",
+   "cheesy-bacon-turkey-sliders",
+   "turkey-and-rice-soup",
+   "french-onion-meatballs"
+  ],
+  "swaps": [
+   "smothered-chicken",
+   "marry-me-chicken",
+   "baked-ziti",
+   "american-goulash",
+   "crock-pot-chicken-tortilla-soup",
+   "light-crock-pot-fiesta-chicken-rice-bowls",
+   "honey-baked-ham",
+   "crock-pot-make-ahead-turkey-recipe",
+   "pepperoni-pizza-sliders",
+   "turkey-shepherds-pie",
+   "leftover-turkey-pot-pie",
+   "pasta-e-fagioli",
+   "porcupine-meatballs",
+   "crock-pot-meatloaf-veggies"
+  ],
+  "dessert": "brownie-bites"
+ },
+ {
   "week": "2026-11-16",
   "label": "November 16 to 22",
   "url": "/2026-11-16/",
