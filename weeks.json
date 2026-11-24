@@ -1,5 +1,45 @@
 [
  {
+  "week": "2026-11-30",
+  "label": "November 30 to December 6",
+  "url": "/2026-11-30/",
+  "dinners": [
+   "Chicken Fajita Casserole",
+   "Crock Pot Scalloped Potatoes and Ham",
+   "No Peek Chicken and Rice",
+   "Crock Pot Beef and Noodles",
+   "Calzones",
+   "Taco Tater Tot Casserole",
+   "Oven Baked Ribs"
+  ],
+  "slugs": [
+   "chicken-fajita-casserole",
+   "scalloped-potatoes-ham",
+   "no-peek-chicken-and-rice",
+   "crock-pot-beef-and-noodles",
+   "calzone-recipe",
+   "taco-tater-tot-casserole",
+   "oven-baked-ribs"
+  ],
+  "swaps": [
+   "baked-chicken-tacos",
+   "cheesy-chicken-stuffing-casserole",
+   "crock-pot-potato-soup",
+   "ham-fried-rice",
+   "chicken-stroganoff",
+   "easy-chicken-pot-pie-casserole",
+   "crock-pot-beef-stew-2",
+   "crock-pot-cheeseburger-soup",
+   "philly-cheesesteak-sloppy-joes",
+   "chicken-bacon-ranch-sliders",
+   "taco-stuffed-shells",
+   "taco-salad",
+   "crock-pot-ribs",
+   "baked-pork-chops"
+  ],
+  "dessert": "almond-cookies"
+ },
+ {
   "week": "2026-11-23",
   "label": "November 23 to 29",
   "url": "/2026-11-23/",
